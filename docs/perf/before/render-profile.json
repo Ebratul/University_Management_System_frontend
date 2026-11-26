@@ -1,0 +1,363 @@
+{
+  "generatedAt": "2026-11-26T13:31:53.450Z",
+  "base": "http://localhost:3000",
+  "cpuSlowdown": 4,
+  "results": [
+    {
+      "scenario": "admin-overview-load",
+      "path": "/admin",
+      "wallMs": 6019,
+      "commits": 114,
+      "componentRenders": 2680,
+      "renderMs": 336.7,
+      "top": [
+        {
+          "name": "AdminOverview",
+          "count": 2,
+          "ms": 56.8
+        },
+        {
+          "name": "Anonymous",
+          "count": 936,
+          "ms": 39.4
+        },
+        {
+          "name": "PieSectors",
+          "count": 74,
+          "ms": 21.4
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 20.6
+        },
+        {
+          "name": "JavascriptAnimate",
+          "count": 128,
+          "ms": 19.6
+        },
+        {
+          "name": "Sector",
+          "count": 220,
+          "ms": 14.8
+        },
+        {
+          "name": "Rectangle",
+          "count": 108,
+          "ms": 10.6
+        },
+        {
+          "name": "CartesianGrid",
+          "count": 3,
+          "ms": 9.9
+        },
+        {
+          "name": "BarRectangles",
+          "count": 54,
+          "ms": 8.1
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 8.1
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 8
+        },
+        {
+          "name": "BarImpl",
+          "count": 6,
+          "ms": 7.4
+        },
+        {
+          "name": "EventSynchronizer",
+          "count": 8,
+          "ms": 7.3
+        },
+        {
+          "name": "Logo",
+          "count": 1,
+          "ms": 5.7
+        },
+        {
+          "name": "Shape",
+          "count": 328,
+          "ms": 5.2
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "domNodes": 438,
+      "tableRowsInDom": 0
+    },
+    {
+      "scenario": "users-search-typing",
+      "path": "/admin/users",
+      "wallMs": 6089,
+      "commits": 9,
+      "componentRenders": 1899,
+      "renderMs": 26.9,
+      "top": [
+        {
+          "name": "UsersManager",
+          "count": 8,
+          "ms": 6.1
+        },
+        {
+          "name": "DropdownMenu",
+          "count": 73,
+          "ms": 3.4
+        },
+        {
+          "name": "DataTable",
+          "count": 8,
+          "ms": 2.1
+        },
+        {
+          "name": "Menu",
+          "count": 73,
+          "ms": 1.6
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 1.6
+        },
+        {
+          "name": "OuterLayoutRouter",
+          "count": 4,
+          "ms": 1.3
+        },
+        {
+          "name": "Pagination",
+          "count": 2,
+          "ms": 1.3
+        },
+        {
+          "name": "Badge",
+          "count": 146,
+          "ms": 1.2
+        },
+        {
+          "name": "Presence",
+          "count": 89,
+          "ms": 1.2
+        },
+        {
+          "name": "ConfirmDialog",
+          "count": 8,
+          "ms": 0.7
+        },
+        {
+          "name": "HTTPAccessFallbackBoundary",
+          "count": 4,
+          "ms": 0.7
+        },
+        {
+          "name": "Button",
+          "count": 10,
+          "ms": 0.6
+        },
+        {
+          "name": "RowMenu",
+          "count": 73,
+          "ms": 0.5
+        },
+        {
+          "name": "ErrorBoundary",
+          "count": 5,
+          "ms": 0.5
+        },
+        {
+          "name": "Dialog",
+          "count": 8,
+          "ms": 0.4
+        }
+      ],
+      "interactions": 6,
+      "worstInteractionMs": 32,
+      "domNodes": 228,
+      "tableRowsInDom": 3
+    },
+    {
+      "scenario": "audit-filter-typing",
+      "path": "/admin/audit-logs",
+      "wallMs": 5408,
+      "commits": 9,
+      "componentRenders": 90,
+      "renderMs": 7,
+      "top": [
+        {
+          "name": "FilterField",
+          "count": 9,
+          "ms": 1.3
+        },
+        {
+          "name": "HTTPAccessFallbackErrorBoundary",
+          "count": 2,
+          "ms": 0.8
+        },
+        {
+          "name": "InnerScrollHandlerNew",
+          "count": 4,
+          "ms": 0.7
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 0.7
+        },
+        {
+          "name": "Button",
+          "count": 4,
+          "ms": 0.6
+        },
+        {
+          "name": "AuditLogViewer",
+          "count": 2,
+          "ms": 0.6
+        },
+        {
+          "name": "RedirectErrorBoundary",
+          "count": 5,
+          "ms": 0.5
+        },
+        {
+          "name": "EmptyState",
+          "count": 1,
+          "ms": 0.5
+        },
+        {
+          "name": "ErrorBoundary",
+          "count": 5,
+          "ms": 0.3
+        },
+        {
+          "name": "InnerLayoutRouter",
+          "count": 4,
+          "ms": 0.3
+        },
+        {
+          "name": "ScrollAndMaybeFocusHandler",
+          "count": 4,
+          "ms": 0.2
+        },
+        {
+          "name": "HTTPAccessFallbackBoundary",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "Head",
+          "count": 2,
+          "ms": 0.1
+        },
+        {
+          "name": "DataTable",
+          "count": 2,
+          "ms": 0.1
+        },
+        {
+          "name": "Anonymous",
+          "count": 2,
+          "ms": 0.1
+        }
+      ],
+      "interactions": 2,
+      "worstInteractionMs": 24,
+      "domNodes": 179,
+      "tableRowsInDom": 0
+    },
+    {
+      "scenario": "student-overview-load",
+      "path": "/student",
+      "wallMs": 3415,
+      "commits": 10,
+      "componentRenders": 209,
+      "renderMs": 137.6,
+      "top": [
+        {
+          "name": "StudentOverview",
+          "count": 7,
+          "ms": 47.9
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 20.1
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 9.4
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 8.7
+        },
+        {
+          "name": "Anonymous",
+          "count": 25,
+          "ms": 4.6
+        },
+        {
+          "name": "Badge",
+          "count": 6,
+          "ms": 4.5
+        },
+        {
+          "name": "Logo",
+          "count": 1,
+          "ms": 4.4
+        },
+        {
+          "name": "Button",
+          "count": 6,
+          "ms": 3.2
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 3.2
+        },
+        {
+          "name": "SectionSubnav",
+          "count": 1,
+          "ms": 2.7
+        },
+        {
+          "name": "LoadingBoundaryProvider",
+          "count": 1,
+          "ms": 2.2
+        },
+        {
+          "name": "Toaster",
+          "count": 2,
+          "ms": 1.6
+        },
+        {
+          "name": "LogoutButton",
+          "count": 1,
+          "ms": 1.6
+        },
+        {
+          "name": "LinkComponent",
+          "count": 16,
+          "ms": 1.2
+        },
+        {
+          "name": "AppRouterAnnouncer",
+          "count": 2,
+          "ms": 1.1
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "domNodes": 207,
+      "tableRowsInDom": 0
+    }
+  ]
+}

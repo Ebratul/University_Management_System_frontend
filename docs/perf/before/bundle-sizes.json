@@ -1,0 +1,395 @@
+{
+  "generatedAt": "2026-11-26T13:20:50.302Z",
+  "summary": {
+    "allChunksGzipKB": 971,
+    "largestChunk": "3y1z0-oh5fq4m.js",
+    "largestChunkGzipKB": 108.4
+  },
+  "routes": [
+    {
+      "route": "/",
+      "chunks": 15,
+      "gzipKB": 212,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/_global-error",
+      "chunks": 6,
+      "gzipKB": 127.5,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/_not-found",
+      "chunks": 12,
+      "gzipKB": 183.5,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin",
+      "chunks": 18,
+      "gzipKB": 220.7,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin/audit-logs",
+      "chunks": 18,
+      "gzipKB": 221.9,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin/courses",
+      "chunks": 23,
+      "gzipKB": 350.2,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/departments",
+      "chunks": 23,
+      "gzipKB": 349.3,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/enrollments",
+      "chunks": 20,
+      "gzipKB": 232.9,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin/faculties",
+      "chunks": 23,
+      "gzipKB": 350.1,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/notices",
+      "chunks": 23,
+      "gzipKB": 349,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/offerings",
+      "chunks": 23,
+      "gzipKB": 352.4,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/payments",
+      "chunks": 18,
+      "gzipKB": 222.2,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin/payments/[id]",
+      "chunks": 18,
+      "gzipKB": 223.6,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin/registration",
+      "chunks": 22,
+      "gzipKB": 353.8,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/registration/[id]",
+      "chunks": 20,
+      "gzipKB": 319.6,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/registration/[id]/receipt",
+      "chunks": 18,
+      "gzipKB": 219.7,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin/semesters",
+      "chunks": 23,
+      "gzipKB": 349.7,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/students",
+      "chunks": 18,
+      "gzipKB": 223,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/admin/students/[id]",
+      "chunks": 22,
+      "gzipKB": 346.2,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/universities",
+      "chunks": 22,
+      "gzipKB": 345.7,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/users",
+      "chunks": 24,
+      "gzipKB": 357.4,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/admin/website",
+      "chunks": 22,
+      "gzipKB": 343.6,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/courses",
+      "chunks": 17,
+      "gzipKB": 229.3,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/courses/[id]",
+      "chunks": 16,
+      "gzipKB": 213.3,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/dashboard",
+      "chunks": 16,
+      "gzipKB": 213.9,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/departments",
+      "chunks": 15,
+      "gzipKB": 212,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/departments/[id]",
+      "chunks": 15,
+      "gzipKB": 212,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/faculties",
+      "chunks": 16,
+      "gzipKB": 217.6,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/faculty",
+      "chunks": 18,
+      "gzipKB": 218.2,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/faculty/notices",
+      "chunks": 18,
+      "gzipKB": 219,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/faculty/offerings",
+      "chunks": 18,
+      "gzipKB": 220.3,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/faculty/offerings/[id]",
+      "chunks": 23,
+      "gzipKB": 366.3,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/faculty/profile",
+      "chunks": 22,
+      "gzipKB": 339.1,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/faculty/quizzes/[id]",
+      "chunks": 21,
+      "gzipKB": 253,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/forgot-password",
+      "chunks": 18,
+      "gzipKB": 321.7,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/login",
+      "chunks": 17,
+      "gzipKB": 306.9,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/notices",
+      "chunks": 15,
+      "gzipKB": 212,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/notices/[id]",
+      "chunks": 15,
+      "gzipKB": 212,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/register",
+      "chunks": 19,
+      "gzipKB": 327.6,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/reset-password",
+      "chunks": 19,
+      "gzipKB": 323.7,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/student",
+      "chunks": 18,
+      "gzipKB": 223.1,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/courses",
+      "chunks": 19,
+      "gzipKB": 233,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/enrollments",
+      "chunks": 18,
+      "gzipKB": 218.9,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/notices",
+      "chunks": 18,
+      "gzipKB": 219,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/offerings/[id]",
+      "chunks": 23,
+      "gzipKB": 366.3,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/student/payments",
+      "chunks": 20,
+      "gzipKB": 237.7,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/payments/result",
+      "chunks": 18,
+      "gzipKB": 224.9,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/profile",
+      "chunks": 22,
+      "gzipKB": 339.1,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/student/quizzes/[id]",
+      "chunks": 18,
+      "gzipKB": 228.3,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/registration",
+      "chunks": 19,
+      "gzipKB": 319,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/student/registration/[id]",
+      "chunks": 20,
+      "gzipKB": 319.6,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    },
+    {
+      "route": "/student/registration/[id]/receipt",
+      "chunks": 18,
+      "gzipKB": 219.7,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/registrations",
+      "chunks": 18,
+      "gzipKB": 220.2,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/student/results",
+      "chunks": 18,
+      "gzipKB": 220.5,
+      "largestChunk": "static/chunks/3sg07wnn969xq.js",
+      "largestKB": 71.5
+    },
+    {
+      "route": "/verify-email",
+      "chunks": 19,
+      "gzipKB": 323.7,
+      "largestChunk": "static/chunks/3p1wmlicvzhw2.js",
+      "largestKB": 88.6
+    }
+  ]
+}
