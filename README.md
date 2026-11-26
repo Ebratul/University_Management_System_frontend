@@ -107,16 +107,28 @@ src/
 
 ## Deployment (Vercel)
 
-1. Import the repository into Vercel and set **Root Directory** to `frontend`.
+1. Import the repository into Vercel (the app is the repository root).
 2. Framework preset: Next.js. Build command: `npm run build`.
 3. Set environment variables (Production and Preview):
    - `NEXT_PUBLIC_APP_URL` = the Vercel URL
-   - `BACKEND_URL` = the Render API URL
+   - `BACKEND_URL` = the deployed API URL
    - `DEMO_*` = the demo account credentials
 4. On the backend, set `CORS_ALLOWED_ORIGINS` and `FRONTEND_URL` to the Vercel URL, and
    redeploy. `FRONTEND_URL` sends the browser to the payment result page after bKash.
 5. The build fetches public data from the API, so the API must be running and reachable
    when Vercel builds the site.
+
+## Performance and design system
+
+The dashboard was profiled and optimised (virtualized 5,000-row lists, server-rendered overview,
+lazy forms and charts, debounced inputs, selective subscriptions). Read
+[docs/PERFORMANCE_REPORT.md](docs/PERFORMANCE_REPORT.md) for the before/after numbers, and
+[docs/perf/](docs/perf) for the raw data, the measuring guide and the demo script.
+
+Re-measure with the API running: `bash scripts/perf/measure.sh after`.
+
+Design tokens (light and dark) are CSS custom properties in `src/app/globals.css`; components
+use shadcn's semantic names, which map onto them.
 
 ## Known limitations
 
