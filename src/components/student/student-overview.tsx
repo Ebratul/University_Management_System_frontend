@@ -7,7 +7,7 @@ import { NoticeCard } from "@/components/catalog/cards";
 import { useSession } from "@/components/auth/session-provider";
 import { PageHeader } from "@/components/shared/page-header";
 import { PersonAvatar } from "@/components/shared/person-avatar";
-import { StatCard } from "@/components/shared/stat-card";
+import { StatCard, StatCardSkeleton } from "@/components/shared/stat-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -66,8 +66,10 @@ export function StudentOverview() {
             <p className="text-muted-foreground text-sm">{user.email}</p>
             <div className="flex flex-wrap gap-2 pt-1">
               {user.student ? <Badge variant="secondary" className="font-mono">Reg. {user.student.registrationNumber}</Badge> : null}
-              {departmentName ? <Badge variant="outline">{departmentName}</Badge> : null}
-              {semesterName ? <Badge variant="outline">Admitted {semesterName}</Badge> : null}
+              {/* Placeholders of badge size while the option lists load, so the card
+                  does not grow and push the stats down (was the page's CLS source). */}
+              {departments.isLoading ? <Skeleton className="h-5 w-40 rounded-full" /> : departmentName ? <Badge variant="outline">{departmentName}</Badge> : null}
+              {semesters.isLoading ? <Skeleton className="h-5 w-32 rounded-full" /> : semesterName ? <Badge variant="outline">Admitted {semesterName}</Badge> : null}
             </div>
           </div>
           <Button asChild variant="outline" className="ml-auto">
@@ -80,7 +82,7 @@ export function StudentOverview() {
         <h2 id="stats-heading" className="sr-only">Summary</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {enrollments.isPending || payments.isPending || results.isPending ? (
-            Array.from({ length: 4 }, (_, i) => <Skeleton key={i} className="h-24 rounded-xl" />)
+            Array.from({ length: 4 }, (_, i) => <StatCardSkeleton key={i} />)
           ) : (
             <>
               <StatCard label="Active courses" value={active ?? 0} hint="Currently enrolled" icon={BookOpen} tone="indigo" />
@@ -95,14 +97,18 @@ export function StudentOverview() {
       <section aria-labelledby="courses-heading" className="space-y-4">
         <h2 id="courses-heading" className="text-lg font-semibold tracking-tight">My courses</h2>
         {enrollments.isPending ? (
-          <Skeleton className="h-28 w-full rounded-xl" />
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6 xl:grid-cols-3" aria-hidden="true">
+            {Array.from({ length: 3 }, (_, i) => (
+              <li key={i}><Skeleton className="h-[168px] w-full rounded-2xl" /></li>
+            ))}
+          </ul>
         ) : myCourses.length === 0 ? (
           <p className="text-muted-foreground text-sm">You are not enrolled in any course yet. Browse courses to enrol.</p>
         ) : (
-          <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6 xl:grid-cols-3">
             {myCourses.map((e) => (
               <li key={e.id}>
-                <Card className="h-full card-hover">
+                <Card className="card-hover h-full min-h-[168px]">
                   <CardContent className="flex h-full flex-col gap-3">
                     <div className="min-w-0">
                       <p className="text-muted-foreground font-mono text-xs">{e.courseOffering.course.courseCode}</p>
@@ -128,9 +134,13 @@ export function StudentOverview() {
           <Button asChild variant="ghost" size="sm"><Link href="/student/notices">All notices</Link></Button>
         </div>
         {notices.isPending ? (
-          <Skeleton className="h-32 w-full rounded-xl" />
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-6" aria-hidden="true">
+            {Array.from({ length: 3 }, (_, i) => (
+              <li key={i}><Skeleton className="h-[188px] w-full rounded-2xl" /></li>
+            ))}
+          </ul>
         ) : notices.data && notices.data.data.length > 0 ? (
-          <ul className="grid gap-4 md:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-6">
             {notices.data.data.map((notice) => (
               <li key={notice.id}><NoticeCard notice={notice} /></li>
             ))}

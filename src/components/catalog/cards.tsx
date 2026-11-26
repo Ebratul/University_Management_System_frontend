@@ -4,6 +4,7 @@ import { ArrowUpRight, Building2, Mail, UserRound } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatDate } from "@/lib/format";
+import { cn } from "@/lib/utils";
 import type { Course, Department, Faculty, Notice, NoticeAudience } from "@/types/entities";
 
 const audienceLabel: Record<NoticeAudience, string> = {
@@ -96,7 +97,7 @@ export function FacultyCard({ faculty }: { faculty: Faculty }) {
 
 export function NoticeCard({ notice, href }: { notice: Notice; href?: string }) {
   return (
-    <Card className={href ? linkedCardClass : "h-full"}>
+    <Card className={cn(href ? linkedCardClass : "h-full", "min-h-[188px]")}>
       <CardHeader className="gap-3">
         <div className="flex flex-wrap items-center gap-2">
           <Badge className={audienceTone[notice.audience]} variant="secondary">

@@ -5,9 +5,8 @@ import { Award, BookOpen, Users } from "lucide-react";
 
 import { useSession } from "@/components/auth/session-provider";
 import { PageHeader } from "@/components/shared/page-header";
-import { StatCard } from "@/components/shared/stat-card";
+import { StatCard, StatCardSkeleton } from "@/components/shared/stat-card";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { useApiQuery } from "@/hooks/use-api-query";
 import { apiListRequest } from "@/lib/api/client";
 import { queryKeys } from "@/lib/api/query-keys";
@@ -44,9 +43,9 @@ export function FacultyOverview() {
       />
 
       {offerings.isPending || results.isPending ? (
-        <div className="grid gap-4 sm:grid-cols-3">{Array.from({ length: 3 }, (_, i) => <Skeleton key={i} className="h-24 rounded-xl" />)}</div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:gap-6">{Array.from({ length: 3 }, (_, i) => <StatCardSkeleton key={i} />)}</div>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:gap-6">
           <StatCard label="Courses taught" value={offerings.data?.data.length ?? 0} hint={`${offerings.data?.data.filter((o) => o.semester.status !== "COMPLETED").length ?? 0} of 5 course slots in use`} icon={BookOpen} tone="indigo" />
           <StatCard label="Students across courses" value={students} hint="Enrolled right now" icon={Users} tone="teal" />
           <StatCard label="Results published" value={results.data?.meta.total ?? 0} hint="All your published grades" icon={Award} tone="violet" />
