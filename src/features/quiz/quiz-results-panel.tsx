@@ -1,6 +1,6 @@
 "use client";
 
-import { useDeferredValue, useState } from "react";
+import { useState } from "react";
 import { ArrowDownAZ, ArrowUpAZ, ListChecks, Search, Users } from "lucide-react";
 
 import { EmptyState } from "@/components/shared/empty-state";
@@ -9,6 +9,7 @@ import { StatCard } from "@/components/shared/stat-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useDebouncedValue } from "@/hooks/use-debounce";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -38,7 +39,8 @@ export function QuizResultsPanel({ quizId, status }: { quizId: string; status: Q
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("registrationNumber");
   const [order, setOrder] = useState<"asc" | "desc">("asc");
-  const deferredSearch = useDeferredValue(search);
+  // Debounced: the term is sent to the API, so one request per pause, not per keystroke.
+  const deferredSearch = useDebouncedValue(search.trim());
 
   const query = { search: deferredSearch || undefined, sortBy, order };
   const results = useApiQuery({

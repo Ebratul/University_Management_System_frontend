@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 import { Input } from "@/components/ui/input";
+import { useDebouncedValue } from "@/hooks/use-debounce";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useApiMutation } from "@/hooks/use-api-mutation";
@@ -53,6 +54,7 @@ export function CourseRegistration() {
   const router = useRouter();
   const [selected, setSelected] = useState<string[]>([]);
   const [search, setSearch] = useState("");
+  const debouncedSearch = useDebouncedValue(search);
   const [type, setType] = useState<"ALL" | CourseType>("ALL");
   const [confirming, setConfirming] = useState(false);
 
@@ -106,7 +108,8 @@ export function CourseRegistration() {
     );
   }
 
-  const q = search.trim().toLowerCase();
+  // Filter on the debounced term: the input stays live, the course list re-filters once per pause.
+  const q = debouncedSearch.trim().toLowerCase();
   const courses = data.courses.filter(
     (c) =>
       (type === "ALL" || c.courseType === type) &&
@@ -152,7 +155,7 @@ export function CourseRegistration() {
             </h2>
             <div className="relative ml-auto min-w-48 flex-1 sm:max-w-xs">
               <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2" aria-hidden="true" />
-              <Input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search code or title" aria-label="Search courses" className="h-9 pl-9" />
+              <Input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search code or title" aria-label="Search courses" className="h-10 pl-9" />
             </div>
             <select
               aria-label="Filter by course type"
