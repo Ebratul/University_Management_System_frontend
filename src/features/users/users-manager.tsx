@@ -36,6 +36,40 @@ const createdFormat = new Intl.DateTimeFormat("en-GB");
 
 const displayName = (user: AdminUser) => user.admin?.name ?? user.faculty?.name ?? user.student?.name ?? user.email;
 
+/**
+ * Module scope: the columns depend on no state, so the table always gets the
+ * same array. Built inside the component, a new array on every render made
+ * every visible row re-render while a filter was typed.
+ */
+const COLUMNS: Column<AdminUser>[] = [
+  {
+    id: "email",
+    header: "Account",
+    width: "minmax(0,2fr)",
+    cell: (user) => (
+      <div className="min-w-0">
+        <p className="truncate font-medium">{displayName(user)}</p>
+        <p className="text-muted-foreground truncate text-xs">{user.email}</p>
+      </div>
+    ),
+  },
+  { id: "role", header: "Role", width: "150px", cell: (user) => <Badge variant="secondary">{ROLE_META[user.role].label}</Badge> },
+  {
+    id: "status",
+    header: "Status",
+    width: "120px",
+    className: "hidden sm:table-cell",
+    cell: (user) => (user.isActive ? <Badge>Active</Badge> : <Badge variant="outline" className="text-muted-foreground">Inactive</Badge>),
+  },
+  {
+    id: "createdAt",
+    header: "Created",
+    width: "130px",
+    className: "hidden lg:table-cell",
+    cell: (user) => <span className="text-muted-foreground text-sm">{createdFormat.format(new Date(user.createdAt))}</span>,
+  },
+];
+
 export function UsersManager() {
   const list = useListState(FILTER_KEYS);
   const [creating, setCreating] = useState(false);
@@ -90,34 +124,6 @@ export function UsersManager() {
     onSuccess: () => setToDelete(null),
   });
 
-  const columns: Column<AdminUser>[] = [
-    {
-      id: "email",
-      header: "Account",
-      width: "minmax(0,2fr)",
-      cell: (user) => (
-        <div className="min-w-0">
-          <p className="truncate font-medium">{displayName(user)}</p>
-          <p className="text-muted-foreground truncate text-xs">{user.email}</p>
-        </div>
-      ),
-    },
-    { id: "role", header: "Role", width: "150px", cell: (user) => <Badge variant="secondary">{ROLE_META[user.role].label}</Badge> },
-    {
-      id: "status",
-      header: "Status",
-      width: "120px",
-      className: "hidden sm:table-cell",
-      cell: (user) => (user.isActive ? <Badge>Active</Badge> : <Badge variant="outline" className="text-muted-foreground">Inactive</Badge>),
-    },
-    {
-      id: "createdAt",
-      header: "Created",
-      width: "130px",
-      className: "hidden lg:table-cell",
-      cell: (user) => <span className="text-muted-foreground text-sm">{createdFormat.format(new Date(user.createdAt))}</span>,
-    },
-  ];
 
   const renderActions = (user: AdminUser) => {
     const items: RowMenuItem[] = [
@@ -175,7 +181,7 @@ export function UsersManager() {
       {isAll ? (
         <VirtualTable
           caption="User accounts (all records)"
-          columns={columns}
+          columns={COLUMNS}
           rows={visibleUsers}
           isLoading={allUsers.isPending}
           isError={allUsers.isError}
@@ -189,7 +195,7 @@ export function UsersManager() {
       ) : (
         <DataTable
           caption="User accounts"
-          columns={columns}
+          columns={COLUMNS}
           rows={users.data?.data}
           isLoading={users.isPending}
           isError={users.isError}

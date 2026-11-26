@@ -26,6 +26,30 @@ const RESET_PAGE = ["page"];
 /** Hoisted: one formatter for all rows (same output as toLocaleString("en-GB")). */
 const whenFormat = new Intl.DateTimeFormat("en-GB", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" });
 
+/**
+ * Module scope: the columns depend on no state, so the table always gets the
+ * same array. Built inside the component, a new array on every render made
+ * every visible row re-render while a filter was typed.
+ */
+const COLUMNS: Column<AuditLog>[] = [
+  { id: "when", header: "When", width: "180px", cell: (log) => <time dateTime={log.createdAt} className="text-muted-foreground text-xs whitespace-nowrap">{whenFormat.format(new Date(log.createdAt))}</time> },
+  {
+    id: "actor",
+    header: "Actor",
+    width: "minmax(0,1.4fr)",
+    className: "hidden md:table-cell",
+    cell: (log) => (
+      <div className="min-w-0">
+        <p className="truncate text-sm">{log.performedByEmail ?? "System"}</p>
+        {log.performedByRole ? <p className="text-muted-foreground text-xs">{log.performedByRole.toLowerCase()}</p> : null}
+      </div>
+    ),
+  },
+  { id: "action", header: "Action", width: "minmax(0,1.3fr)", cell: (log) => <Badge variant="outline" className="font-mono text-[11px]">{log.action}</Badge> },
+  { id: "entity", header: "Entity", className: "hidden sm:table-cell", width: "140px", cell: (log) => <span className="text-sm">{log.entityType}</span> },
+  { id: "description", header: "Details", className: "hidden lg:table-cell", width: "minmax(0,2fr)", cell: (log) => <span className="text-muted-foreground line-clamp-1 text-sm">{log.description ?? "—"}</span> },
+];
+
 /** Read-only history of every mutating action. Filters are kept in the URL. */
 export function AuditLogViewer() {
   const list = useListState(FILTER_KEYS);
@@ -66,24 +90,6 @@ export function AuditLogViewer() {
   }, [allLogs.data, action, entityType, from, to]);
 
 
-  const columns: Column<AuditLog>[] = [
-    { id: "when", header: "When", width: "180px", cell: (log) => <time dateTime={log.createdAt} className="text-muted-foreground text-xs whitespace-nowrap">{whenFormat.format(new Date(log.createdAt))}</time> },
-    {
-      id: "actor",
-      header: "Actor",
-      width: "minmax(0,1.4fr)",
-      className: "hidden md:table-cell",
-      cell: (log) => (
-        <div className="min-w-0">
-          <p className="truncate text-sm">{log.performedByEmail ?? "System"}</p>
-          {log.performedByRole ? <p className="text-muted-foreground text-xs">{log.performedByRole.toLowerCase()}</p> : null}
-        </div>
-      ),
-    },
-    { id: "action", header: "Action", width: "minmax(0,1.3fr)", cell: (log) => <Badge variant="outline" className="font-mono text-[11px]">{log.action}</Badge> },
-    { id: "entity", header: "Entity", className: "hidden sm:table-cell", width: "140px", cell: (log) => <span className="text-sm">{log.entityType}</span> },
-    { id: "description", header: "Details", className: "hidden lg:table-cell", width: "minmax(0,2fr)", cell: (log) => <span className="text-muted-foreground line-clamp-1 text-sm">{log.description ?? "—"}</span> },
-  ];
 
   return (
     <div className="space-y-6">
@@ -109,7 +115,7 @@ export function AuditLogViewer() {
       {isAll ? (
         <VirtualTable
           caption="Audit log entries (all records)"
-          columns={columns}
+          columns={COLUMNS}
           rows={visibleLogs}
           isLoading={allLogs.isPending}
           isError={allLogs.isError}
@@ -122,7 +128,7 @@ export function AuditLogViewer() {
       ) : (
         <DataTable
           caption="Audit log entries"
-          columns={columns}
+          columns={COLUMNS}
           rows={logs.data?.data}
           isLoading={logs.isPending}
           isError={logs.isError}
