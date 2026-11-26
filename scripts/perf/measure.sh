@@ -12,12 +12,14 @@ PORT="${PORT:-3000}"
 mkdir -p "$OUT/lighthouse"
 
 serve() {
+  fuser -k "$PORT/tcp" >/dev/null 2>&1 || true
   npx next start -p "$PORT" >/dev/null 2>&1 &
   SERVER=$!
   for _ in $(seq 1 60); do curl -sf -o /dev/null "http://localhost:$PORT/" && return 0; sleep 1; done
   echo "server did not start" >&2; exit 1
 }
-stop() { kill "$SERVER" 2>/dev/null || true; wait "$SERVER" 2>/dev/null || true; }
+# npx is a wrapper: kill whatever holds the port, or an orphaned next-server keeps serving an old build.
+stop() { kill "$SERVER" 2>/dev/null || true; fuser -k "$PORT/tcp" >/dev/null 2>&1 || true; wait "$SERVER" 2>/dev/null || true; }
 
 echo "== production build"
 rm -rf .next
