@@ -20,6 +20,7 @@ const outDir = process.argv[2] ?? "docs/perf/lighthouse";
 const BASE = process.env.BASE ?? "http://localhost:3000";
 const RUNS = Number(process.env.RUNS ?? 3);
 const LH = process.env.LIGHTHOUSE_BIN ?? "lighthouse";
+const ONLY = process.env.ONLY?.split(",");
 
 const PAGES = [
   { name: "home", path: "/", role: undefined },
@@ -51,6 +52,7 @@ mkdirSync(outDir, { recursive: true });
 const summary = [];
 
 for (const page of PAGES) {
+  if (ONLY && !ONLY.includes(page.path)) continue;
   const runs = [];
   for (let i = 0; i < RUNS; i++) {
     // One login per role (the API rate-limits logins); the proxy refreshes expired access tokens.
