@@ -23,6 +23,8 @@ const BASE = process.env.BASE ?? "http://localhost:3000";
 const CHROME = process.env.CHROME_PATH ?? "/usr/bin/google-chrome";
 const CPU = Number(process.env.CPU_SLOWDOWN ?? 4);
 const only = process.env.ONLY?.split(",");
+/** Repeat each scenario and keep the median run by render time (counts are deterministic, timings are not). */
+const RUNS = Number(process.env.RUNS ?? 1);
 
 const HOOK = `(() => {
   const PerformedWork = 1;
@@ -155,8 +157,7 @@ const SCENARIOS = [
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ["--no-first-run", "--window-size=1440,900"] });
 const results = [];
 
-for (const scenario of SCENARIOS) {
-  if (only && !only.includes(scenario.name)) continue;
+async function runScenario(scenario) {
   const context = await browser.createBrowserContext();
   const page = await context.newPage();
   await page.setViewport({ width: 1440, height: 900 });
@@ -172,7 +173,7 @@ for (const scenario of SCENARIOS) {
     if (scenario.optional) {
       console.log(`skip ${scenario.name}: not available`);
       await context.close();
-      continue;
+      return undefined;
     }
     throw new Error(`${scenario.name}: landed on ${page.url()}`);
   }
@@ -183,7 +184,7 @@ for (const scenario of SCENARIOS) {
     if (rows < 100) {
       console.log(`skip ${scenario.name}: large view not present`);
       await context.close();
-      continue;
+      return undefined;
     }
   }
 
@@ -213,10 +214,24 @@ for (const scenario of SCENARIOS) {
       tableRowsInDom: document.querySelectorAll("tbody tr").length,
     };
   });
-  results.push({ scenario: scenario.name, path: scenario.path, wallMs: Date.now() - start, ...data });
-  console.log(`${scenario.name.padEnd(26)} commits=${String(data.commits).padStart(4)} renders=${String(data.componentRenders).padStart(6)} renderMs=${String(data.renderMs).padStart(8)} worstInteraction=${data.worstInteractionMs}ms dom=${data.domNodes} rows=${data.tableRowsInDom}`);
-  console.log("   top:", data.top.slice(0, 6).map((t) => `${t.name}×${t.count} ${t.ms}ms`).join(", "));
   await context.close();
+  return { scenario: scenario.name, path: scenario.path, wallMs: Date.now() - start, ...data };
+}
+
+for (const scenario of SCENARIOS) {
+  if (only && !only.includes(scenario.name)) continue;
+  const runs = [];
+  for (let i = 0; i < RUNS; i++) {
+    const run = await runScenario(scenario);
+    if (!run) break;
+    runs.push(run);
+  }
+  if (!runs.length) continue;
+  const sorted = [...runs].sort((a, b) => a.renderMs - b.renderMs);
+  const data = { ...sorted[Math.floor(sorted.length / 2)], runs: runs.length, renderMsRuns: runs.map((r) => r.renderMs), worstInteractionRuns: runs.map((r) => r.worstInteractionMs) };
+  results.push(data);
+  console.log(`${scenario.name.padEnd(26)} commits=${String(data.commits).padStart(4)} renders=${String(data.componentRenders).padStart(6)} renderMs=${String(data.renderMs).padStart(8)} (runs ${data.renderMsRuns.join("/")}) worstInteraction=${data.worstInteractionMs}ms dom=${data.domNodes} rows=${data.tableRowsInDom}`);
+  console.log("   top:", data.top.slice(0, 6).map((t) => `${t.name}×${t.count} ${t.ms}ms`).join(", "));
 }
 
 await browser.close();

@@ -39,6 +39,6 @@ echo "== profiling build"
 rm -rf .next
 npx next build --profile --no-mangling >/dev/null
 serve
-BASE="http://localhost:$PORT" node scripts/perf/render-profile.mjs "$OUT"
+BASE="http://localhost:$PORT" RUNS="${RUNS:-3}" node scripts/perf/render-profile.mjs "$OUT"
 stop
 echo "done: $OUT"
