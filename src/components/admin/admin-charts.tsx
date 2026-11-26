@@ -8,6 +8,10 @@ import { queryKeys } from "@/lib/api/query-keys";
 import type { CourseOffering } from "@/types/entities";
 
 /*
+ * Entry animations are off: each animated frame is a React commit (the
+ * profiler counted ~110 extra commits and ~2,000 component renders per /admin
+ * load), and they delay the moment the chart is readable.
+ *
  * Chart colours are the brand palette, written as literal colour strings: SVG
  * presentation attributes do not resolve CSS variables reliably.
  */
@@ -28,7 +32,7 @@ export function RolesDonut({ byRole }: { byRole: Record<"ADMIN" | "FACULTY" | "S
     <div role="img" aria-label={`Accounts by role: ${data.map((d) => `${d.name} ${d.value}`).join(", ")}`} className="h-64 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
-          <Pie data={data} dataKey="value" nameKey="name" innerRadius={55} outerRadius={85} paddingAngle={3} stroke="none">
+          <Pie data={data} dataKey="value" nameKey="name" innerRadius={55} outerRadius={85} paddingAngle={3} stroke="none" isAnimationActive={false}>
             {data.map((entry) => (
               <Cell key={entry.role} fill={roleColours[entry.role]} />
             ))}
@@ -67,8 +71,8 @@ export function SeatBars() {
           <YAxis allowDecimals={false} tickLine={false} axisLine={false} fontSize={12} />
           <Tooltip cursor={{ fill: "currentColor", fillOpacity: 0.05 }} />
           <Legend verticalAlign="bottom" height={28} iconType="circle" />
-          <Bar dataKey="enrolled" name="Enrolled" stackId="seats" fill="oklch(0.51 0.23 277)" radius={[0, 0, 0, 0]} />
-          <Bar dataKey="free" name="Free seats" stackId="seats" fill="oklch(0.9 0.02 277)" radius={[6, 6, 0, 0]} />
+          <Bar dataKey="enrolled" name="Enrolled" stackId="seats" fill="oklch(0.51 0.23 277)" radius={[0, 0, 0, 0]} isAnimationActive={false} />
+          <Bar dataKey="free" name="Free seats" stackId="seats" fill="oklch(0.9 0.02 277)" radius={[6, 6, 0, 0]} isAnimationActive={false} />
         </BarChart>
       </ResponsiveContainer>
     </div>
