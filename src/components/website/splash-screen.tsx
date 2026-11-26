@@ -50,7 +50,7 @@ export function SplashScreen() {
         style={{ transitionDuration: `${FADE_MS}ms` }}
         className={cn(
           "fixed inset-0 z-[100] flex flex-col items-center justify-center gap-8 overflow-hidden px-6 text-center text-white transition-[opacity,transform] ease-out",
-          "bg-[radial-gradient(ellipse_at_top,var(--brand-violet),transparent_60%),linear-gradient(160deg,oklch(0.25_0.1_277),oklch(0.16_0.06_277))]",
+          "bg-[radial-gradient(ellipse_at_top,var(--brand-panel-2),transparent_60%),linear-gradient(160deg,var(--brand-panel),#0b1f17)]",
           phase === "leaving" && "pointer-events-none scale-105 opacity-0",
         )}
       >

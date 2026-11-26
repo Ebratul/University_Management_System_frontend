@@ -13,7 +13,7 @@ export function Hero({ settings }: { settings: WebsiteSettings }) {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative isolate flex min-h-[28rem] items-center overflow-hidden bg-[linear-gradient(135deg,oklch(0.3_0.12_277),oklch(0.2_0.08_290))] text-white sm:min-h-[34rem] lg:min-h-[40rem]"
+      className="relative isolate flex min-h-[28rem] items-center overflow-hidden bg-[linear-gradient(135deg,var(--brand-panel-2),var(--brand-panel))] text-white sm:min-h-[34rem] lg:min-h-[40rem]"
     >
       <BrandImage
         src={settings.homepageBackgroundUrl}
