@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { preconnect, preload } from "react-dom";
 
 import { BrandImage } from "@/components/website/brand-image";
 import { Button } from "@/components/ui/button";
+import { cloudinarySrcSet, cloudinaryWidth } from "@/lib/cloudinary";
 import type { WebsiteSettings } from "@/types/entities";
 
 /**
@@ -10,13 +12,29 @@ import type { WebsiteSettings } from "@/types/entities";
  * over any photo.
  */
 export function Hero({ settings }: { settings: WebsiteSettings }) {
+  // The hero photo is the page's LCP element. It lives on another origin
+  // (Cloudinary), and before this it was requested after ~380 KB of JS had
+  // started downloading. A high-priority preload in <head> (plus an early
+  // connection) puts it first in the queue.
+  // It is also served at the size of the viewport (Cloudinary resizes and
+  // re-encodes on the fly) instead of the original upload.
+  const original = settings.homepageBackgroundUrl;
+  const background = original ? cloudinaryWidth(original, 1920) : original;
+  const srcSet = original ? cloudinarySrcSet(original) : undefined;
+  if (original && background) {
+    preconnect(new URL(original).origin, { crossOrigin: "anonymous" });
+    preload(background, { as: "image", fetchPriority: "high", imageSrcSet: srcSet, imageSizes: srcSet ? "100vw" : undefined });
+  }
+
   return (
     <section
       aria-labelledby="hero-heading"
       className="relative isolate flex min-h-[28rem] items-center overflow-hidden bg-[linear-gradient(135deg,var(--brand-panel-2),var(--brand-panel))] text-white sm:min-h-[34rem] lg:min-h-[40rem]"
     >
       <BrandImage
-        src={settings.homepageBackgroundUrl}
+        src={background}
+        srcSet={srcSet}
+        sizes="100vw"
         alt=""
         priority
         className="absolute inset-0 -z-20 size-full object-cover object-center"

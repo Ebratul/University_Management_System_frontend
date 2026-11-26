@@ -16,10 +16,14 @@ const inter = Inter({
   display: "swap",
 });
 
+// Only used for short codes (course codes, IDs). Not preloaded, so it does not
+// compete with the page's LCP image and body font on a slow connection; it
+// swaps in when first used.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
