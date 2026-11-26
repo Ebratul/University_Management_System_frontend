@@ -1,0 +1,473 @@
+{
+  "generatedAt": "2026-11-26T13:59:25.452Z",
+  "base": "http://localhost:3002",
+  "cpuSlowdown": 4,
+  "results": [
+    {
+      "scenario": "users-large-list-load",
+      "path": "/admin/users?view=all&dataset=sample",
+      "wallMs": 4412,
+      "commits": 5,
+      "componentRenders": 35263,
+      "renderMs": 368.2,
+      "top": [
+        {
+          "name": "UsersManager",
+          "count": 2,
+          "ms": 128.3
+        },
+        {
+          "name": "TableCell",
+          "count": 20024,
+          "ms": 55.6
+        },
+        {
+          "name": "DataTable",
+          "count": 2,
+          "ms": 41.6
+        },
+        {
+          "name": "Badge",
+          "count": 10001,
+          "ms": 37.3
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 22.2
+        },
+        {
+          "name": "TableRow",
+          "count": 5008,
+          "ms": 14.1
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 11.5
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 8.9
+        },
+        {
+          "name": "Logo",
+          "count": 1,
+          "ms": 4.5
+        },
+        {
+          "name": "Anonymous",
+          "count": 19,
+          "ms": 3.3
+        },
+        {
+          "name": "SectionSubnav",
+          "count": 1,
+          "ms": 3.3
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 3.1
+        },
+        {
+          "name": "Toaster",
+          "count": 2,
+          "ms": 2.5
+        },
+        {
+          "name": "Presence",
+          "count": 8,
+          "ms": 2.2
+        },
+        {
+          "name": "ErrorBoundaryHandler",
+          "count": 3,
+          "ms": 1.9
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 3,
+      "longFrameBlockingMs": 163,
+      "longestFrameMs": 142,
+      "domNodes": 55180,
+      "tableRowsInDom": 5000,
+      "runs": 3,
+      "renderMsRuns": [
+        374.3,
+        368.2,
+        358.8
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "users-large-list-scroll",
+      "path": "/admin/users?view=all&dataset=sample",
+      "wallMs": 8680,
+      "commits": 0,
+      "componentRenders": 0,
+      "renderMs": 0,
+      "top": [],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 1,
+      "longFrameBlockingMs": 3052,
+      "longestFrameMs": 3382,
+      "domNodes": 55181,
+      "tableRowsInDom": 5000,
+      "runs": 3,
+      "renderMsRuns": [
+        0,
+        0,
+        0
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "users-large-list-search",
+      "path": "/admin/users?view=all&dataset=sample",
+      "wallMs": 9949,
+      "commits": 7,
+      "componentRenders": 2468,
+      "renderMs": 26.5,
+      "top": [
+        {
+          "name": "TableCell",
+          "count": 1348,
+          "ms": 7.5
+        },
+        {
+          "name": "UsersManager",
+          "count": 1,
+          "ms": 3.9
+        },
+        {
+          "name": "TableRow",
+          "count": 338,
+          "ms": 2.8
+        },
+        {
+          "name": "Badge",
+          "count": 674,
+          "ms": 2.5
+        },
+        {
+          "name": "DataTable",
+          "count": 1,
+          "ms": 2.2
+        },
+        {
+          "name": "ListSearch",
+          "count": 7,
+          "ms": 1.5
+        },
+        {
+          "name": "HTTPAccessFallbackBoundary",
+          "count": 4,
+          "ms": 1.1
+        },
+        {
+          "name": "Dialog",
+          "count": 1,
+          "ms": 0.9
+        },
+        {
+          "name": "Anonymous",
+          "count": 2,
+          "ms": 0.8
+        },
+        {
+          "name": "LogoutButton",
+          "count": 1,
+          "ms": 0.8
+        },
+        {
+          "name": "TableHead",
+          "count": 4,
+          "ms": 0.7
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 0.6
+        },
+        {
+          "name": "OuterLayoutRouter",
+          "count": 4,
+          "ms": 0.5
+        },
+        {
+          "name": "RedirectBoundary",
+          "count": 5,
+          "ms": 0.1
+        },
+        {
+          "name": "ScrollAndMaybeFocusHandler",
+          "count": 4,
+          "ms": 0.1
+        }
+      ],
+      "interactions": 7,
+      "worstInteractionMs": 88,
+      "longFrames": 9,
+      "longFrameBlockingMs": 422,
+      "longestFrameMs": 274,
+      "domNodes": 3887,
+      "tableRowsInDom": 337,
+      "runs": 3,
+      "renderMsRuns": [
+        14.7,
+        28.8,
+        26.5
+      ],
+      "worstInteractionRuns": [
+        88,
+        88,
+        88
+      ]
+    },
+    {
+      "scenario": "audit-large-list-load",
+      "path": "/admin/audit-logs?view=all&dataset=sample",
+      "wallMs": 4837,
+      "commits": 5,
+      "componentRenders": 35253,
+      "renderMs": 288.3,
+      "top": [
+        {
+          "name": "TableCell",
+          "count": 25030,
+          "ms": 52
+        },
+        {
+          "name": "DataTable",
+          "count": 2,
+          "ms": 48.8
+        },
+        {
+          "name": "Badge",
+          "count": 5001,
+          "ms": 40.1
+        },
+        {
+          "name": "AuditLogViewer",
+          "count": 2,
+          "ms": 35.9
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 20.8
+        },
+        {
+          "name": "TableRow",
+          "count": 5008,
+          "ms": 13.8
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 10.3
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 9.5
+        },
+        {
+          "name": "V",
+          "count": 1,
+          "ms": 4.6
+        },
+        {
+          "name": "Anonymous",
+          "count": 17,
+          "ms": 4.5
+        },
+        {
+          "name": "LinkComponent",
+          "count": 18,
+          "ms": 4.3
+        },
+        {
+          "name": "Logo",
+          "count": 1,
+          "ms": 3.8
+        },
+        {
+          "name": "Segmented",
+          "count": 2,
+          "ms": 2.8
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 2.6
+        },
+        {
+          "name": "FilterField",
+          "count": 8,
+          "ms": 2.1
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 1,
+      "longFrameBlockingMs": 91,
+      "longestFrameMs": 154,
+      "domNodes": 65170,
+      "tableRowsInDom": 5000,
+      "runs": 3,
+      "renderMsRuns": [
+        288.3,
+        263.4,
+        289.9
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "audit-large-list-scroll",
+      "path": "/admin/audit-logs?view=all&dataset=sample",
+      "wallMs": 9071,
+      "commits": 0,
+      "componentRenders": 0,
+      "renderMs": 0,
+      "top": [],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 2,
+      "longFrameBlockingMs": 3605,
+      "longestFrameMs": 3996,
+      "domNodes": 65174,
+      "tableRowsInDom": 5000,
+      "runs": 3,
+      "renderMsRuns": [
+        0,
+        0,
+        0
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "audit-large-list-filter",
+      "path": "/admin/audit-logs?view=all&dataset=sample",
+      "wallMs": 8084,
+      "commits": 8,
+      "componentRenders": 4908,
+      "renderMs": 42,
+      "top": [
+        {
+          "name": "TableCell",
+          "count": 3440,
+          "ms": 19.1
+        },
+        {
+          "name": "DataTable",
+          "count": 1,
+          "ms": 6.3
+        },
+        {
+          "name": "TableRow",
+          "count": 689,
+          "ms": 5.6
+        },
+        {
+          "name": "Badge",
+          "count": 688,
+          "ms": 4.5
+        },
+        {
+          "name": "RedirectErrorBoundary",
+          "count": 5,
+          "ms": 2
+        },
+        {
+          "name": "AuditLogViewer",
+          "count": 1,
+          "ms": 1.8
+        },
+        {
+          "name": "FilterField",
+          "count": 11,
+          "ms": 0.7
+        },
+        {
+          "name": "Input",
+          "count": 7,
+          "ms": 0.5
+        },
+        {
+          "name": "LoadingBoundaryProvider",
+          "count": 1,
+          "ms": 0.3
+        },
+        {
+          "name": "RedirectBoundary",
+          "count": 5,
+          "ms": 0.2
+        },
+        {
+          "name": "LoadingBoundary",
+          "count": 4,
+          "ms": 0.2
+        },
+        {
+          "name": "InnerLayoutRouter",
+          "count": 4,
+          "ms": 0.2
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 0.2
+        },
+        {
+          "name": "OuterLayoutRouter",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "Button",
+          "count": 1,
+          "ms": 0.1
+        }
+      ],
+      "interactions": 8,
+      "worstInteractionMs": 96,
+      "longFrames": 10,
+      "longFrameBlockingMs": 4569,
+      "longestFrameMs": 3943,
+      "domNodes": 9117,
+      "tableRowsInDom": 688,
+      "runs": 3,
+      "renderMsRuns": [
+        42,
+        32.9,
+        47.6
+      ],
+      "worstInteractionRuns": [
+        96,
+        112,
+        96
+      ]
+    }
+  ]
+}

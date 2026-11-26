@@ -10,6 +10,7 @@ import { FormDialog } from "@/components/admin/form-dialog";
 import { ListToolbar } from "@/components/admin/list-toolbar";
 import { ListViewSwitch } from "@/components/admin/list-view-switch";
 import { SampleDataNotice } from "@/components/admin/sample-data-notice";
+import { VirtualTable } from "@/components/admin/virtual-table";
 import { Pagination } from "@/components/admin/pagination";
 import { RowMenu, type RowMenuItem } from "@/components/admin/row-menu";
 import { FormAlert } from "@/components/forms/form-alert";
@@ -68,7 +69,6 @@ export function UsersManager() {
     return rows.filter((user) => (!roleFilter || user.role === roleFilter) && (!term || user.email.toLowerCase().includes(term) || displayName(user).toLowerCase().includes(term)));
   }, [allUsers.data, roleFilter, term]);
 
-  const active = isAll ? allUsers : users;
 
   const invalidateUsers = [queryKeys.users.all, queryKeys.adminStats];
 
@@ -95,6 +95,7 @@ export function UsersManager() {
     {
       id: "email",
       header: "Account",
+      width: "minmax(0,2fr)",
       cell: (user) => (
         <div className="min-w-0">
           <p className="truncate font-medium">{displayName(user)}</p>
@@ -102,20 +103,37 @@ export function UsersManager() {
         </div>
       ),
     },
-    { id: "role", header: "Role", cell: (user) => <Badge variant="secondary">{ROLE_META[user.role].label}</Badge> },
+    { id: "role", header: "Role", width: "150px", cell: (user) => <Badge variant="secondary">{ROLE_META[user.role].label}</Badge> },
     {
       id: "status",
       header: "Status",
+      width: "120px",
       className: "hidden sm:table-cell",
       cell: (user) => (user.isActive ? <Badge>Active</Badge> : <Badge variant="outline" className="text-muted-foreground">Inactive</Badge>),
     },
     {
       id: "createdAt",
       header: "Created",
+      width: "130px",
       className: "hidden lg:table-cell",
       cell: (user) => <span className="text-muted-foreground text-sm">{createdFormat.format(new Date(user.createdAt))}</span>,
     },
   ];
+
+  const renderActions = (user: AdminUser) => {
+    const items: RowMenuItem[] = [
+      ...ROLES.filter((role) => role !== user.role).map((role) => ({
+        label: `Make ${ROLE_META[role].label.toLowerCase()}`,
+        onSelect: () => changeRole.mutate({ user, role }),
+      })),
+      {
+        label: user.isActive ? "Deactivate account" : "Activate account",
+        onSelect: () => changeStatus.mutate({ user, isActive: !user.isActive }),
+      },
+      { label: "Delete account", destructive: true, onSelect: () => setToDelete(user) },
+    ];
+    return <RowMenu label={user.email} groupLabel="Account" items={items} />;
+  };
 
   return (
     <div className="space-y-6">
@@ -155,32 +173,36 @@ export function UsersManager() {
       </div>
       {isSample ? <SampleDataNotice onExit={() => list.update({ dataset: undefined })} /> : null}
 
-      <DataTable
-        caption="User accounts"
-        columns={columns}
-        rows={isAll ? visibleUsers : users.data?.data}
-        isLoading={active.isPending}
-        isError={active.isError}
-        errorMessage={active.error?.message}
-        onRetry={() => void active.refetch()}
-        emptyIcon={UserRound}
-        emptyTitle="No accounts match"
-        emptyDescription="Try another search or role filter."
-        rowActions={isSample ? undefined : (user) => {
-          const items: RowMenuItem[] = [
-            ...ROLES.filter((role) => role !== user.role).map((role) => ({
-              label: `Make ${ROLE_META[role].label.toLowerCase()}`,
-              onSelect: () => changeRole.mutate({ user, role }),
-            })),
-            {
-              label: user.isActive ? "Deactivate account" : "Activate account",
-              onSelect: () => changeStatus.mutate({ user, isActive: !user.isActive }),
-            },
-            { label: "Delete account", destructive: true, onSelect: () => setToDelete(user) },
-          ];
-          return <RowMenu label={user.email} groupLabel="Account" items={items} />;
-        }}
-      />
+      {isAll ? (
+        <VirtualTable
+          caption="User accounts (all records)"
+          columns={columns}
+          rows={visibleUsers}
+          isLoading={allUsers.isPending}
+          isError={allUsers.isError}
+          errorMessage={allUsers.error?.message}
+          onRetry={() => void allUsers.refetch()}
+          emptyIcon={UserRound}
+          emptyTitle="No accounts match"
+          emptyDescription="Try another search or role filter."
+          rowActions={isSample ? undefined : renderActions}
+        />
+      ) : (
+        <DataTable
+          caption="User accounts"
+          columns={columns}
+          rows={users.data?.data}
+          isLoading={users.isPending}
+          isError={users.isError}
+          errorMessage={users.error?.message}
+          onRetry={() => void users.refetch()}
+          emptyIcon={UserRound}
+          emptyTitle="No accounts match"
+          emptyDescription="Try another search or role filter."
+          rowActions={renderActions}
+        />
+      )}
+
 
       {isAll ? null : <Pagination meta={users.data?.meta} limit={list.limit} onPageChange={(page) => list.update({ page })} onLimitChange={(limit) => list.update({ limit, page: 1 })} />}
 

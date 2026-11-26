@@ -7,6 +7,7 @@ import { ScrollText } from "lucide-react";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { ListViewSwitch } from "@/components/admin/list-view-switch";
 import { SampleDataNotice } from "@/components/admin/sample-data-notice";
+import { VirtualTable } from "@/components/admin/virtual-table";
 import { Pagination } from "@/components/admin/pagination";
 import { PageHeader } from "@/components/shared/page-header";
 import { Badge } from "@/components/ui/badge";
@@ -64,13 +65,13 @@ export function AuditLogViewer() {
     );
   }, [allLogs.data, action, entityType, from, to]);
 
-  const active = isAll ? allLogs : logs;
 
   const columns: Column<AuditLog>[] = [
-    { id: "when", header: "When", cell: (log) => <time dateTime={log.createdAt} className="text-muted-foreground text-xs whitespace-nowrap">{whenFormat.format(new Date(log.createdAt))}</time> },
+    { id: "when", header: "When", width: "180px", cell: (log) => <time dateTime={log.createdAt} className="text-muted-foreground text-xs whitespace-nowrap">{whenFormat.format(new Date(log.createdAt))}</time> },
     {
       id: "actor",
       header: "Actor",
+      width: "minmax(0,1.4fr)",
       className: "hidden md:table-cell",
       cell: (log) => (
         <div className="min-w-0">
@@ -79,9 +80,9 @@ export function AuditLogViewer() {
         </div>
       ),
     },
-    { id: "action", header: "Action", cell: (log) => <Badge variant="outline" className="font-mono text-[11px]">{log.action}</Badge> },
-    { id: "entity", header: "Entity", className: "hidden sm:table-cell", cell: (log) => <span className="text-sm">{log.entityType}</span> },
-    { id: "description", header: "Details", className: "hidden lg:table-cell", cell: (log) => <span className="text-muted-foreground line-clamp-1 text-sm">{log.description ?? "—"}</span> },
+    { id: "action", header: "Action", width: "minmax(0,1.3fr)", cell: (log) => <Badge variant="outline" className="font-mono text-[11px]">{log.action}</Badge> },
+    { id: "entity", header: "Entity", className: "hidden sm:table-cell", width: "140px", cell: (log) => <span className="text-sm">{log.entityType}</span> },
+    { id: "description", header: "Details", className: "hidden lg:table-cell", width: "minmax(0,2fr)", cell: (log) => <span className="text-muted-foreground line-clamp-1 text-sm">{log.description ?? "—"}</span> },
   ];
 
   return (
@@ -105,18 +106,33 @@ export function AuditLogViewer() {
       </div>
       {isAll && list.dataset === "sample" ? <SampleDataNotice onExit={() => list.update({ dataset: undefined })} /> : null}
 
-      <DataTable
-        caption="Audit log entries"
-        columns={columns}
-        rows={isAll ? visibleLogs : logs.data?.data}
-        isLoading={active.isPending}
-        isError={active.isError}
-        errorMessage={active.error?.message}
-        onRetry={() => void active.refetch()}
-        emptyIcon={ScrollText}
-        emptyTitle="No entries match"
-        emptyDescription="Clear a filter to see more of the history."
-      />
+      {isAll ? (
+        <VirtualTable
+          caption="Audit log entries (all records)"
+          columns={columns}
+          rows={visibleLogs}
+          isLoading={allLogs.isPending}
+          isError={allLogs.isError}
+          errorMessage={allLogs.error?.message}
+          onRetry={() => void allLogs.refetch()}
+          emptyIcon={ScrollText}
+          emptyTitle="No entries match"
+          emptyDescription="Clear a filter to see more of the history."
+        />
+      ) : (
+        <DataTable
+          caption="Audit log entries"
+          columns={columns}
+          rows={logs.data?.data}
+          isLoading={logs.isPending}
+          isError={logs.isError}
+          errorMessage={logs.error?.message}
+          onRetry={() => void logs.refetch()}
+          emptyIcon={ScrollText}
+          emptyTitle="No entries match"
+          emptyDescription="Clear a filter to see more of the history."
+        />
+      )}
 
       {isAll ? null : <Pagination meta={logs.data?.meta} limit={list.limit} onPageChange={(page) => list.update({ page })} onLimitChange={(limit) => list.update({ limit, page: 1 })} />}
     </div>

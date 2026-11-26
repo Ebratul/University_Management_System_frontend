@@ -1,0 +1,495 @@
+{
+  "generatedAt": "2026-11-26T14:03:16.518Z",
+  "base": "http://localhost:3002",
+  "cpuSlowdown": 4,
+  "results": [
+    {
+      "scenario": "users-large-list-load",
+      "path": "/admin/users?view=all&dataset=sample",
+      "wallMs": 2943,
+      "commits": 6,
+      "componentRenders": 318,
+      "renderMs": 248.9,
+      "top": [
+        {
+          "name": "UsersManager",
+          "count": 2,
+          "ms": 138.2
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 21.8
+        },
+        {
+          "name": "VirtualTable",
+          "count": 3,
+          "ms": 16.4
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 9
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 8.8
+        },
+        {
+          "name": "Logo",
+          "count": 1,
+          "ms": 5
+        },
+        {
+          "name": "Anonymous",
+          "count": 19,
+          "ms": 4.7
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 3.2
+        },
+        {
+          "name": "Toaster",
+          "count": 2,
+          "ms": 3.1
+        },
+        {
+          "name": "Badge",
+          "count": 45,
+          "ms": 2.9
+        },
+        {
+          "name": "SheetContent",
+          "count": 1,
+          "ms": 2.6
+        },
+        {
+          "name": "LinkComponent",
+          "count": 18,
+          "ms": 2.5
+        },
+        {
+          "name": "LoadingBoundaryProvider",
+          "count": 1,
+          "ms": 2.1
+        },
+        {
+          "name": "Button",
+          "count": 4,
+          "ms": 1.9
+        },
+        {
+          "name": "Presence",
+          "count": 8,
+          "ms": 1.7
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 2,
+      "longFrameBlockingMs": 160,
+      "longestFrameMs": 136,
+      "domNodes": 423,
+      "tableRowsInDom": 22,
+      "runs": 3,
+      "renderMsRuns": [
+        246.5,
+        248.9,
+        249.3
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "users-large-list-scroll",
+      "path": "/admin/users?view=all&dataset=sample",
+      "wallMs": 6155,
+      "commits": 31,
+      "componentRenders": 1891,
+      "renderMs": 40.1,
+      "top": [
+        {
+          "name": "VirtualTable",
+          "count": 31,
+          "ms": 32.9
+        },
+        {
+          "name": "Badge",
+          "count": 1860,
+          "ms": 7.2
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 0,
+      "longFrameBlockingMs": 0,
+      "longestFrameMs": 0,
+      "domNodes": 511,
+      "tableRowsInDom": 30,
+      "runs": 3,
+      "renderMsRuns": [
+        40.1,
+        42.1,
+        38.4
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "users-large-list-search",
+      "path": "/admin/users?view=all&dataset=sample",
+      "wallMs": 5591,
+      "commits": 7,
+      "componentRenders": 145,
+      "renderMs": 13.3,
+      "top": [
+        {
+          "name": "UsersManager",
+          "count": 1,
+          "ms": 5.2
+        },
+        {
+          "name": "ListSearch",
+          "count": 7,
+          "ms": 2.2
+        },
+        {
+          "name": "Badge",
+          "count": 44,
+          "ms": 1.4
+        },
+        {
+          "name": "VirtualTable",
+          "count": 1,
+          "ms": 1
+        },
+        {
+          "name": "RedirectErrorBoundary",
+          "count": 5,
+          "ms": 0.7
+        },
+        {
+          "name": "Input",
+          "count": 6,
+          "ms": 0.6
+        },
+        {
+          "name": "AlertDialog1",
+          "count": 1,
+          "ms": 0.6
+        },
+        {
+          "name": "HTTPAccessFallbackBoundary",
+          "count": 4,
+          "ms": 0.5
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 0.4
+        },
+        {
+          "name": "OuterLayoutRouter",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "InnerLayoutRouter",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "Anonymous",
+          "count": 2,
+          "ms": 0.1
+        },
+        {
+          "name": "Presence",
+          "count": 2,
+          "ms": 0.1
+        },
+        {
+          "name": "__next_metadata_boundary__",
+          "count": 1,
+          "ms": 0.1
+        },
+        {
+          "name": "ConfirmDialog",
+          "count": 1,
+          "ms": 0.1
+        }
+      ],
+      "interactions": 3,
+      "worstInteractionMs": 16,
+      "longFrames": 0,
+      "longFrameBlockingMs": 0,
+      "longestFrameMs": 0,
+      "domNodes": 422,
+      "tableRowsInDom": 22,
+      "runs": 3,
+      "renderMsRuns": [
+        13.3,
+        12.6,
+        15.1
+      ],
+      "worstInteractionRuns": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "scenario": "audit-large-list-load",
+      "path": "/admin/audit-logs?view=all&dataset=sample",
+      "wallMs": 2948,
+      "commits": 6,
+      "componentRenders": 292,
+      "renderMs": 155.2,
+      "top": [
+        {
+          "name": "AuditLogViewer",
+          "count": 2,
+          "ms": 40.1
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 22.4
+        },
+        {
+          "name": "VirtualTable",
+          "count": 3,
+          "ms": 19.1
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 10.2
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 9.7
+        },
+        {
+          "name": "Logo",
+          "count": 1,
+          "ms": 5.9
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 3.7
+        },
+        {
+          "name": "Anonymous",
+          "count": 17,
+          "ms": 3.5
+        },
+        {
+          "name": "LinkComponent",
+          "count": 18,
+          "ms": 3.2
+        },
+        {
+          "name": "Toaster",
+          "count": 2,
+          "ms": 3.2
+        },
+        {
+          "name": "SectionSubnav",
+          "count": 1,
+          "ms": 2.7
+        },
+        {
+          "name": "LoadingBoundaryProvider",
+          "count": 1,
+          "ms": 1.8
+        },
+        {
+          "name": "Badge",
+          "count": 23,
+          "ms": 1.7
+        },
+        {
+          "name": "LogoutButton",
+          "count": 1,
+          "ms": 1.6
+        },
+        {
+          "name": "InnerScrollHandlerNew",
+          "count": 4,
+          "ms": 1.5
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 4,
+      "longFrameBlockingMs": 80,
+      "longestFrameMs": 132,
+      "domNodes": 459,
+      "tableRowsInDom": 22,
+      "runs": 3,
+      "renderMsRuns": [
+        154.9,
+        155.2,
+        160.2
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "audit-large-list-scroll",
+      "path": "/admin/audit-logs?view=all&dataset=sample",
+      "wallMs": 6175,
+      "commits": 31,
+      "componentRenders": 961,
+      "renderMs": 51.8,
+      "top": [
+        {
+          "name": "VirtualTable",
+          "count": 31,
+          "ms": 44
+        },
+        {
+          "name": "Badge",
+          "count": 930,
+          "ms": 7.8
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 1,
+      "longFrameBlockingMs": 0,
+      "longestFrameMs": 53,
+      "domNodes": 563,
+      "tableRowsInDom": 30,
+      "runs": 3,
+      "renderMsRuns": [
+        51.8,
+        54.5,
+        49.8
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "audit-large-list-filter",
+      "path": "/admin/audit-logs?view=all&dataset=sample",
+      "wallMs": 5616,
+      "commits": 8,
+      "componentRenders": 105,
+      "renderMs": 9.7,
+      "top": [
+        {
+          "name": "AuditLogViewer",
+          "count": 1,
+          "ms": 2.4
+        },
+        {
+          "name": "VirtualTable",
+          "count": 1,
+          "ms": 1.6
+        },
+        {
+          "name": "FilterField",
+          "count": 11,
+          "ms": 0.9
+        },
+        {
+          "name": "RedirectErrorBoundary",
+          "count": 5,
+          "ms": 0.9
+        },
+        {
+          "name": "Input",
+          "count": 7,
+          "ms": 0.8
+        },
+        {
+          "name": "LoadingBoundaryProvider",
+          "count": 1,
+          "ms": 0.7
+        },
+        {
+          "name": "Badge",
+          "count": 22,
+          "ms": 0.6
+        },
+        {
+          "name": "OuterLayoutRouter",
+          "count": 4,
+          "ms": 0.6
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 0.6
+        },
+        {
+          "name": "Button",
+          "count": 1,
+          "ms": 0.3
+        },
+        {
+          "name": "RenderFromTemplateContext",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "LogoutButton",
+          "count": 1,
+          "ms": 0.1
+        },
+        {
+          "name": "AppRouterAnnouncer",
+          "count": 1,
+          "ms": 0.1
+        },
+        {
+          "name": "ErrorBoundary",
+          "count": 5,
+          "ms": 0
+        },
+        {
+          "name": "RedirectBoundary",
+          "count": 5,
+          "ms": 0
+        }
+      ],
+      "interactions": 3,
+      "worstInteractionMs": 16,
+      "longFrames": 0,
+      "longFrameBlockingMs": 0,
+      "longestFrameMs": 0,
+      "domNodes": 458,
+      "tableRowsInDom": 22,
+      "runs": 3,
+      "renderMsRuns": [
+        10.6,
+        7.9,
+        9.7
+      ],
+      "worstInteractionRuns": [
+        32,
+        16,
+        16
+      ]
+    }
+  ]
+}

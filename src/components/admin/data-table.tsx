@@ -17,6 +17,8 @@ export type Column<T> = {
   cell: (row: T) => ReactNode;
   /** e.g. "hidden md:table-cell" to drop the column on small screens. */
   className?: string;
+  /** Grid track for the virtualized table (default minmax(0,1fr)). The paged table ignores it. */
+  width?: string;
 };
 
 type DataTableProps<T> = {
