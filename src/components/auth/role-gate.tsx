@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 
-import { useSession } from "@/components/auth/session-provider";
+import { selectRole, useSessionSelector } from "@/components/auth/session-provider";
 import type { Role } from "@/types/entities";
 
 /**
@@ -18,6 +18,7 @@ export function RoleGate({
   children: ReactNode;
   fallback?: ReactNode;
 }) {
-  const user = useSession();
-  return roles.includes(user.role) ? children : fallback;
+  // Subscribes to the role only: a profile edit (name, photo) does not re-render gated UI.
+  const role = useSessionSelector(selectRole);
+  return roles.includes(role) ? children : fallback;
 }
