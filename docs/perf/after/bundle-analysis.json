@@ -1,0 +1,3303 @@
+{
+  "generatedAt": "2026-11-26T15:46:24.571Z",
+  "routes": [
+    {
+      "route": "/",
+      "totalKB": 310.8,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 212.1
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 12.7
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 4.2
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "lucide-react",
+          "kb": 4.2
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 4.1
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.6
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "src/components/website",
+          "kb": 2.3
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "src/lib",
+          "kb": 0.8
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/hooks",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0
+        }
+      ]
+    },
+    {
+      "route": "/admin",
+      "totalKB": 486.2,
+      "largestChunk": {
+        "file": "050-5oohoi4h-.js",
+        "kb": 170.5
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 214.6
+        },
+        {
+          "name": "recharts",
+          "kb": 112.2
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "es-toolkit",
+          "kb": 7.8
+        },
+        {
+          "name": "d3-scale",
+          "kb": 6.6
+        },
+        {
+          "name": "d3-shape",
+          "kb": 6.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 5.6
+        },
+        {
+          "name": "decimal.js-light",
+          "kb": 5.4
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "@reduxjs/toolkit",
+          "kb": 4.2
+        },
+        {
+          "name": "immer",
+          "kb": 3.6
+        },
+        {
+          "name": "lucide-react",
+          "kb": 3.5
+        },
+        {
+          "name": "src/components/admin",
+          "kb": 3.4
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "d3-color",
+          "kb": 2.9
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "d3-time-format",
+          "kb": 2.8
+        },
+        {
+          "name": "d3-format",
+          "kb": 2.8
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "d3-time",
+          "kb": 2.1
+        },
+        {
+          "name": "d3-array",
+          "kb": 2.1
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "d3-interpolate",
+          "kb": 2
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "reselect",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "use-sync-external-store",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "redux",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "eventemitter3",
+          "kb": 1
+        },
+        {
+          "name": "react-redux",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "src/hooks",
+          "kb": 0.8
+        },
+        {
+          "name": "d3-path",
+          "kb": 0.8
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "react-is",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "internmap",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "redux-thunk",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        },
+        {
+          "name": "tiny-invariant",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/admin/users",
+      "totalKB": 429.9,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 214.6
+        },
+        {
+          "name": "zod",
+          "kb": 32.5
+        },
+        {
+          "name": "@tanstack/form-core",
+          "kb": 14.4
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 13
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "@tanstack/virtual-core",
+          "kb": 10.3
+        },
+        {
+          "name": "src/components/admin",
+          "kb": 9.3
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "@radix-ui/react-select",
+          "kb": 6.7
+        },
+        {
+          "name": "lucide-react",
+          "kb": 6.1
+        },
+        {
+          "name": "@radix-ui/react-menu",
+          "kb": 4.3
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "src/features/users",
+          "kb": 3.8
+        },
+        {
+          "name": "src/hooks",
+          "kb": 3.5
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/components/forms",
+          "kb": 2.7
+        },
+        {
+          "name": "src/lib/validations",
+          "kb": 2.6
+        },
+        {
+          "name": "@radix-ui/react-collection",
+          "kb": 2.6
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "@tanstack/store",
+          "kb": 1.7
+        },
+        {
+          "name": "@radix-ui/react-roving-focus",
+          "kb": 1.7
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-form",
+          "kb": 1.5
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@radix-ui/react-dropdown-menu",
+          "kb": 1.4
+        },
+        {
+          "name": "@tanstack/devtools-event-client",
+          "kb": 1.3
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "src/lib",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "use-sync-external-store",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "@tanstack/react-virtual",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "@radix-ui/react-alert-dialog",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/catalog",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@tanstack/pacer-lite",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-label",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-is-hydrated",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-direction",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "@tanstack/react-store",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-previous",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "src/lib/forms",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/number",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/admin/audit-logs",
+      "totalKB": 342.3,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 214.6
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "@tanstack/virtual-core",
+          "kb": 10.3
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 7.4
+        },
+        {
+          "name": "src/components/admin",
+          "kb": 6.8
+        },
+        {
+          "name": "lucide-react",
+          "kb": 5
+        },
+        {
+          "name": "(other)",
+          "kb": 4.4
+        },
+        {
+          "name": "src/hooks",
+          "kb": 3.3
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "src/features/audit",
+          "kb": 2
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "src/lib",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "@tanstack/react-virtual",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-label",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/admin/enrollments",
+      "totalKB": 333.1,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 212.2
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 7.7
+        },
+        {
+          "name": "lucide-react",
+          "kb": 5.2
+        },
+        {
+          "name": "@radix-ui/react-menu",
+          "kb": 4.3
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "src/components/admin",
+          "kb": 3.4
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "@radix-ui/react-collection",
+          "kb": 2.6
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "src/features/enrollments",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "src/hooks",
+          "kb": 1.7
+        },
+        {
+          "name": "@radix-ui/react-roving-focus",
+          "kb": 1.7
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@radix-ui/react-dropdown-menu",
+          "kb": 1.4
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-is-hydrated",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-direction",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/admin/courses",
+      "totalKB": 405.7,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 214.6
+        },
+        {
+          "name": "zod",
+          "kb": 32.5
+        },
+        {
+          "name": "@tanstack/form-core",
+          "kb": 14.4
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 11.8
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "@radix-ui/react-select",
+          "kb": 6.7
+        },
+        {
+          "name": "lucide-react",
+          "kb": 6.2
+        },
+        {
+          "name": "src/features/courses",
+          "kb": 5.1
+        },
+        {
+          "name": "src/components/admin",
+          "kb": 5
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "src/hooks",
+          "kb": 3.4
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/components/forms",
+          "kb": 2.7
+        },
+        {
+          "name": "src/lib/validations",
+          "kb": 2.6
+        },
+        {
+          "name": "@radix-ui/react-collection",
+          "kb": 2.6
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "@tanstack/store",
+          "kb": 1.7
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-form",
+          "kb": 1.5
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@tanstack/devtools-event-client",
+          "kb": 1.3
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "use-sync-external-store",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "@radix-ui/react-alert-dialog",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/catalog",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@tanstack/pacer-lite",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-label",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-direction",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "@tanstack/react-store",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-previous",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "src/lib/forms",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/number",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/faculty",
+      "totalKB": 316.1,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 212.2
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 6.6
+        },
+        {
+          "name": "lucide-react",
+          "kb": 4.2
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 1.8
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "src/components/faculty",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "src/hooks",
+          "kb": 0.8
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/faculty/offerings/[id]",
+      "totalKB": 424,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 212.2
+        },
+        {
+          "name": "zod",
+          "kb": 32.5
+        },
+        {
+          "name": "src/features/course",
+          "kb": 16.9
+        },
+        {
+          "name": "@tanstack/form-core",
+          "kb": 14.4
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 14.1
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "lucide-react",
+          "kb": 7.8
+        },
+        {
+          "name": "@radix-ui/react-select",
+          "kb": 6.7
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "src/components/faculty",
+          "kb": 3.6
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 3.4
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/components/forms",
+          "kb": 2.7
+        },
+        {
+          "name": "src/lib/validations",
+          "kb": 2.6
+        },
+        {
+          "name": "@radix-ui/react-collection",
+          "kb": 2.6
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "src/components/admin",
+          "kb": 2.3
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-roving-focus",
+          "kb": 1.7
+        },
+        {
+          "name": "@tanstack/store",
+          "kb": 1.7
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-form",
+          "kb": 1.5
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@tanstack/devtools-event-client",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-tabs",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "use-sync-external-store",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "src/hooks",
+          "kb": 0.8
+        },
+        {
+          "name": "@radix-ui/react-progress",
+          "kb": 0.8
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "@radix-ui/react-alert-dialog",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "src/features/quiz",
+          "kb": 0.5
+        },
+        {
+          "name": "src/lib",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@tanstack/pacer-lite",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-label",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-is-hydrated",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-direction",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "@tanstack/react-store",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-previous",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "src/lib/forms",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/number",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/student",
+      "totalKB": 322.9,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 212.2
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 6.7
+        },
+        {
+          "name": "lucide-react",
+          "kb": 5.2
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "src/components/student",
+          "kb": 3.7
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 2.2
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "src/components/catalog",
+          "kb": 1.7
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "src/hooks",
+          "kb": 1.6
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "src/lib",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "src/lib/academics",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/student/registration",
+      "totalKB": 364.5,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 212.2
+        },
+        {
+          "name": "zod",
+          "kb": 32.5
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 13.5
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "src/features/registration",
+          "kb": 9.3
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 9
+        },
+        {
+          "name": "lucide-react",
+          "kb": 4.7
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "src/lib/validations",
+          "kb": 2.6
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2.5
+        },
+        {
+          "name": "react-remove-scroll",
+          "kb": 2.5
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "@radix-ui/react-dialog",
+          "kb": 1.9
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "src/components/shared",
+          "kb": 1.8
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 1.6
+        },
+        {
+          "name": "@radix-ui/react-focus-scope",
+          "kb": 1.6
+        },
+        {
+          "name": "src/components/dashboard",
+          "kb": 1.4
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "src/hooks",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.2
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-avatar",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 1
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "react-remove-scroll-bar",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-progress",
+          "kb": 0.8
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "@radix-ui/react-alert-dialog",
+          "kb": 0.7
+        },
+        {
+          "name": "aria-hidden",
+          "kb": 0.7
+        },
+        {
+          "name": "src/components/layout",
+          "kb": 0.6
+        },
+        {
+          "name": "use-sidecar",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/lib",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "@radix-ui/react-focus-guards",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "react-style-singleton",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "zustand",
+          "kb": 0.4
+        },
+        {
+          "name": "tslib",
+          "kb": 0.4
+        },
+        {
+          "name": "use-callback-ref",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        },
+        {
+          "name": "get-nonce",
+          "kb": 0.1
+        },
+        {
+          "name": "src/stores",
+          "kb": 0.1
+        }
+      ]
+    },
+    {
+      "route": "/login",
+      "totalKB": 351.4,
+      "largestChunk": {
+        "file": "0lxhzasyekf43.js",
+        "kb": 76.6
+      },
+      "groups": [
+        {
+          "name": "next",
+          "kb": 212.2
+        },
+        {
+          "name": "zod",
+          "kb": 32.5
+        },
+        {
+          "name": "@tanstack/form-core",
+          "kb": 14.4
+        },
+        {
+          "name": "@tanstack/query-core",
+          "kb": 11.2
+        },
+        {
+          "name": "cn",
+          "kb": 10.4
+        },
+        {
+          "name": "sonner",
+          "kb": 9.2
+        },
+        {
+          "name": "src/components/auth",
+          "kb": 4.5
+        },
+        {
+          "name": "lucide-react",
+          "kb": 4.5
+        },
+        {
+          "name": "(other)",
+          "kb": 4.2
+        },
+        {
+          "name": "src/components/ui",
+          "kb": 4.2
+        },
+        {
+          "name": "@floating-ui/core",
+          "kb": 3.1
+        },
+        {
+          "name": "@radix-ui/react-tooltip",
+          "kb": 3
+        },
+        {
+          "name": "@floating-ui/dom",
+          "kb": 2.8
+        },
+        {
+          "name": "@radix-ui/react-popper",
+          "kb": 2.2
+        },
+        {
+          "name": "ofetch",
+          "kb": 2.1
+        },
+        {
+          "name": "src/lib/api",
+          "kb": 2
+        },
+        {
+          "name": "@radix-ui/react-dismissable-layer",
+          "kb": 1.9
+        },
+        {
+          "name": "@tanstack/store",
+          "kb": 1.7
+        },
+        {
+          "name": "src/app",
+          "kb": 1.7
+        },
+        {
+          "name": "@floating-ui/utils",
+          "kb": 1.6
+        },
+        {
+          "name": "@tanstack/react-form",
+          "kb": 1.5
+        },
+        {
+          "name": "next-themes",
+          "kb": 1.4
+        },
+        {
+          "name": "@tanstack/devtools-event-client",
+          "kb": 1.3
+        },
+        {
+          "name": "@floating-ui/react-dom",
+          "kb": 1.3
+        },
+        {
+          "name": "ufo",
+          "kb": 1.3
+        },
+        {
+          "name": "@radix-ui/react-presence",
+          "kb": 1.1
+        },
+        {
+          "name": "@radix-ui/react-slot",
+          "kb": 1.1
+        },
+        {
+          "name": "src/lib/validations",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-use-controllable-state",
+          "kb": 0.9
+        },
+        {
+          "name": "use-sync-external-store",
+          "kb": 0.9
+        },
+        {
+          "name": "class-variance-authority",
+          "kb": 0.9
+        },
+        {
+          "name": "@radix-ui/react-context",
+          "kb": 0.7
+        },
+        {
+          "name": "@tanstack/react-query",
+          "kb": 0.6
+        },
+        {
+          "name": "destr",
+          "kb": 0.6
+        },
+        {
+          "name": "@radix-ui/primitive",
+          "kb": 0.5
+        },
+        {
+          "name": "clsx",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/providers",
+          "kb": 0.5
+        },
+        {
+          "name": "src/hooks",
+          "kb": 0.5
+        },
+        {
+          "name": "src/components/website",
+          "kb": 0.4
+        },
+        {
+          "name": "@radix-ui/react-primitive",
+          "kb": 0.4
+        },
+        {
+          "name": "src/components/forms",
+          "kb": 0.4
+        },
+        {
+          "name": "@swc/helpers",
+          "kb": 0.4
+        },
+        {
+          "name": "src/lib",
+          "kb": 0.3
+        },
+        {
+          "name": "@tanstack/pacer-lite",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-visually-hidden",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-separator",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-size",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-portal",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-compose-refs",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-label",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-use-effect-event",
+          "kb": 0.3
+        },
+        {
+          "name": "@radix-ui/react-arrow",
+          "kb": 0.3
+        },
+        {
+          "name": "src/lib/auth",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-id",
+          "kb": 0.2
+        },
+        {
+          "name": "@radix-ui/react-use-callback-ref",
+          "kb": 0.2
+        },
+        {
+          "name": "@tanstack/react-store",
+          "kb": 0.2
+        },
+        {
+          "name": "src/lib/query",
+          "kb": 0.1
+        },
+        {
+          "name": "@radix-ui/react-use-layout-effect",
+          "kb": 0.1
+        }
+      ]
+    }
+  ]
+}

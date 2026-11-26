@@ -1,0 +1,419 @@
+{
+  "generatedAt": "2026-11-26T15:25:51.212Z",
+  "base": "http://localhost:3000",
+  "cpuSlowdown": 4,
+  "results": [
+    {
+      "scenario": "admin-overview-load",
+      "path": "/admin",
+      "wallMs": 3295,
+      "commits": 126,
+      "componentRenders": 2860,
+      "renderMs": 342.7,
+      "top": [
+        {
+          "name": "Anonymous",
+          "count": 1020,
+          "ms": 43.3
+        },
+        {
+          "name": "AdminOverview",
+          "count": 2,
+          "ms": 40.3
+        },
+        {
+          "name": "PieSectors",
+          "count": 86,
+          "ms": 28.1
+        },
+        {
+          "name": "JavascriptAnimate",
+          "count": 140,
+          "ms": 24.3
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 19.4
+        },
+        {
+          "name": "Sector",
+          "count": 256,
+          "ms": 16.2
+        },
+        {
+          "name": "CartesianGrid",
+          "count": 3,
+          "ms": 12.1
+        },
+        {
+          "name": "Rectangle",
+          "count": 108,
+          "ms": 11.1
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 10.4
+        },
+        {
+          "name": "BarRectangles",
+          "count": 54,
+          "ms": 9
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 8.9
+        },
+        {
+          "name": "BarImpl",
+          "count": 6,
+          "ms": 7.6
+        },
+        {
+          "name": "BarRectangleNeverActive",
+          "count": 108,
+          "ms": 6.4
+        },
+        {
+          "name": "Tooltip",
+          "count": 7,
+          "ms": 6.3
+        },
+        {
+          "name": "EventSynchronizer",
+          "count": 8,
+          "ms": 5.9
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 4,
+      "longFrameBlockingMs": 236,
+      "longestFrameMs": 170,
+      "domNodes": 438,
+      "tableRowsInDom": 0,
+      "runs": 3,
+      "renderMsRuns": [
+        381.1,
+        331,
+        342.7
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "users-search-typing",
+      "path": "/admin/users",
+      "wallMs": 5991,
+      "commits": 9,
+      "componentRenders": 1899,
+      "renderMs": 31.8,
+      "top": [
+        {
+          "name": "UsersManager",
+          "count": 8,
+          "ms": 5.7
+        },
+        {
+          "name": "DataTable",
+          "count": 8,
+          "ms": 3.4
+        },
+        {
+          "name": "DropdownMenu",
+          "count": 73,
+          "ms": 2.8
+        },
+        {
+          "name": "Presence",
+          "count": 89,
+          "ms": 2.6
+        },
+        {
+          "name": "DropdownMenuPortal",
+          "count": 73,
+          "ms": 1.4
+        },
+        {
+          "name": "DropdownMenuProvider",
+          "count": 73,
+          "ms": 1.2
+        },
+        {
+          "name": "TableCell",
+          "count": 365,
+          "ms": 1.1
+        },
+        {
+          "name": "MenuProvider",
+          "count": 146,
+          "ms": 1.1
+        },
+        {
+          "name": "PopperProvider",
+          "count": 76,
+          "ms": 1.1
+        },
+        {
+          "name": "HTTPAccessFallbackErrorBoundary",
+          "count": 2,
+          "ms": 1.1
+        },
+        {
+          "name": "TableRow",
+          "count": 81,
+          "ms": 1
+        },
+        {
+          "name": "Menu",
+          "count": 73,
+          "ms": 0.8
+        },
+        {
+          "name": "Anonymous",
+          "count": 30,
+          "ms": 0.8
+        },
+        {
+          "name": "Badge",
+          "count": 146,
+          "ms": 0.7
+        },
+        {
+          "name": "Popper",
+          "count": 76,
+          "ms": 0.7
+        }
+      ],
+      "interactions": 6,
+      "worstInteractionMs": 24,
+      "longFrames": 0,
+      "longFrameBlockingMs": 0,
+      "longestFrameMs": 0,
+      "domNodes": 228,
+      "tableRowsInDom": 3,
+      "runs": 3,
+      "renderMsRuns": [
+        32.1,
+        30,
+        31.8
+      ],
+      "worstInteractionRuns": [
+        40,
+        24,
+        24
+      ]
+    },
+    {
+      "scenario": "audit-filter-typing",
+      "path": "/admin/audit-logs",
+      "wallMs": 5437,
+      "commits": 7,
+      "componentRenders": 88,
+      "renderMs": 6.1,
+      "top": [
+        {
+          "name": "AuditLogViewer",
+          "count": 2,
+          "ms": 1.5
+        },
+        {
+          "name": "FilterField",
+          "count": 9,
+          "ms": 1.3
+        },
+        {
+          "name": "RedirectErrorBoundary",
+          "count": 5,
+          "ms": 1.1
+        },
+        {
+          "name": "InnerLayoutRouter",
+          "count": 4,
+          "ms": 0.5
+        },
+        {
+          "name": "Anonymous",
+          "count": 2,
+          "ms": 0.5
+        },
+        {
+          "name": "EmptyState",
+          "count": 1,
+          "ms": 0.5
+        },
+        {
+          "name": "Button",
+          "count": 4,
+          "ms": 0.2
+        },
+        {
+          "name": "OuterLayoutRouter",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "ScrollAndMaybeFocusHandler",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "HTTPAccessFallbackBoundary",
+          "count": 4,
+          "ms": 0.1
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 0.1
+        },
+        {
+          "name": "Head",
+          "count": 1,
+          "ms": 0.1
+        },
+        {
+          "name": "Input",
+          "count": 5,
+          "ms": 0
+        },
+        {
+          "name": "ErrorBoundary",
+          "count": 5,
+          "ms": 0
+        },
+        {
+          "name": "RedirectBoundary",
+          "count": 5,
+          "ms": 0
+        }
+      ],
+      "interactions": 2,
+      "worstInteractionMs": 16,
+      "longFrames": 0,
+      "longFrameBlockingMs": 0,
+      "longestFrameMs": 0,
+      "domNodes": 179,
+      "tableRowsInDom": 0,
+      "runs": 3,
+      "renderMsRuns": [
+        6.1,
+        6.4,
+        3.9
+      ],
+      "worstInteractionRuns": [
+        16,
+        24,
+        24
+      ]
+    },
+    {
+      "scenario": "student-overview-load",
+      "path": "/student",
+      "wallMs": 3807,
+      "commits": 10,
+      "componentRenders": 210,
+      "renderMs": 131.5,
+      "top": [
+        {
+          "name": "StudentOverview",
+          "count": 7,
+          "ms": 45.6
+        },
+        {
+          "name": "AppProviders",
+          "count": 1,
+          "ms": 19.4
+        },
+        {
+          "name": "DashboardHeader",
+          "count": 1,
+          "ms": 9.5
+        },
+        {
+          "name": "SessionProvider",
+          "count": 1,
+          "ms": 9
+        },
+        {
+          "name": "Anonymous",
+          "count": 25,
+          "ms": 5.3
+        },
+        {
+          "name": "Logo",
+          "count": 1,
+          "ms": 4.2
+        },
+        {
+          "name": "Button",
+          "count": 6,
+          "ms": 2.8
+        },
+        {
+          "name": "Badge",
+          "count": 6,
+          "ms": 2.7
+        },
+        {
+          "name": "Router",
+          "count": 1,
+          "ms": 2.6
+        },
+        {
+          "name": "LinkComponent",
+          "count": 16,
+          "ms": 2.1
+        },
+        {
+          "name": "Toaster",
+          "count": 2,
+          "ms": 2.1
+        },
+        {
+          "name": "LoadingBoundaryProvider",
+          "count": 1,
+          "ms": 1.9
+        },
+        {
+          "name": "ErrorBoundaryHandler",
+          "count": 3,
+          "ms": 1.5
+        },
+        {
+          "name": "LogoutButton",
+          "count": 1,
+          "ms": 1.4
+        },
+        {
+          "name": "StatCard",
+          "count": 4,
+          "ms": 1.2
+        }
+      ],
+      "interactions": 0,
+      "worstInteractionMs": 0,
+      "longFrames": 2,
+      "longFrameBlockingMs": 62,
+      "longestFrameMs": 115,
+      "domNodes": 207,
+      "tableRowsInDom": 0,
+      "runs": 3,
+      "renderMsRuns": [
+        131.5,
+        133,
+        129.1
+      ],
+      "worstInteractionRuns": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

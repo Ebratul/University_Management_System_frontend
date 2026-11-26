@@ -18,7 +18,23 @@ and `bundle-analysis.json`, runs Lighthouse 3× per page (mobile preset), then
 makes a profiling build and runs `render-profile.mjs`.
 
 Restart the API between runs: its rate limiter keeps counts in memory, and a
-`429` would show error states and skew the numbers.
+`429` would show error states and skew the numbers. `measure.sh` can do it for
+you before each phase: `BEFORE_STEP="./restart-api.sh" bash scripts/perf/measure.sh after`.
+
+**How the report's before/after were produced** (same scripts, same machine, back to back):
+
+```bash
+git worktree add ../ums-before 90f7db9          # untouched app + tooling
+cp scripts/perf/* ../ums-before/scripts/perf/    # the final scripts in both runs
+cp .env.local ../ums-before/ && (cd ../ums-before && npm ci)
+(cd ../ums-before && OUT_DIR=$PWD/../University_Management_System_frontend/docs/perf/before-rerun \
+  BEFORE_STEP=./restart-api.sh bash scripts/perf/measure.sh before-rerun)
+BEFORE_STEP=./restart-api.sh bash scripts/perf/measure.sh after
+node scripts/perf/compare.mjs docs/perf/before-rerun docs/perf/after   # Markdown tables
+```
+
+`docs/perf/before/` holds the original Phase 1 audit (same app; it was the
+first run, before the scripts gained median-of-3 and the large-list scenarios).
 
 ## 2. Lighthouse in Chrome by hand (local or the live Vercel URL)
 

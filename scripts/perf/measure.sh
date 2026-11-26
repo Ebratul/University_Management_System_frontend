@@ -5,10 +5,17 @@
 #
 # Needs the API reachable at BACKEND_URL (see .env.local) and Chrome installed.
 #   bash scripts/perf/measure.sh before
+#
+# Optional:
+#   OUT_DIR=/abs/path     write somewhere other than docs/perf/<label> (e.g. from a worktree)
+#   BEFORE_STEP="cmd"     run before the Lighthouse and profiling phases, e.g. a
+#                         script that restarts the API so its in-memory rate
+#                         limiter starts from zero for both runs alike.
 set -euo pipefail
 LABEL="${1:?usage: measure.sh <before|after>}"
-OUT="docs/perf/$LABEL"
+OUT="${OUT_DIR:-docs/perf/$LABEL}"
 PORT="${PORT:-3000}"
+before_step() { if [ -n "${BEFORE_STEP:-}" ]; then bash -c "$BEFORE_STEP"; fi; }
 mkdir -p "$OUT/lighthouse"
 
 serve() {
@@ -29,17 +36,19 @@ npx next experimental-analyze --output >/dev/null
 node scripts/perf/analyze-report.mjs "$OUT"
 
 echo "== lighthouse"
+before_step
 serve
 BASE="http://localhost:$PORT" RUNS="${RUNS:-3}" node scripts/perf/lighthouse.mjs "$OUT/lighthouse"
 stop
 # Keep the median report per page only.
 node -e '
-const fs=require("fs"),p=process.argv[1];const keep=new Set(require("./"+p+"/lighthouse-summary.json").pages.map(x=>x.report.split("/").pop()));
+const fs=require("fs"),path=require("path"),p=path.resolve(process.argv[1]);const keep=new Set(require(p+"/lighthouse-summary.json").pages.map(x=>x.report.split("/").pop()));
 for(const f of fs.readdirSync(p)) if(f.endsWith(".json")&&f!=="lighthouse-summary.json"&&!keep.has(f)) fs.rmSync(p+"/"+f);' "$OUT/lighthouse"
 
 echo "== profiling build"
 rm -rf .next
 npx next build --profile --no-mangling >/dev/null
+before_step
 serve
 BASE="http://localhost:$PORT" RUNS="${RUNS:-3}" node scripts/perf/render-profile.mjs "$OUT"
 stop

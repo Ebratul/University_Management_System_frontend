@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-11-26T15:49:24.137Z",
+  "base": "http://localhost:3000",
+  "runs": 3,
+  "pages": [
+    {
+      "page": "/",
+      "score": 84,
+      "scores": "84/84/84",
+      "FCP s": 1.21,
+      "LCP s": 4.52,
+      "TBT ms": 63,
+      "CLS": 0,
+      "SI s": 1.21,
+      "JS KB (transfer)": 319,
+      "report": "docs/perf/after/lighthouse/home.run1.json"
+    },
+    {
+      "page": "/admin",
+      "score": 99,
+      "scores": "98/99/99",
+      "FCP s": 1.69,
+      "LCP s": 1.69,
+      "TBT ms": 72,
+      "CLS": 0,
+      "SI s": 2.29,
+      "JS KB (transfer)": 367.9,
+      "report": "docs/perf/after/lighthouse/admin-overview.run2.json"
+    },
+    {
+      "page": "/admin/users",
+      "score": 100,
+      "scores": "100/100/100",
+      "FCP s": 1.54,
+      "LCP s": 1.54,
+      "TBT ms": 47,
+      "CLS": 0.004,
+      "SI s": 1.82,
+      "JS KB (transfer)": 281.6,
+      "report": "docs/perf/after/lighthouse/admin-users.run1.json"
+    },
+    {
+      "page": "/admin/audit-logs",
+      "score": 100,
+      "scores": "99/100/100",
+      "FCP s": 1.53,
+      "LCP s": 1.53,
+      "TBT ms": 21,
+      "CLS": 0.002,
+      "SI s": 1.53,
+      "JS KB (transfer)": 265.6,
+      "report": "docs/perf/after/lighthouse/admin-audit-logs.run2.json"
+    },
+    {
+      "page": "/student",
+      "score": 99,
+      "scores": "100/99/99",
+      "FCP s": 1.55,
+      "LCP s": 1.55,
+      "TBT ms": 49,
+      "CLS": 0.008,
+      "SI s": 1.94,
+      "JS KB (transfer)": 262.8,
+      "report": "docs/perf/after/lighthouse/student-overview.run2.json"
+    }
+  ]
+}

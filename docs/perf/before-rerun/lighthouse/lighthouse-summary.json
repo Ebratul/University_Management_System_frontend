@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-11-26T15:23:43.685Z",
+  "base": "http://localhost:3000",
+  "runs": 3,
+  "pages": [
+    {
+      "page": "/",
+      "score": 82,
+      "scores": "82/82/82",
+      "FCP s": 1.21,
+      "LCP s": 4.84,
+      "TBT ms": 35,
+      "CLS": 0,
+      "SI s": 1.21,
+      "JS KB (transfer)": 378.2,
+      "report": "/storage/document/code/WEB/University_Management_System/Frontend/docs/perf/before-rerun/lighthouse/home.run1.json"
+    },
+    {
+      "page": "/admin",
+      "score": 99,
+      "scores": "99/98/99",
+      "FCP s": 1.38,
+      "LCP s": 1.38,
+      "TBT ms": 100,
+      "CLS": 0,
+      "SI s": 2.84,
+      "JS KB (transfer)": 375.9,
+      "report": "/storage/document/code/WEB/University_Management_System/Frontend/docs/perf/before-rerun/lighthouse/admin-overview.run1.json"
+    },
+    {
+      "page": "/admin/users",
+      "score": 99,
+      "scores": "99/100/99",
+      "FCP s": 1.39,
+      "LCP s": 1.39,
+      "TBT ms": 101,
+      "CLS": 0.002,
+      "SI s": 2.02,
+      "JS KB (transfer)": 406.1,
+      "report": "/storage/document/code/WEB/University_Management_System/Frontend/docs/perf/before-rerun/lighthouse/admin-users.run1.json"
+    },
+    {
+      "page": "/admin/audit-logs",
+      "score": 99,
+      "scores": "99/99/100",
+      "FCP s": 1.7,
+      "LCP s": 1.7,
+      "TBT ms": 33,
+      "CLS": 0.001,
+      "SI s": 1.7,
+      "JS KB (transfer)": 266.4,
+      "report": "/storage/document/code/WEB/University_Management_System/Frontend/docs/perf/before-rerun/lighthouse/admin-audit-logs.run1.json"
+    },
+    {
+      "page": "/student",
+      "score": 98,
+      "scores": "98/99/98",
+      "FCP s": 1.53,
+      "LCP s": 1.53,
+      "TBT ms": 28,
+      "CLS": 0.08,
+      "SI s": 2.01,
+      "JS KB (transfer)": 267.6,
+      "report": "/storage/document/code/WEB/University_Management_System/Frontend/docs/perf/before-rerun/lighthouse/student-overview.run1.json"
+    }
+  ]
+}
