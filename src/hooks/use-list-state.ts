@@ -8,7 +8,14 @@ import type { ListQuery } from "@/types/api";
 export const PAGE_SIZES = [10, 20, 50] as const;
 export type PageSize = (typeof PAGE_SIZES)[number];
 
+/** "paged": server pagination (default). "all": every record, virtualized, filtered on the client. */
+export type ListView = "paged" | "all";
+/** "sample": generated rows for load testing the "all" view; never sent to the API. */
+export type ListDataset = "live" | "sample";
+
 type ListStateValues = {
+  view: ListView;
+  dataset: ListDataset;
   page: number;
   limit: PageSize;
   sortBy?: string;
@@ -41,6 +48,8 @@ export function useListState(filterKeys: readonly string[] = []) {
     }
 
     return {
+      view: params.get("view") === "all" ? "all" : "paged",
+      dataset: params.get("dataset") === "sample" ? "sample" : "live",
       page: Math.max(1, Number(params.get("page")) || 1),
       limit: (PAGE_SIZES as readonly number[]).includes(limitValue) ? (limitValue as PageSize) : 10,
       sortBy: params.get("sortBy") || undefined,
@@ -68,6 +77,7 @@ export function useListState(filterKeys: readonly string[] = []) {
     [pathname, router],
   );
 
+  // view / dataset are UI state only: they never reach the API query.
   const query: ListQuery = {
     page: values.page,
     limit: values.limit,

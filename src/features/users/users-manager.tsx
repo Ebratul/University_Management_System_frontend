@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Plus, UserRound } from "lucide-react";
 import { useForm } from "@tanstack/react-form";
 
@@ -8,6 +8,8 @@ import { ConfirmDialog } from "@/components/admin/confirm-dialog";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
 import { ListToolbar } from "@/components/admin/list-toolbar";
+import { ListViewSwitch } from "@/components/admin/list-view-switch";
+import { SampleDataNotice } from "@/components/admin/sample-data-notice";
 import { Pagination } from "@/components/admin/pagination";
 import { RowMenu, type RowMenuItem } from "@/components/admin/row-menu";
 import { FormAlert } from "@/components/forms/form-alert";
@@ -16,6 +18,7 @@ import { PageHeader } from "@/components/shared/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useApiMutation } from "@/hooks/use-api-mutation";
+import { useAllRecords } from "@/hooks/use-all-records";
 import { useApiQuery } from "@/hooks/use-api-query";
 import { useListState } from "@/hooks/use-list-state";
 import { apiListRequest, apiRequest } from "@/lib/api/client";
@@ -28,17 +31,44 @@ import type { AdminUser, Role } from "@/types/entities";
 
 const FILTER_KEYS = ["role"];
 const ROLES: Role[] = ["ADMIN", "FACULTY", "STUDENT"];
+/** Hoisted: one formatter for every row instead of a new one per cell (same output as toLocaleDateString("en-GB")). */
+const createdFormat = new Intl.DateTimeFormat("en-GB");
+
+const displayName = (user: AdminUser) => user.admin?.name ?? user.faculty?.name ?? user.student?.name ?? user.email;
 
 export function UsersManager() {
   const list = useListState(FILTER_KEYS);
   const [creating, setCreating] = useState(false);
   const [toDelete, setToDelete] = useState<AdminUser | null>(null);
 
+  const isAll = list.view === "all";
+  const isSample = isAll && list.dataset === "sample";
+
   const users = useApiQuery({
     queryKey: queryKeys.users.list(list.query),
     queryFn: () => apiListRequest<AdminUser>("/users", list.query),
     keepPreviousData: true,
+    enabled: !isAll,
   });
+
+  // "All records" view: every account (or the generated sample), filtered here.
+  const allUsers = useAllRecords<AdminUser>({
+    queryKey: queryKeys.users.all,
+    path: "/users",
+    dataset: list.dataset,
+    sample: () => import("@/lib/sample-data").then((m) => m.sampleUsers()),
+    enabled: isAll,
+  });
+  const roleFilter = list.filters.role;
+  const term = list.searchTerm?.toLowerCase();
+  // Filtering thousands of rows is the expensive step: memoised on its real inputs only.
+  const visibleUsers = useMemo(() => {
+    const rows = allUsers.data?.rows;
+    if (!rows) return undefined;
+    return rows.filter((user) => (!roleFilter || user.role === roleFilter) && (!term || user.email.toLowerCase().includes(term) || displayName(user).toLowerCase().includes(term)));
+  }, [allUsers.data, roleFilter, term]);
+
+  const active = isAll ? allUsers : users;
 
   const invalidateUsers = [queryKeys.users.all, queryKeys.adminStats];
 
@@ -67,7 +97,7 @@ export function UsersManager() {
       header: "Account",
       cell: (user) => (
         <div className="min-w-0">
-          <p className="truncate font-medium">{user.admin?.name ?? user.faculty?.name ?? user.student?.name ?? user.email}</p>
+          <p className="truncate font-medium">{displayName(user)}</p>
           <p className="text-muted-foreground truncate text-xs">{user.email}</p>
         </div>
       ),
@@ -83,7 +113,7 @@ export function UsersManager() {
       id: "createdAt",
       header: "Created",
       className: "hidden lg:table-cell",
-      cell: (user) => <span className="text-muted-foreground text-sm">{new Date(user.createdAt).toLocaleDateString("en-GB")}</span>,
+      cell: (user) => <span className="text-muted-foreground text-sm">{createdFormat.format(new Date(user.createdAt))}</span>,
     },
   ];
 
@@ -115,18 +145,28 @@ export function UsersManager() {
         }
       />
 
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <ListViewSwitch view={list.view} dataset={list.dataset} onChange={list.update} />
+        {isAll && visibleUsers ? (
+          <p className="text-muted-foreground text-sm" aria-live="polite">
+            {visibleUsers.length.toLocaleString()} of {(allUsers.data?.total ?? 0).toLocaleString()} accounts
+          </p>
+        ) : null}
+      </div>
+      {isSample ? <SampleDataNotice onExit={() => list.update({ dataset: undefined })} /> : null}
+
       <DataTable
         caption="User accounts"
         columns={columns}
-        rows={users.data?.data}
-        isLoading={users.isPending}
-        isError={users.isError}
-        errorMessage={users.error?.message}
-        onRetry={() => void users.refetch()}
+        rows={isAll ? visibleUsers : users.data?.data}
+        isLoading={active.isPending}
+        isError={active.isError}
+        errorMessage={active.error?.message}
+        onRetry={() => void active.refetch()}
         emptyIcon={UserRound}
         emptyTitle="No accounts match"
         emptyDescription="Try another search or role filter."
-        rowActions={(user) => {
+        rowActions={isSample ? undefined : (user) => {
           const items: RowMenuItem[] = [
             ...ROLES.filter((role) => role !== user.role).map((role) => ({
               label: `Make ${ROLE_META[role].label.toLowerCase()}`,
@@ -142,7 +182,7 @@ export function UsersManager() {
         }}
       />
 
-      <Pagination meta={users.data?.meta} limit={list.limit} onPageChange={(page) => list.update({ page })} onLimitChange={(limit) => list.update({ limit, page: 1 })} />
+      {isAll ? null : <Pagination meta={users.data?.meta} limit={list.limit} onPageChange={(page) => list.update({ page })} onLimitChange={(limit) => list.update({ limit, page: 1 })} />}
 
       <FormDialog open={creating} onOpenChange={setCreating} title="New administrator" description="Creates an admin login. Share the temporary password through a secure channel.">
         {creating ? <AdminCreateForm onDone={() => setCreating(false)} /> : null}
