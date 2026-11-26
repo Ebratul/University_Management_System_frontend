@@ -72,11 +72,11 @@ export function PaymentResult({ paymentId }: { paymentId: string | null }) {
         {registration ? (
           <>
             {p.status === "PAID" ? (
-              <Button asChild className="bg-brand-gradient text-white hover:opacity-90">
+              <Button asChild>
                 <Link href={`/student/registration/${registration.registrationId}/receipt`}>View receipt</Link>
               </Button>
             ) : null}
-            <Button asChild variant={p.status === "PAID" ? "outline" : "default"} className={p.status === "PAID" ? undefined : "bg-brand-gradient text-white hover:opacity-90"}>
+            <Button asChild variant={p.status === "PAID" ? "outline" : "default"} className={p.status === "PAID" ? undefined : ""}>
               <Link href={`/student/registration/${registration.registrationId}`}>
                 {p.status === "FAILED" ? "Retry payment" : "View registration"}
               </Link>

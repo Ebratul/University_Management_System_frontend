@@ -59,7 +59,7 @@ export function MobileNav({
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setExpanded(isOpen ? null : group.label)}
-                    className="focus-visible:ring-ring/50 flex min-h-12 w-full items-center justify-between rounded-md px-3 text-left text-base font-medium outline-none focus-visible:ring-3"
+                    className="focus-visible:ring-ring/40 flex min-h-12 w-full items-center justify-between rounded-md px-3 text-left text-base font-medium outline-none focus-visible:ring-2"
                   >
                     {group.label}
                     <ChevronDown
@@ -73,7 +73,7 @@ export function MobileNav({
                         <Link
                           href={link.href}
                           onClick={close}
-                          className="text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-ring/50 flex min-h-11 items-center rounded-md px-3 text-sm outline-none focus-visible:ring-3"
+                          className="text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-ring/40 flex min-h-11 items-center rounded-md px-3 text-sm outline-none focus-visible:ring-2"
                         >
                           {link.label}
                         </Link>
@@ -87,7 +87,7 @@ export function MobileNav({
         </nav>
 
         <div className="border-t p-4">
-          <Button asChild size="lg" className="bg-brand-gradient h-11 w-full text-white hover:opacity-90">
+          <Button asChild size="lg" className="h-11 w-full">
             <Link href={LOGIN_HREF} onClick={close}>
               Log in
             </Link>

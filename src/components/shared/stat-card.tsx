@@ -1,16 +1,21 @@
 import type { LucideIcon } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
-// Full class names (not built from template strings) so Tailwind can see them.
+/*
+ * Tone only tints the icon and the chip. The card itself stays calm; the
+ * accent is used sparingly, for the chip of a normal figure. Full class names
+ * (not template strings) so Tailwind can see them.
+ */
 const toneStyles = {
-  indigo: { chip: "bg-brand-indigo/12 text-brand-indigo", bar: "bg-brand-indigo" },
-  violet: { chip: "bg-brand-violet/12 text-brand-violet", bar: "bg-brand-violet" },
-  teal: { chip: "bg-brand-teal/15 text-brand-teal", bar: "bg-brand-teal" },
-  amber: { chip: "bg-brand-amber/25 text-amber-700 dark:text-brand-amber", bar: "bg-brand-amber" },
-  rose: { chip: "bg-brand-rose/12 text-brand-rose", bar: "bg-brand-rose" },
-  sky: { chip: "bg-brand-sky/15 text-brand-sky", bar: "bg-brand-sky" },
+  indigo: { icon: "text-muted-foreground", chip: "bg-brand-soft text-accent-foreground" },
+  violet: { icon: "text-muted-foreground", chip: "bg-brand-soft text-accent-foreground" },
+  teal: { icon: "text-muted-foreground", chip: "bg-brand-soft text-accent-foreground" },
+  sky: { icon: "text-muted-foreground", chip: "bg-brand-soft text-accent-foreground" },
+  amber: { icon: "text-warning", chip: "bg-warning/12 text-warning" },
+  rose: { icon: "text-destructive", chip: "bg-destructive/10 text-destructive" },
 } as const;
 
 export type StatTone = keyof typeof toneStyles;
@@ -24,32 +29,40 @@ type StatCardProps = {
   className?: string;
 };
 
-export function StatCard({
-  label,
-  value,
-  hint,
-  icon: Icon,
-  tone = "indigo",
-  className,
-}: StatCardProps) {
-  const styles = toneStyles[tone];
+/**
+ * Card shell shared by the real card and its skeleton. The fixed min-height
+ * means the skeleton and the loaded card occupy exactly the same box (CLS 0).
+ */
+const SHELL = "card-hover min-h-[152px] justify-between gap-4 px-4 sm:px-6";
 
+/** Label -> large value -> chip. A Server Component: no client JavaScript. */
+export function StatCard({ label, value, hint, icon: Icon, tone = "indigo", className }: StatCardProps) {
+  const styles = toneStyles[tone];
   return (
-    <Card className={cn("relative overflow-hidden", className)}>
-      <span
-        aria-hidden="true"
-        className={cn("absolute inset-x-0 top-0 h-1", styles.bar)}
-      />
-      <CardContent className="flex items-start justify-between gap-4">
-        <div className="min-w-0 space-y-1">
-          <p className="text-muted-foreground truncate text-sm font-medium">{label}</p>
-          <p className="text-2xl font-bold tabular-nums">{value}</p>
-          {hint ? <p className="text-muted-foreground text-xs">{hint}</p> : null}
-        </div>
-        <span className={cn("flex size-10 shrink-0 items-center justify-center rounded-xl", styles.chip)}>
-          <Icon className="size-5" aria-hidden="true" />
-        </span>
-      </CardContent>
+    <Card className={cn(SHELL, className)}>
+      <div className="flex items-start justify-between gap-3">
+        <p className="text-muted-foreground truncate text-[13px] font-medium tracking-wide uppercase">{label}</p>
+        <Icon className={cn("size-5 shrink-0", styles.icon)} aria-hidden="true" />
+      </div>
+      <p className="text-[28px] leading-[1.15] font-semibold tracking-[-0.02em] tabular-nums sm:text-[32px]">{value}</p>
+      <div className="h-6">
+        {hint ? (
+          <span className={cn("inline-flex h-6 max-w-full items-center truncate rounded-full px-2.5 text-xs font-medium", styles.chip)}>{hint}</span>
+        ) : null}
+      </div>
+    </Card>
+  );
+}
+
+export function StatCardSkeleton({ className }: { className?: string }) {
+  return (
+    <Card className={cn(SHELL, className)} aria-hidden="true">
+      <div className="flex items-start justify-between gap-3">
+        <Skeleton className="h-4 w-28" />
+        <Skeleton className="size-5 rounded-md" />
+      </div>
+      <Skeleton className="h-8 w-24" />
+      <Skeleton className="h-6 w-36 rounded-full" />
     </Card>
   );
 }

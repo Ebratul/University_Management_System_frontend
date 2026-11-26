@@ -141,7 +141,7 @@ export function CourseEnrolment() {
           const full = o.seatsRemaining <= 0;
           // Wait until we know what the student already has, so a repeat click can't send a duplicate.
           return (
-            <Button size="sm" disabled={full || enrol.isPending || mine.isPending} onClick={() => enrol.mutate(o)} aria-label={`Enrol in ${o.course.title}`} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button size="sm" disabled={full || enrol.isPending || mine.isPending} onClick={() => enrol.mutate(o)} aria-label={`Enrol in ${o.course.title}`}>
               {pendingId === o.id ? <Loader2 className="size-4 animate-spin" aria-hidden="true" /> : null}
               {full ? "Full" : "Enrol"}
             </Button>

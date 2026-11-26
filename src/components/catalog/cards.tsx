@@ -20,7 +20,7 @@ const audienceTone: Record<NoticeAudience, string> = {
 
 /** Hover and focus lift shared by every linked card. */
 const linkedCardClass =
-  "group relative h-full transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-within:ring-3 focus-within:ring-ring/50";
+  "card-hover group relative h-full focus-within:ring-2 focus-within:ring-ring/40";
 
 export function DepartmentCard({ department }: { department: Department }) {
   return (

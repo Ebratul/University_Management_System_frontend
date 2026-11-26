@@ -93,7 +93,7 @@ export function DepartmentsManager() {
         searchLabel="Search departments"
         searchPlaceholder="Search by name or code"
         action={
-          <Button onClick={() => setDialog({ item: null })} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setDialog({ item: null })}>
             <Plus className="size-4" aria-hidden="true" />
             New department
           </Button>
@@ -226,7 +226,7 @@ function DepartmentForm({ item, onDone }: { item: Department | null; onDone: () 
             <Button type="button" variant="outline" onClick={onDone}>
               Cancel
             </Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : item ? "Save changes" : "Create department"}
             </Button>
           </div>

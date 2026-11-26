@@ -61,7 +61,7 @@ export function ForgotPasswordForm() {
 
       <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting] as const}>
         {([canSubmit, isSubmitting]) => (
-          <Button type="submit" size="lg" disabled={!canSubmit || isSubmitting || request.isPending} className="bg-brand-gradient h-11 w-full text-white hover:opacity-90">
+          <Button type="submit" size="lg" disabled={!canSubmit || isSubmitting || request.isPending} className="h-11 w-full">
             {isSubmitting || request.isPending ? (
               <>
                 <Loader2 className="size-4 animate-spin" aria-hidden="true" />

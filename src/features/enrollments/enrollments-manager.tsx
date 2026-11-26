@@ -55,7 +55,7 @@ export function EnrollmentsManager() {
           aria-label="Filter by status"
           value={list.filters.status ?? ""}
           onChange={(event) => list.update({ status: event.target.value })}
-          className="border-input bg-background h-10 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="border-input bg-card h-10 rounded-lg border px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40"
         >
           <option value="">All statuses</option>
           {statuses.map((status) => (

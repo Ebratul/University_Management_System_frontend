@@ -16,7 +16,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
   if (user.role !== "ADMIN") redirect(homeForRole(user.role));
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 lg:space-y-12">
       <SectionSubnav items={ADMIN_NAV} label="Administration sections" root="/admin" />
       {children}
     </div>

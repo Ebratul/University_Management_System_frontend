@@ -94,7 +94,7 @@ export function StudentDetail({ id }: { id: string }) {
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         <Card>
           <CardHeader><CardDescription>Phone</CardDescription><CardTitle className="text-base">{s.phone ?? "Not given"}</CardTitle></CardHeader>
         </Card>
@@ -192,7 +192,7 @@ function StudentEditForm({ student, onDone }: { student: StudentRecord; onDone: 
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : "Save changes"}
             </Button>
           </div>

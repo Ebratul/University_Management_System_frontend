@@ -158,7 +158,7 @@ export function CourseRegistration() {
               aria-label="Filter by course type"
               value={type}
               onChange={(event) => setType(event.target.value as "ALL" | CourseType)}
-              className="border-input bg-background h-9 rounded-md border px-2 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+              className="border-input bg-background h-9 rounded-md border px-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
             >
               <option value="ALL">All types</option>
               {Object.entries(TYPE_LABEL).map(([value, label]) => (
@@ -228,7 +228,7 @@ export function CourseRegistration() {
                 ) : null}
 
                 <Button
-                  className="bg-brand-gradient h-11 w-full text-white hover:opacity-90"
+                  className="h-11 w-full"
                   disabled={!canSelect || !preview.data?.valid || preview.isFetching || submit.isPending}
                   onClick={() => setConfirming(true)}
                 >

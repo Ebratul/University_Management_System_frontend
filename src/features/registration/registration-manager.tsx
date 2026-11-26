@@ -55,7 +55,7 @@ export function RegistrationManager() {
 
 // ------------------------------ registrations ------------------------------
 
-const selectClass = "border-input bg-background h-10 max-w-56 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50";
+const selectClass = "border-input bg-background h-10 max-w-56 rounded-md border px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40";
 
 function RegistrationsPanel() {
   const list = useListState(FILTER_KEYS);
@@ -114,7 +114,7 @@ function RegistrationsPanel() {
   return (
     <div className="space-y-6">
       {stats.data ? (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           <StatCard label="Registered students" value={stats.data.totalRegisteredStudents} hint="With a confirmed registration" icon={Users} tone="indigo" />
           <StatCard label="Confirmed" value={stats.data.totalConfirmed} icon={CheckCircle2} tone="teal" />
           <StatCard label="Paid invoices" value={stats.data.totalPaid} icon={BadgeDollarSign} tone="violet" />
@@ -125,7 +125,7 @@ function RegistrationsPanel() {
           <StatCard label="All registrations" value={Object.values(stats.data.byStatus).reduce((a, b) => a + b, 0)} hint="Including cancelled and expired" icon={GraduationCap} tone="violet" />
         </div>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {Array.from({ length: 4 }, (_, i) => <Skeleton key={i} className="h-24 rounded-xl" />)}
         </div>
       )}
@@ -362,7 +362,7 @@ function SettingsForm({ row, onDone }: { row: Row; onDone: () => void }) {
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : "Save settings"}
             </Button>
           </div>

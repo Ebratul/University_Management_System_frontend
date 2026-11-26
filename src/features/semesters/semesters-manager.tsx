@@ -83,7 +83,7 @@ export function SemestersManager() {
             aria-label="Filter by status"
             value={list.filters.status ?? ""}
             onChange={(event) => list.update({ status: event.target.value })}
-            className="border-input bg-background h-10 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="border-input bg-card h-10 rounded-lg border px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40"
           >
             <option value="">All statuses</option>
             {statusOptions.map((option) => (
@@ -92,7 +92,7 @@ export function SemestersManager() {
           </select>
         }
         action={
-          <Button onClick={() => setDialog({ item: null })} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setDialog({ item: null })}>
             <Plus className="size-4" aria-hidden="true" />
             New semester
           </Button>
@@ -209,7 +209,7 @@ function SemesterForm({ item, onDone }: { item: Semester | null; onDone: () => v
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : item ? "Save changes" : "Create semester"}
             </Button>
           </div>

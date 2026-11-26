@@ -24,7 +24,7 @@ export default function NotFound() {
         description="The link may be broken, or the page may have moved."
         action={
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild className="bg-brand-gradient text-white hover:opacity-90">
+            <Button asChild>
               <Link href="/">Back to home</Link>
             </Button>
             <Button asChild variant="outline">

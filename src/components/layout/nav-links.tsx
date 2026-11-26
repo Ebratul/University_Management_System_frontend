@@ -40,7 +40,7 @@ export function NavLinks({
                 onClick={onNavigate}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "block rounded-md px-3 text-sm font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                  "block rounded-md px-3 text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/40",
                   orientation === "vertical" ? "py-3 text-base" : "py-2",
                   active
                     ? "bg-accent text-accent-foreground"

@@ -5,7 +5,7 @@ import type { WebsiteSettings } from "@/types/entities";
 import { Logo } from "./logo";
 
 const linkClass =
-  "rounded-sm text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50";
+  "rounded-sm text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/40";
 
 export function SiteFooter({ settings }: { settings: WebsiteSettings }) {
   const columns = publicMenu.filter((group) =>

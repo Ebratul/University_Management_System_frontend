@@ -196,7 +196,7 @@ function ResultForm({ row, offeringId, onDone }: { row: Row; offeringId: string;
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : row.result ? "Save result" : "Publish result"}
             </Button>
           </div>

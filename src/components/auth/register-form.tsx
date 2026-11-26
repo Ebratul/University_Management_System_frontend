@@ -184,7 +184,7 @@ export function RegisterForm() {
             type="submit"
             size="lg"
             disabled={!canSubmit || isSubmitting || register.isPending || !catalogReady}
-            className="bg-brand-gradient h-11 w-full text-white hover:opacity-90"
+            className="h-11 w-full"
           >
             {isSubmitting || register.isPending ? (
               <>

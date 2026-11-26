@@ -54,7 +54,7 @@ export function AdminOverview() {
   const shortcuts = ADMIN_NAV.filter((item) => item.href !== "/admin");
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8 lg:space-y-12">
       <section aria-labelledby="stats-heading" className="space-y-4">
         <div className="flex items-end justify-between gap-4">
           <h2 id="stats-heading" className="text-lg font-semibold tracking-tight">
@@ -73,7 +73,7 @@ export function AdminOverview() {
             </button>
           </div>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {stats.isPending
               ? Array.from({ length: 8 }, (_, index) => (
                   <Card key={index}>
@@ -95,7 +95,7 @@ export function AdminOverview() {
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {shortcuts.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className="bg-card hover:border-primary/40 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 block rounded-xl border p-4 font-medium transition-all outline-none">
+              <Link href={item.href} className="bg-card card-hover focus-visible:ring-2 focus-visible:ring-ring/40 block rounded-xl border p-4 font-medium outline-none">
                 {item.label}
               </Link>
             </li>

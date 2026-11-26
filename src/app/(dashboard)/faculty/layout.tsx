@@ -13,7 +13,7 @@ export default async function FacultyLayout({ children }: { children: ReactNode 
   if (user.role !== "FACULTY") redirect(homeForRole(user.role));
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 lg:space-y-12">
       <SectionSubnav items={FACULTY_NAV} label="Faculty sections" root="/faculty" />
       {children}
     </div>

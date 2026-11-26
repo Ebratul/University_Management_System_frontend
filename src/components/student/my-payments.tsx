@@ -63,7 +63,7 @@ export function MyPayments() {
         title="Payments"
         description="Pay a semester's tuition through bKash. The status here is the one the payment gateway confirmed."
         actions={
-          <Button onClick={() => setPaying(true)} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setPaying(true)}>
             <CreditCard className="size-4" aria-hidden="true" />
             Pay semester fee
           </Button>
@@ -143,7 +143,7 @@ function PayForm({ onDone }: { onDone: () => void }) {
             setError(null);
             initiate.mutate(semesterId);
           }}
-          className="bg-brand-gradient text-white hover:opacity-90"
+         
         >
           {initiate.isPending ? <Loader2 className="size-4 animate-spin" aria-hidden="true" /> : <ExternalLink className="size-4" aria-hidden="true" />}
           Continue to bKash

@@ -74,7 +74,7 @@ export default async function HomePage() {
             <li key={item.label} className="bg-card">
               <Link
                 href={item.href}
-                className="hover:bg-muted focus-visible:ring-ring/50 flex min-h-16 items-center gap-3 p-4 outline-none transition-colors focus-visible:ring-3 focus-visible:ring-inset"
+                className="hover:bg-muted focus-visible:ring-ring/40 flex min-h-16 items-center gap-3 p-4 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-inset"
               >
                 <span className="bg-primary/10 text-primary flex size-10 shrink-0 items-center justify-center rounded-lg">
                   <item.icon className="size-5" aria-hidden="true" />
@@ -106,7 +106,7 @@ export default async function HomePage() {
               <li key={department.id}>
                 <Link
                   href={`/departments/${department.id}`}
-                  className="group hover:border-primary/40 focus-visible:ring-ring/50 bg-card flex h-full items-center gap-4 rounded-xl border p-4 outline-none transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:ring-3"
+                  className="group card-hover focus-visible:ring-ring/40 bg-card flex h-full items-center gap-4 rounded-2xl border p-4 shadow-card outline-none hover:-translate-y-0.5 focus-visible:ring-2"
                 >
                   <span className="bg-brand-teal/15 text-brand-teal flex size-11 shrink-0 items-center justify-center rounded-xl">
                     <Building2 className="size-5" aria-hidden="true" />
@@ -138,7 +138,7 @@ export default async function HomePage() {
             { step: "2", title: "Enrol", text: "Pick course offerings with live seat availability." },
             { step: "3", title: "Study", text: "Follow results, notices and fees from your portal." },
           ].map((item) => (
-            <li key={item.step} className="bg-card rounded-xl border p-5">
+            <li key={item.step} className="bg-card rounded-2xl border p-6 shadow-card">
               <span className="bg-brand-gradient mb-3 flex size-8 items-center justify-center rounded-full text-sm font-bold text-white">
                 {item.step}
               </span>
@@ -148,7 +148,7 @@ export default async function HomePage() {
           ))}
         </ol>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <Button asChild size="lg" className="bg-brand-gradient text-white hover:opacity-90">
+          <Button asChild size="lg">
             <Link href="/register">Apply now</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
@@ -166,7 +166,7 @@ export default async function HomePage() {
         <ul className="grid gap-4 md:grid-cols-3">
           {studentServices.map((service) => (
             <li key={service.label}>
-              <Card className="hover:border-primary/40 h-full transition-all hover:shadow-md">
+              <Card className="card-hover h-full">
                 <CardHeader className="gap-3">
                   <span className="bg-brand-indigo/12 text-brand-indigo flex size-11 items-center justify-center rounded-xl">
                     <service.icon className="size-5" aria-hidden="true" />
@@ -197,12 +197,12 @@ export default async function HomePage() {
         }
       >
         <div className="grid gap-4 sm:grid-cols-2">
-          <Link href="/faculties" className="bg-card hover:border-primary/40 focus-visible:ring-ring/50 rounded-xl border p-5 outline-none transition-all hover:shadow-md focus-visible:ring-3">
+          <Link href="/faculties" className="bg-card card-hover focus-visible:ring-ring/40 rounded-2xl border p-6 shadow-card outline-none focus-visible:ring-2">
             <Users className="text-brand-violet mb-3 size-6" aria-hidden="true" />
             <h3 className="font-semibold">Faculty directory</h3>
             <p className="text-muted-foreground mt-1 text-sm">Find the people who teach each course.</p>
           </Link>
-          <Link href="/faculty/offerings" className="bg-card hover:border-primary/40 focus-visible:ring-ring/50 rounded-xl border p-5 outline-none transition-all hover:shadow-md focus-visible:ring-3">
+          <Link href="/faculty/offerings" className="bg-card card-hover focus-visible:ring-ring/40 rounded-2xl border p-6 shadow-card outline-none focus-visible:ring-2">
             <BookOpenCheck className="text-brand-teal mb-3 size-6" aria-hidden="true" />
             <h3 className="font-semibold">My offerings</h3>
             <p className="text-muted-foreground mt-1 text-sm">Review enrolled students and publish results.</p>
@@ -217,14 +217,14 @@ export default async function HomePage() {
         description="Our departments and faculty drive research across disciplines. Browse departments and researchers to learn more."
       >
         <div className="grid gap-4 sm:grid-cols-2">
-          <Link href="/departments" className="bg-card hover:border-primary/40 focus-visible:ring-ring/50 flex items-center gap-4 rounded-xl border p-5 outline-none transition-all hover:shadow-md focus-visible:ring-3">
+          <Link href="/departments" className="bg-card card-hover focus-visible:ring-ring/40 flex items-center gap-4 rounded-2xl border p-6 shadow-card outline-none focus-visible:ring-2">
             <FlaskConical className="text-brand-rose size-7 shrink-0" aria-hidden="true" />
             <span>
               <span className="block font-semibold">Research departments</span>
               <span className="text-muted-foreground text-sm">Where research groups are based.</span>
             </span>
           </Link>
-          <Link href="/faculties" className="bg-card hover:border-primary/40 focus-visible:ring-ring/50 flex items-center gap-4 rounded-xl border p-5 outline-none transition-all hover:shadow-md focus-visible:ring-3">
+          <Link href="/faculties" className="bg-card card-hover focus-visible:ring-ring/40 flex items-center gap-4 rounded-2xl border p-6 shadow-card outline-none focus-visible:ring-2">
             <Users className="text-brand-sky size-7 shrink-0" aria-hidden="true" />
             <span>
               <span className="block font-semibold">Researchers</span>
@@ -288,7 +288,7 @@ export default async function HomePage() {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className="bg-card hover:border-primary/40 focus-visible:ring-ring/50 flex min-h-12 items-center gap-3 rounded-lg border px-4 text-sm font-medium outline-none transition-colors focus-visible:ring-3"
+                className="bg-card card-hover focus-visible:ring-ring/40 flex min-h-12 items-center gap-3 rounded-lg border px-4 text-sm font-medium outline-none focus-visible:ring-2"
               >
                 <Library className="text-primary size-4 shrink-0" aria-hidden="true" />
                 {link.label}

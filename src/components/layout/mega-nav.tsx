@@ -57,7 +57,7 @@ export function MegaNav({ groups, className }: { groups: MenuGroup[]; className?
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(open ? null : index)}
                 className={cn(
-                  "flex items-center gap-1 rounded-md px-2.5 py-2 text-sm font-medium whitespace-nowrap transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
+                  "flex items-center gap-1 rounded-md px-2.5 py-2 text-sm font-medium whitespace-nowrap transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/40",
                   open ? "bg-accent text-accent-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
@@ -83,7 +83,7 @@ export function MegaNav({ groups, className }: { groups: MenuGroup[]; className?
                         <Link
                           href={link.href}
                           onClick={() => setOpenIndex(null)}
-                          className="hover:bg-muted focus-visible:ring-ring/50 block rounded-lg px-3 py-2.5 outline-none focus-visible:ring-3"
+                          className="hover:bg-muted focus-visible:ring-ring/40 block rounded-lg px-3 py-2.5 outline-none focus-visible:ring-2"
                         >
                           <span className="block text-sm font-medium">{link.label}</span>
                           {link.description ? (

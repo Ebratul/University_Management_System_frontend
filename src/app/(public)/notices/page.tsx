@@ -15,7 +15,7 @@ export default async function NoticesPage() {
   const notices = await getAllNotices();
 
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-10 px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-7xl space-y-8 lg:space-y-12 px-4 py-12 sm:px-6 lg:px-8">
       <PageHeader eyebrow="Announcements" title="Notices" description="Announcements open to everyone." />
 
       {notices.length > 0 ? (

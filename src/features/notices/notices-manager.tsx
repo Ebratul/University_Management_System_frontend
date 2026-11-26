@@ -63,7 +63,7 @@ export function NoticesManager() {
         searchLabel="Search notices"
         searchPlaceholder="Search titles and content"
         action={
-          <Button onClick={() => setDialog({ item: null })} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setDialog({ item: null })}>
             <Plus className="size-4" aria-hidden="true" />
             New notice
           </Button>
@@ -152,7 +152,7 @@ function NoticeForm({ item, onDone }: { item: Notice | null; onDone: () => void 
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : item ? "Save changes" : "Publish notice"}
             </Button>
           </div>

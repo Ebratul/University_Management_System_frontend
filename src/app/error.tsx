@@ -40,7 +40,7 @@ export default function ErrorPage({ error, retry }: ErrorPageProps) {
         ) : null}
       </div>
       <div className="flex flex-col gap-3 sm:flex-row">
-        <Button onClick={() => retry()} className="bg-brand-gradient text-white hover:opacity-90">
+        <Button onClick={() => retry()}>
           <RotateCcw className="size-4" aria-hidden="true" />
           Try again
         </Button>

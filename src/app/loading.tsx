@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { StatCardSkeleton } from "@/components/shared/stat-card";
 
 /**
  * Shown while a route segment streams in. The skeleton mirrors the real page
@@ -16,18 +17,13 @@ export default function Loading() {
 
       <div className="space-y-3">
         <Skeleton className="h-3 w-24" />
-        <Skeleton className="h-8 w-72 max-w-full" />
+        <Skeleton className="h-10 w-72 max-w-full" />
         <Skeleton className="h-4 w-96 max-w-full" />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {Array.from({ length: 4 }, (_, index) => (
-          <Card key={index}>
-            <CardContent className="space-y-3">
-              <Skeleton className="h-4 w-24" />
-              <Skeleton className="h-7 w-16" />
-            </CardContent>
-          </Card>
+          <StatCardSkeleton key={index} />
         ))}
       </div>
 

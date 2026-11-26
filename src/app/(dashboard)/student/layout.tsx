@@ -13,7 +13,7 @@ export default async function StudentLayout({ children }: { children: ReactNode 
   if (user.role !== "STUDENT") redirect(homeForRole(user.role));
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 lg:space-y-12">
       <SectionSubnav items={STUDENT_NAV} label="Student sections" root="/student" />
       {children}
     </div>

@@ -15,7 +15,7 @@ export default async function DepartmentsPage() {
   const departments = await getAllDepartments();
 
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-10 px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-7xl space-y-8 lg:space-y-12 px-4 py-12 sm:px-6 lg:px-8">
       <PageHeader
         eyebrow="Academics"
         title="Departments"

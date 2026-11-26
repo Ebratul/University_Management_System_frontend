@@ -142,7 +142,7 @@ export function RegistrationDetail({
           <>
             <RegistrationStatusBadge status={reg.status} className="h-8 px-3 text-sm" />
             {reg.status === "CONFIRMED" ? (
-              <Button asChild className="bg-brand-gradient text-white hover:opacity-90">
+              <Button asChild>
                 <Link href={viewer === "admin" ? `/admin/registration/${reg.id}/receipt` : `/student/registration/${reg.id}/receipt`}>
                   <Receipt className="size-4" aria-hidden="true" /> Receipt
                 </Link>
@@ -216,7 +216,7 @@ export function RegistrationDetail({
               {viewer === "student" ? (
                 <div className="space-y-2">
                   {reg.canPay ? (
-                    <Button className="bg-brand-gradient h-11 w-full text-white hover:opacity-90" onClick={() => setPaying(true)} disabled={pay.isPending}>
+                    <Button className="h-11 w-full" onClick={() => setPaying(true)} disabled={pay.isPending}>
                       {pay.isPending ? <Loader2 className="size-4 animate-spin" aria-hidden="true" /> : <CreditCard className="size-4" aria-hidden="true" />}
                       {reg.paymentInProgress ? "Continue payment" : invoice.status === "FAILED" ? "Retry payment" : "Pay now"}
                     </Button>
@@ -318,7 +318,7 @@ export function RegistrationDetail({
               maxLength={300}
               value={reason}
               onChange={(event) => setReason(event.target.value)}
-              className="border-input bg-background focus-visible:ring-ring/50 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-3"
+              className="border-input bg-background focus-visible:ring-ring/40 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-2"
             />
           </div>
           <AlertDialogFooter>

@@ -55,7 +55,7 @@ export function DemoLoginPanel({ next }: { next: string | null }) {
               variant="outline"
               disabled={demoLogin.isPending}
               onClick={() => demoLogin.mutate(segment)}
-              className="hover:border-primary/40 h-auto justify-start gap-3 px-3 py-3 text-left whitespace-normal"
+              className="card-hover h-auto justify-start gap-3 px-3 py-3 text-left whitespace-normal"
             >
               <span className={`flex size-10 shrink-0 items-center justify-center rounded-lg ${tone}`}>
                 {busy ? <Loader2 className="size-5 animate-spin" aria-hidden="true" /> : <Icon className="size-5" aria-hidden="true" />}

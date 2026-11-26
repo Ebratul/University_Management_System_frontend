@@ -21,11 +21,11 @@ export function EmptyState({
   return (
     <div
       className={cn(
-        "bg-muted/40 flex flex-col items-center justify-center gap-3 rounded-xl border border-dashed px-6 py-12 text-center",
+        "bg-surface flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed px-6 py-12 text-center",
         className,
       )}
     >
-      <span className="bg-accent text-accent-foreground flex size-12 items-center justify-center rounded-full">
+      <span className="bg-brand-soft text-accent-foreground flex size-12 items-center justify-center rounded-full">
         <Icon className="size-6" aria-hidden="true" />
       </span>
       <div className="max-w-sm space-y-1">

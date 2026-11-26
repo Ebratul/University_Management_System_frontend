@@ -40,7 +40,7 @@ export function QuizzesTab({ offeringId, isStaff }: { offeringId: string; isStaf
     <div className="space-y-6">
       {isStaff ? (
         <div className="flex justify-end">
-          <Button onClick={() => setCreating(true)} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setCreating(true)}>
             <Plus className="size-4" aria-hidden="true" /> Create quiz
           </Button>
         </div>
@@ -107,7 +107,7 @@ function QuizCard({ quiz, isStaff }: { quiz: QuizListItem; isStaff: boolean }) {
     );
   } else if (quiz.status === "ACTIVE") {
     action = (
-      <Button asChild size="sm" className="bg-brand-gradient text-white hover:opacity-90">
+      <Button asChild size="sm">
         <Link href={href}>{attempt ? "Continue quiz" : "Start quiz"}</Link>
       </Button>
     );
@@ -118,7 +118,7 @@ function QuizCard({ quiz, isStaff }: { quiz: QuizListItem; isStaff: boolean }) {
   }
 
   return (
-    <Card className="h-full transition-shadow hover:shadow-md">
+    <Card className="h-full card-hover">
       <CardContent className="flex h-full flex-col gap-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 space-y-1">
@@ -263,7 +263,7 @@ function CreateQuizForm({ offeringId, onDone }: { offeringId: string; onDone: ()
             <Button type="button" variant="outline" onClick={onDone}>
               Cancel
             </Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Creating…" : "Create draft"}
             </Button>
           </div>

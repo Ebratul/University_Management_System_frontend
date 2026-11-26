@@ -151,7 +151,7 @@ function SortButton({ label, active, order, onClick }: { label: string; active: 
     <button
       type="button"
       onClick={onClick}
-      className="hover:text-foreground -mx-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+      className="hover:text-foreground -mx-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
     >
       {label}
       <Icon className={cn("size-3.5", active ? "text-foreground" : "text-muted-foreground/60")} aria-hidden="true" />

@@ -167,7 +167,7 @@ function UploadCard({ offeringId }: { offeringId: string }) {
           <Button
             disabled={!file || upload.isPending}
             onClick={() => file && upload.mutate({ file, title })}
-            className="bg-brand-gradient h-10 text-white hover:opacity-90"
+            className="h-10"
           >
             {upload.isPending ? (
               <>
@@ -226,7 +226,7 @@ function MaterialCard({
   }
 
   return (
-    <Card className="group h-full transition-shadow hover:shadow-md">
+    <Card className="group h-full card-hover">
       <CardContent className="flex h-full flex-col gap-4">
         <div className="flex items-start gap-3">
           <span className="bg-brand-rose/12 text-brand-rose flex size-11 shrink-0 items-center justify-center rounded-xl">

@@ -35,7 +35,7 @@ export default async function CoursePage({ params }: PageProps<"/courses/[id]">)
   const offerings = await getCourseOfferings(id);
 
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-10 px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-7xl space-y-8 lg:space-y-12 px-4 py-12 sm:px-6 lg:px-8">
       <nav aria-label="Breadcrumb" className="text-muted-foreground text-sm">
         <Link href="/courses" className="hover:text-foreground underline-offset-4 hover:underline">
           Courses

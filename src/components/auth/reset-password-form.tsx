@@ -84,7 +84,7 @@ export function ResetPasswordForm({ email, justSent }: { email: string; justSent
       <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting, state.values.email] as const}>
         {([canSubmit, isSubmitting, currentEmail]) => (
           <div className="space-y-3">
-            <Button type="submit" size="lg" disabled={!canSubmit || isSubmitting || reset.isPending} className="bg-brand-gradient h-11 w-full text-white hover:opacity-90">
+            <Button type="submit" size="lg" disabled={!canSubmit || isSubmitting || reset.isPending} className="h-11 w-full">
               {isSubmitting || reset.isPending ? (
                 <>
                   <Loader2 className="size-4 animate-spin" aria-hidden="true" />

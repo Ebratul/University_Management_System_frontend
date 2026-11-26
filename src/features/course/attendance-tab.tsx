@@ -149,7 +149,7 @@ function RosterEditor({ offeringId, roster }: { offeringId: string; roster: Atte
       </div>
 
       <div className="flex justify-end">
-        <Button disabled={marked === 0 || save.isPending} onClick={() => save.mutate()} className="bg-brand-gradient text-white hover:opacity-90">
+        <Button disabled={marked === 0 || save.isPending} onClick={() => save.mutate()}>
           {save.isPending ? (
             <>
               <Loader2 className="size-4 animate-spin" aria-hidden="true" /> Saving…
@@ -170,7 +170,7 @@ function StatusButton({ active, tone, onClick, children }: { active: boolean; to
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "focus-visible:ring-ring/50 inline-flex h-8 items-center gap-1 rounded-md border px-2.5 text-xs font-medium transition-colors outline-none focus-visible:ring-3",
+        "focus-visible:ring-ring/40 inline-flex h-8 items-center gap-1 rounded-md border px-2.5 text-xs font-medium transition-colors outline-none focus-visible:ring-2",
         active && tone === "present" && "border-success bg-success/15 text-success",
         active && tone === "absent" && "border-destructive bg-destructive/10 text-destructive",
         !active && "text-muted-foreground hover:bg-muted",
@@ -268,7 +268,7 @@ function StudentAttendance({ offeringId }: { offeringId: string }) {
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         <StatCard label="Total classes" value={a.totalClasses} icon={CalendarCheck} tone="indigo" />
         <StatCard label="Present" value={a.present} icon={Check} tone="teal" />
         <StatCard label="Absent" value={a.absent} icon={X} tone="rose" />

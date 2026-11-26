@@ -33,7 +33,7 @@ export function Pagination({
           <select
             value={limit}
             onChange={(event) => onLimitChange(Number(event.target.value) as PageSize)}
-            className="border-input bg-background h-8 rounded-md border px-2 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="border-input bg-card h-8 rounded-md border px-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40"
           >
             {PAGE_SIZES.map((size) => (
               <option key={size} value={size}>

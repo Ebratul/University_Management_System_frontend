@@ -59,7 +59,7 @@ export function OverviewTab({
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         <StatCard label="Materials" value={materials.data?.length ?? "…"} hint="PDFs shared in this course" icon={FileText} tone="indigo" />
         <StatCard
           label="Quizzes"

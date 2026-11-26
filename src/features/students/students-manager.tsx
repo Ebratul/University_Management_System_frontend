@@ -61,11 +61,11 @@ export function StudentsManager() {
         searchPlaceholder="Search by name or student ID"
         filters={
           <div className="flex flex-col gap-3 sm:flex-row">
-            <select aria-label="Filter by department" value={list.filters.departmentId ?? ""} onChange={(event) => list.update({ departmentId: event.target.value })} className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
+            <select aria-label="Filter by department" value={list.filters.departmentId ?? ""} onChange={(event) => list.update({ departmentId: event.target.value })} className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40">
               <option value="">All departments</option>
               {departments.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>
-            <select aria-label="Filter by admission semester" value={list.filters.admissionSemesterId ?? ""} onChange={(event) => list.update({ admissionSemesterId: event.target.value })} className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
+            <select aria-label="Filter by admission semester" value={list.filters.admissionSemesterId ?? ""} onChange={(event) => list.update({ admissionSemesterId: event.target.value })} className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40">
               <option value="">All admission semesters</option>
               {semesters.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>

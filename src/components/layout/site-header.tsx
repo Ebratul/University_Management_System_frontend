@@ -26,7 +26,7 @@ export function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-1 sm:gap-2">
           <ThemeToggle />
-          <Button asChild className="bg-brand-gradient hidden text-white shadow-sm shadow-brand-violet/30 hover:opacity-90 sm:inline-flex">
+          <Button asChild className="hidden sm:inline-flex">
             <Link href={LOGIN_HREF}>Log in</Link>
           </Button>
           <MobileNav groups={publicMenu} universityName={universityName} logoUrl={logoUrl} />

@@ -75,7 +75,7 @@ export function TextareaField({
         onChange={(event) => field.handleChange(event.target.value)}
         aria-invalid={invalid}
         aria-describedby={describedBy}
-        className="border-input bg-background placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive min-h-24 w-full rounded-md border px-3 py-2 text-sm outline-none"
+        className="border-input bg-background placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40 aria-invalid:border-destructive min-h-24 w-full rounded-md border px-3 py-2 text-sm outline-none"
       />
       <FieldMessage id={errorId} errors={errors} />
     </div>

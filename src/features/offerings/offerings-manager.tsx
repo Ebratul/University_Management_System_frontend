@@ -114,7 +114,7 @@ export function OfferingsManager() {
             aria-label="Filter by semester"
             value={list.filters.semesterId ?? ""}
             onChange={(event) => list.update({ semesterId: event.target.value })}
-            className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
           >
             <option value="">All semesters</option>
             {semesters.options.map((option) => (
@@ -123,7 +123,7 @@ export function OfferingsManager() {
           </select>
         }
         action={
-          <Button onClick={() => setDialog({ item: null })} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setDialog({ item: null })}>
             <Plus className="size-4" aria-hidden="true" />
             New offering
           </Button>
@@ -225,7 +225,7 @@ function OfferingCreateForm({ onDone }: { onDone: () => void }) {
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : "Create offering"}
             </Button>
           </div>
@@ -294,7 +294,7 @@ function OfferingEditForm({ item, onDone }: { item: CourseOffering; onDone: () =
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : "Save changes"}
             </Button>
           </div>

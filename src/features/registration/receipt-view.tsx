@@ -41,7 +41,7 @@ export function ReceiptView({ registrationId, backHref }: { registrationId: stri
           <Button variant="outline" size="sm" onClick={() => window.print()}>
             <Printer className="size-4" aria-hidden="true" /> Print
           </Button>
-          <Button asChild size="sm" className="bg-brand-gradient text-white hover:opacity-90">
+          <Button asChild size="sm">
             <a href={registrationApi.receiptPdfUrl(registrationId)} download>
               <Download className="size-4" aria-hidden="true" /> Download PDF
             </a>

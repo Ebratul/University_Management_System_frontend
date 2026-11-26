@@ -19,7 +19,7 @@ export default async function CoursesPage() {
   const [courses, departments] = await Promise.all([getAllCourses(), getAllDepartments()]);
 
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-10 px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-7xl space-y-8 lg:space-y-12 px-4 py-12 sm:px-6 lg:px-8">
       <PageHeader eyebrow="Academics" title="Course catalogue" description="Find a course by title or code, or narrow the list to one department." />
 
       <Suspense fallback={<CatalogSkeleton count={courses.length} />}>

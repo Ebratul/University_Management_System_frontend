@@ -149,7 +149,7 @@ export function ProfileForm() {
               <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting] as const}>
                 {([canSubmit, isSubmitting]) => (
                   <div className="flex justify-end">
-                    <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+                    <Button type="submit" disabled={!canSubmit || isSubmitting}>
                       {isSubmitting ? "Saving…" : "Save changes"}
                     </Button>
                   </div>

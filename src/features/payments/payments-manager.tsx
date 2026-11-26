@@ -73,11 +73,11 @@ export function PaymentsManager() {
       <PageHeader eyebrow="Finance" title="Payments" description="Tuition payments. Only the gateway callback can mark a payment as paid." />
 
       <div className="flex flex-wrap items-center gap-3">
-        <select aria-label="Filter by status" value={list.filters.status ?? ""} onChange={(event) => list.update({ status: event.target.value })} className="border-input bg-background h-10 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
+        <select aria-label="Filter by status" value={list.filters.status ?? ""} onChange={(event) => list.update({ status: event.target.value })} className="border-input bg-card h-10 rounded-lg border px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40">
           <option value="">All statuses</option>
           {statuses.map((status) => <option key={status} value={status}>{status.toLowerCase()}</option>)}
         </select>
-        <select aria-label="Filter by semester" value={list.filters.semesterId ?? ""} onChange={(event) => list.update({ semesterId: event.target.value })} className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
+        <select aria-label="Filter by semester" value={list.filters.semesterId ?? ""} onChange={(event) => list.update({ semesterId: event.target.value })} className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40">
           <option value="">All semesters</option>
           {semesters.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
         </select>

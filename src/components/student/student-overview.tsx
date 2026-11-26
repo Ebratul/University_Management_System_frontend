@@ -41,7 +41,7 @@ export function StudentOverview() {
   const gpa = gradePointAverage(results.data?.data);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8 lg:space-y-12">
       <PageHeader
         eyebrow={user.student?.studentId ?? "Student"}
         title={`Welcome, ${getDisplayName(user).split(" ")[0]}`}
@@ -51,7 +51,7 @@ export function StudentOverview() {
             <Button asChild variant="outline">
               <Link href="/student/courses">Browse courses</Link>
             </Button>
-            <Button asChild className="bg-brand-gradient text-white hover:opacity-90">
+            <Button asChild>
               <Link href="/student/registration">Register courses</Link>
             </Button>
           </>
@@ -78,7 +78,7 @@ export function StudentOverview() {
 
       <section aria-labelledby="stats-heading" className="space-y-4">
         <h2 id="stats-heading" className="sr-only">Summary</h2>
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {enrollments.isPending || payments.isPending || results.isPending ? (
             Array.from({ length: 4 }, (_, i) => <Skeleton key={i} className="h-24 rounded-xl" />)
           ) : (
@@ -102,7 +102,7 @@ export function StudentOverview() {
           <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {myCourses.map((e) => (
               <li key={e.id}>
-                <Card className="h-full transition-shadow hover:shadow-md">
+                <Card className="h-full card-hover">
                   <CardContent className="flex h-full flex-col gap-3">
                     <div className="min-w-0">
                       <p className="text-muted-foreground font-mono text-xs">{e.courseOffering.course.courseCode}</p>

@@ -17,10 +17,10 @@ export default async function DashboardLayout({ children }: { children: ReactNod
 
   return (
     <SessionProvider user={user}>
-      <div className="bg-muted/30 flex min-h-dvh flex-col">
+      <div className="bg-background flex min-h-dvh flex-col">
         <SkipLink />
         <DashboardHeader />
-        <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 outline-none sm:px-6 lg:px-8">
+        <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 outline-none sm:px-6 lg:px-8 lg:py-12">
           {children}
         </main>
       </div>

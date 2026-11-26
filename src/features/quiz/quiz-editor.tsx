@@ -130,7 +130,7 @@ function QuizEditorBody({ quiz, receivedAt }: { quiz: QuizDetail; receivedAt: nu
 
           <div className="ml-auto flex flex-wrap gap-2">
             {quiz.status === "DRAFT" ? (
-              <Button disabled={quiz.questionCount === 0 || publish.isPending} onClick={() => publish.mutate()} className="bg-brand-gradient text-white hover:opacity-90">
+              <Button disabled={quiz.questionCount === 0 || publish.isPending} onClick={() => publish.mutate()}>
                 {publish.isPending ? <Loader2 className="size-4 animate-spin" aria-hidden="true" /> : <Rocket className="size-4" aria-hidden="true" />}
                 Publish quiz
               </Button>
@@ -268,7 +268,7 @@ function DetailsForm({ quiz, editable }: { quiz: QuizDetail; editable: boolean }
             disabled={!editable}
             maxLength={1000}
             onChange={(event) => setDescription(event.target.value)}
-            className="border-input bg-background focus-visible:border-ring focus-visible:ring-ring/50 disabled:opacity-70 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-3"
+            className="border-input bg-background focus-visible:border-ring focus-visible:ring-ring/40 disabled:opacity-70 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-2"
           />
         </div>
         <div className="space-y-2">
@@ -285,7 +285,7 @@ function DetailsForm({ quiz, editable }: { quiz: QuizDetail; editable: boolean }
         </label>
         {editable ? (
           <div className="flex justify-end">
-            <Button disabled={!valid || !changed || save.isPending} onClick={() => save.mutate()} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button disabled={!valid || !changed || save.isPending} onClick={() => save.mutate()}>
               {save.isPending ? "Saving…" : "Save details"}
             </Button>
           </div>

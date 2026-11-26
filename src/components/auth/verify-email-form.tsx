@@ -102,7 +102,7 @@ export function VerifyEmailForm({ email, justSent }: { email: string; justSent: 
               type="submit"
               size="lg"
               disabled={!canSubmit || isSubmitting || verify.isPending}
-              className="bg-brand-gradient h-11 w-full text-white hover:opacity-90"
+              className="h-11 w-full"
             >
               {isSubmitting || verify.isPending ? (
                 <>

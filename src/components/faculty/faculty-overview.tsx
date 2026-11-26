@@ -31,13 +31,13 @@ export function FacultyOverview() {
   const students = offerings.data?.data.reduce((sum, o) => sum + o.enrolledCount, 0) ?? 0;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8 lg:space-y-12">
       <PageHeader
         eyebrow={user.faculty?.facultyId ?? "Faculty"}
         title={`Hello, ${user.faculty?.name.split(" ")[0] ?? "there"}`}
         description="Your teaching load and the results you have published."
         actions={
-          <Button asChild className="bg-brand-gradient text-white hover:opacity-90">
+          <Button asChild>
             <Link href="/faculty/offerings">Open my courses</Link>
           </Button>
         }

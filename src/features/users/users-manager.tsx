@@ -102,7 +102,7 @@ export function UsersManager() {
             aria-label="Filter by role"
             value={list.filters.role ?? ""}
             onChange={(event) => list.update({ role: event.target.value })}
-            className="border-input bg-background h-10 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="border-input bg-card h-10 rounded-lg border px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40"
           >
             <option value="">All roles</option>
             {ROLES.map((role) => (
@@ -111,7 +111,7 @@ export function UsersManager() {
           </select>
         }
         action={
-          <Button onClick={() => setCreating(true)} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setCreating(true)}>
             <Plus className="size-4" aria-hidden="true" />
             New administrator
           </Button>
@@ -203,7 +203,7 @@ function AdminCreateForm({ onDone }: { onDone: () => void }) {
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Creating…" : "Create administrator"}
             </Button>
           </div>

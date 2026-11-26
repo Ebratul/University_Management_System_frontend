@@ -132,7 +132,7 @@ function IdentityForm({ settings }: { settings: WebsiteSettings }) {
               <Button
                 type="submit"
                 disabled={!canSubmit || isSubmitting || !isDirty}
-                className="bg-brand-gradient text-white hover:opacity-90"
+               
               >
                 {isSubmitting ? "Saving…" : "Save changes"}
               </Button>

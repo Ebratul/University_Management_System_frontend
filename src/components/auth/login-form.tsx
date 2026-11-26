@@ -142,7 +142,7 @@ export function LoginForm({ next, expired }: { next: string | null; expired: boo
                   onClick={() => setShowPassword((value) => !value)}
                   aria-label={showPassword ? "Hide password" : "Show password"}
                   aria-pressed={showPassword}
-                  className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 absolute inset-y-0 right-0 flex w-11 items-center justify-center rounded-r-md outline-none focus-visible:ring-3"
+                  className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/40 absolute inset-y-0 right-0 flex w-11 items-center justify-center rounded-r-md outline-none focus-visible:ring-2"
                 >
                   {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
                 </button>
@@ -159,7 +159,7 @@ export function LoginForm({ next, expired }: { next: string | null; expired: boo
             type="submit"
             size="lg"
             disabled={!canSubmit || isSubmitting || login.isPending}
-            className="bg-brand-gradient h-11 w-full text-white hover:opacity-90"
+            className="h-11 w-full"
           >
             {isSubmitting || login.isPending ? (
               <>

@@ -67,7 +67,7 @@ export function UniversitiesManager() {
         searchLabel="Search universities"
         searchPlaceholder="Search by name or domain"
         action={
-          <Button onClick={() => setDialog({ item: null })} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setDialog({ item: null })}>
             <Plus className="size-4" aria-hidden="true" />
             New university
           </Button>
@@ -193,7 +193,7 @@ function UniversityForm({ item, onDone }: { item: University | null; onDone: () 
             <Button type="button" variant="outline" onClick={onDone}>
               Cancel
             </Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : item ? "Save changes" : "Create university"}
             </Button>
           </div>

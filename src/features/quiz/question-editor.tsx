@@ -80,7 +80,7 @@ export function QuestionEditor({ quiz, editable }: { quiz: QuizDetail; editable:
               <Button variant="outline" size="sm" onClick={() => setQuestions((list) => [...list, blankQuestion()])}>
                 <Plus className="size-4" aria-hidden="true" /> Add question
               </Button>
-              <Button size="sm" disabled={!dirty || hasErrors || save.isPending} onClick={() => save.mutate()} className="bg-brand-gradient text-white hover:opacity-90">
+              <Button size="sm" disabled={!dirty || hasErrors || save.isPending} onClick={() => save.mutate()}>
                 {save.isPending ? (
                   <>
                     <Loader2 className="size-4 animate-spin" aria-hidden="true" /> Saving…
@@ -206,7 +206,7 @@ function QuestionCard({
             value={q.question}
             disabled={!editable}
             onChange={(event) => onChange({ question: event.target.value })}
-            className="border-input bg-background focus-visible:border-ring focus-visible:ring-ring/50 disabled:opacity-70 min-h-16 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-3"
+            className="border-input bg-background focus-visible:border-ring focus-visible:ring-ring/40 disabled:opacity-70 min-h-16 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-2"
           />
         </div>
 
@@ -224,7 +224,7 @@ function QuestionCard({
                     aria-label={`Option ${c} is the correct answer`}
                     onClick={() => onChange({ correctAnswer: c })}
                     className={cn(
-                      "focus-visible:ring-ring/50 flex size-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold outline-none focus-visible:ring-3",
+                      "focus-visible:ring-ring/40 flex size-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold outline-none focus-visible:ring-2",
                       correct ? "border-success bg-success text-white" : "text-muted-foreground hover:bg-muted",
                     )}
                   >
@@ -251,7 +251,7 @@ function QuestionCard({
               value={q.explanation}
               disabled={!editable}
               onChange={(event) => onChange({ explanation: event.target.value })}
-              className="border-input bg-background focus-visible:border-ring focus-visible:ring-ring/50 disabled:opacity-70 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-3"
+              className="border-input bg-background focus-visible:border-ring focus-visible:ring-ring/40 disabled:opacity-70 w-full rounded-md border px-3 py-2 text-sm outline-none focus-visible:ring-2"
             />
           </div>
           <div className="space-y-2">
@@ -362,7 +362,7 @@ function AiGenerator({ quiz, onGenerated }: { quiz: QuizDetail; onGenerated: (qu
                 setStartedAt(Date.now());
                 generate.mutate();
               }}
-              className="bg-brand-gradient h-10 text-white hover:opacity-90 sm:col-span-2 lg:col-span-3"
+              className="h-10 sm:col-span-2 lg:col-span-3"
             >
               {generate.isPending ? (
                 <>

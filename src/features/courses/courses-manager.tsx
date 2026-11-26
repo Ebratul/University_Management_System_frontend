@@ -80,7 +80,7 @@ export function CoursesManager() {
             aria-label="Filter by department"
             value={list.filters.departmentId ?? ""}
             onChange={(event) => list.update({ departmentId: event.target.value })}
-            className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="border-input bg-background h-10 max-w-64 rounded-md border px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
           >
             <option value="">All departments</option>
             {departments.options.map((option) => (
@@ -89,7 +89,7 @@ export function CoursesManager() {
           </select>
         }
         action={
-          <Button onClick={() => setDialog({ item: null })} className="bg-brand-gradient text-white hover:opacity-90">
+          <Button onClick={() => setDialog({ item: null })}>
             <Plus className="size-4" aria-hidden="true" />
             New course
           </Button>
@@ -217,7 +217,7 @@ function CourseForm({ item, departments, onDone }: { item: Course | null; depart
         {([canSubmit, isSubmitting]) => (
           <div className="flex justify-end gap-2 pt-2">
             <Button type="button" variant="outline" onClick={onDone}>Cancel</Button>
-            <Button type="submit" disabled={!canSubmit || isSubmitting} className="bg-brand-gradient text-white hover:opacity-90">
+            <Button type="submit" disabled={!canSubmit || isSubmitting}>
               {isSubmitting ? "Saving…" : item ? "Save changes" : "Create course"}
             </Button>
           </div>

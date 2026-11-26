@@ -144,7 +144,7 @@ export function QuizRunner({ quizId }: { quizId: string }) {
             </p>
           ) : null}
           {begin.isError ? <FormAlert message={begin.error.message} details={[]} /> : null}
-          <Button size="lg" disabled={begin.isPending} onClick={() => begin.mutate()} className="bg-brand-gradient h-12 w-full text-base text-white hover:opacity-90">
+          <Button size="lg" disabled={begin.isPending} onClick={() => begin.mutate()} className="h-12 w-full text-base">
             {begin.isPending ? (
               <>
                 <Loader2 className="size-5 animate-spin" aria-hidden="true" /> Starting…
@@ -271,7 +271,7 @@ function QuizSession({
                     disabled={expired || submitting}
                     onClick={() => choose(current.id, c)}
                     className={cn(
-                      "focus-visible:ring-ring/50 flex min-h-14 w-full items-center gap-3 rounded-xl border p-3 text-left text-sm transition-all outline-none focus-visible:ring-3 sm:text-base",
+                      "focus-visible:ring-ring/40 flex min-h-14 w-full items-center gap-3 rounded-xl border p-3 text-left text-sm transition-all outline-none focus-visible:ring-2 sm:text-base",
                       selected ? "border-primary bg-primary/10 shadow-sm" : "hover:border-primary/50 hover:bg-muted/60",
                       (expired || submitting) && "opacity-60",
                     )}
@@ -294,7 +294,7 @@ function QuizSession({
                   Next <ChevronRight className="size-4" aria-hidden="true" />
                 </Button>
               ) : (
-                <Button disabled={expired || submitting} onClick={() => setConfirming(true)} className="bg-brand-gradient text-white hover:opacity-90">
+                <Button disabled={expired || submitting} onClick={() => setConfirming(true)}>
                   <Send className="size-4" aria-hidden="true" /> Submit quiz
                 </Button>
               )}
@@ -317,7 +317,7 @@ function QuizSession({
                         aria-label={`Question ${i + 1}, ${answered ? "answered" : "not answered"}${i === index ? ", current" : ""}`}
                         aria-current={i === index ? "step" : undefined}
                         className={cn(
-                          "focus-visible:ring-ring/50 flex h-9 w-full items-center justify-center rounded-lg border text-sm font-medium tabular-nums transition-colors outline-none focus-visible:ring-3",
+                          "focus-visible:ring-ring/40 flex h-9 w-full items-center justify-center rounded-lg border text-sm font-medium tabular-nums transition-colors outline-none focus-visible:ring-2",
                           answered ? "border-success/50 bg-success/15 text-success" : "text-muted-foreground hover:bg-muted",
                           i === index && "ring-primary ring-2",
                         )}
