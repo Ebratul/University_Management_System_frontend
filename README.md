@@ -2,7 +2,7 @@
 
 The web app for students, faculty and administrators. It is built with Next.js
 (App Router), React 19, Tailwind CSS v4, shadcn/ui, TanStack Query and Form, Zod
-and ofetch. It talks to the Express API in `../backend`.
+and ofetch. It talks to the Express API in the [backend repository](https://github.com/Ebratul/University_Management_System_Backned).
 
 ## Features
 
@@ -17,7 +17,7 @@ and ofetch. It talks to the Express API in `../backend`.
 ## Requirements
 
 - Node.js 22 or later (the project is developed on Node 24)
-- The backend running (see `../backend/README.md`), with the seeded demo accounts
+- The backend running (see the backend repository README), with the seeded demo accounts
 
 ## Setup
 
