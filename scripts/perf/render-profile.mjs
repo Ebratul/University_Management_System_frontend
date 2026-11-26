@@ -70,6 +70,12 @@ const HOOK = `(() => {
     checkDCE() {},
   };
   window.__EVENTS = [];
+  window.__LOAF = [];
+  try {
+    new PerformanceObserver((list) => {
+      for (const e of list.getEntries()) window.__LOAF.push({ duration: e.duration, blocking: e.blockingDuration || 0 });
+    }).observe({ type: "long-animation-frame", buffered: true });
+  } catch {}
   new PerformanceObserver((list) => {
     for (const e of list.getEntries()) if (e.interactionId) window.__EVENTS.push({ id: e.interactionId, name: e.name, duration: e.duration });
   }).observe({ type: "event", durationThreshold: 16, buffered: true });
@@ -103,6 +109,14 @@ async function typeSlowly(page, selector, text, delay = 120) {
  * Each scenario: where to start, what to record. `record` runs while counting.
  * Selectors use accessible labels that exist both before and after the refactor.
  */
+const scroll = async (page) => {
+  for (let i = 0; i < 30; i++) {
+    await page.mouse.move(700, 700);
+    await page.mouse.wheel({ deltaY: 800 });
+    await new Promise((r) => setTimeout(r, 40));
+  }
+};
+
 const SCENARIOS = [
   {
     name: "admin-overview-load",
@@ -128,29 +142,25 @@ const SCENARIOS = [
     path: "/student",
     recordLoad: true,
   },
+  // Large lists (5,000 generated rows). "load" records the mount of the list,
+  // "scroll" counts long animation frames, "search" is the filter interaction.
+  { name: "users-large-list-load", role: "admin", path: "/admin/users?view=all&dataset=sample", optional: true, recordLoad: true },
+  { name: "users-large-list-scroll", role: "admin", path: "/admin/users?view=all&dataset=sample", optional: true, record: scroll },
   {
-    name: "audit-large-list-scroll",
-    role: "admin",
-    path: "/admin/audit-logs?view=all&dataset=sample",
-    optional: true,
-    record: async (page) => {
-      for (let i = 0; i < 20; i++) {
-        await page.mouse.wheel({ deltaY: 600 });
-        await new Promise((r) => setTimeout(r, 50));
-      }
-    },
-  },
-  {
-    name: "users-large-list-scroll",
+    name: "users-large-list-search",
     role: "admin",
     path: "/admin/users?view=all&dataset=sample",
     optional: true,
-    record: async (page) => {
-      for (let i = 0; i < 20; i++) {
-        await page.mouse.wheel({ deltaY: 600 });
-        await new Promise((r) => setTimeout(r, 50));
-      }
-    },
+    record: (page) => typeSlowly(page, 'input[aria-label="Search users"]', "rahman"),
+  },
+  { name: "audit-large-list-load", role: "admin", path: "/admin/audit-logs?view=all&dataset=sample", optional: true, recordLoad: true },
+  { name: "audit-large-list-scroll", role: "admin", path: "/admin/audit-logs?view=all&dataset=sample", optional: true, record: scroll },
+  {
+    name: "audit-large-list-filter",
+    role: "admin",
+    path: "/admin/audit-logs?view=all&dataset=sample",
+    optional: true,
+    record: (page) => typeSlowly(page, "#audit-action", "PAYMENT"),
   },
 ];
 
@@ -180,8 +190,9 @@ async function runScenario(scenario) {
   await settle(page);
 
   if (scenario.optional && scenario.path.includes("view=all")) {
-    const rows = await page.$$eval("table tbody tr", (r) => r.length).catch(() => 0);
-    if (rows < 100) {
+    // The view must exist (virtualized lists keep few rows in the DOM, so check the counter text).
+    const present = await page.evaluate(() => /of 5,000 (accounts|entries)/.test(document.body.innerText));
+    if (!present) {
       console.log(`skip ${scenario.name}: large view not present`);
       await context.close();
       return undefined;
@@ -189,7 +200,7 @@ async function runScenario(scenario) {
   }
 
   if (scenario.record) {
-    await page.evaluate(() => { window.__RP.recording = true; window.__RP.commits = 0; window.__RP.renders = {}; window.__RP.durations = {}; window.__RP.total = 0; window.__EVENTS = []; });
+    await page.evaluate(() => { window.__RP.recording = true; window.__RP.commits = 0; window.__RP.renders = {}; window.__RP.durations = {}; window.__RP.total = 0; window.__EVENTS = []; window.__LOAF = []; });
     await scenario.record(page);
     await settle(page, 1000);
   }
@@ -210,6 +221,9 @@ async function runScenario(scenario) {
         .slice(0, 15),
       interactions: latencies.length,
       worstInteractionMs: latencies.length ? Math.round(latencies[latencies.length - 1]) : 0,
+      longFrames: window.__LOAF.length,
+      longFrameBlockingMs: Math.round(window.__LOAF.reduce((sum, f) => sum + f.blocking, 0)),
+      longestFrameMs: Math.round(window.__LOAF.reduce((max, f) => Math.max(max, f.duration), 0)),
       domNodes: document.getElementsByTagName("*").length,
       tableRowsInDom: document.querySelectorAll("tbody tr").length,
     };
@@ -230,7 +244,7 @@ for (const scenario of SCENARIOS) {
   const sorted = [...runs].sort((a, b) => a.renderMs - b.renderMs);
   const data = { ...sorted[Math.floor(sorted.length / 2)], runs: runs.length, renderMsRuns: runs.map((r) => r.renderMs), worstInteractionRuns: runs.map((r) => r.worstInteractionMs) };
   results.push(data);
-  console.log(`${scenario.name.padEnd(26)} commits=${String(data.commits).padStart(4)} renders=${String(data.componentRenders).padStart(6)} renderMs=${String(data.renderMs).padStart(8)} (runs ${data.renderMsRuns.join("/")}) worstInteraction=${data.worstInteractionMs}ms dom=${data.domNodes} rows=${data.tableRowsInDom}`);
+  console.log(`${scenario.name.padEnd(26)} commits=${String(data.commits).padStart(4)} renders=${String(data.componentRenders).padStart(6)} renderMs=${String(data.renderMs).padStart(8)} (runs ${data.renderMsRuns.join("/")}) worstInteraction=${data.worstInteractionMs}ms LoAF=${data.longFrames}/${data.longFrameBlockingMs}ms(max ${data.longestFrameMs}) dom=${data.domNodes} rows=${data.tableRowsInDom}`);
   console.log("   top:", data.top.slice(0, 6).map((t) => `${t.name}×${t.count} ${t.ms}ms`).join(", "));
 }
 
