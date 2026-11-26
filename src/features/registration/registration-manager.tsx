@@ -7,7 +7,7 @@ import { BadgeDollarSign, CheckCircle2, Clock, GraduationCap, Hourglass, Layers,
 
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { FormAlert } from "@/components/forms/form-alert";
 import { TextInputField } from "@/components/forms/form-fields";
@@ -59,7 +59,6 @@ const selectClass = "border-input bg-background h-10 max-w-56 rounded-md border 
 
 function RegistrationsPanel() {
   const list = useListState(FILTER_KEYS);
-  const [search, setSearch] = useListSearch();
   const semesters = useSemesterOptions();
   const departments = useDepartmentOptions();
 
@@ -131,8 +130,6 @@ function RegistrationsPanel() {
       )}
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search registrations"
         searchPlaceholder="Student, registration or invoice no."
         filters={

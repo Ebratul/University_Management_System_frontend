@@ -6,7 +6,7 @@ import { useForm } from "@tanstack/react-form";
 
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { FormAlert } from "@/components/forms/form-alert";
 import { TextInputField } from "@/components/forms/form-fields";
@@ -27,7 +27,6 @@ const FILTER_KEYS: string[] = [];
 
 export function UniversitiesManager() {
   const list = useListState(FILTER_KEYS);
-  const [search, setSearch] = useListSearch();
   const [dialog, setDialog] = useState<{ item: University | null } | null>(null);
 
   const universities = useApiQuery({
@@ -62,8 +61,6 @@ export function UniversitiesManager() {
       />
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search universities"
         searchPlaceholder="Search by name or domain"
         action={

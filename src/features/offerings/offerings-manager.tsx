@@ -7,7 +7,7 @@ import { useForm } from "@tanstack/react-form";
 import { ConfirmDialog } from "@/components/admin/confirm-dialog";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { FormAlert } from "@/components/forms/form-alert";
 import { SelectInputField, TextInputField } from "@/components/forms/form-fields";
@@ -30,7 +30,6 @@ const FILTER_KEYS = ["semesterId"];
 
 export function OfferingsManager() {
   const list = useListState(FILTER_KEYS);
-  const [search, setSearch] = useListSearch();
   const semesters = useSemesterOptions();
   const [dialog, setDialog] = useState<{ item: CourseOffering | null } | null>(null);
   const [toDelete, setToDelete] = useState<CourseOffering | null>(null);
@@ -105,8 +104,6 @@ export function OfferingsManager() {
       <PageHeader eyebrow="Academic setup" title="Course offerings" description="A course taught by one faculty member in one semester, with a seat limit." />
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search offerings"
         searchPlaceholder="Offerings are filtered by semester"
         filters={

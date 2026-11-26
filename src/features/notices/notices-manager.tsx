@@ -7,7 +7,7 @@ import { useForm } from "@tanstack/react-form";
 import { ConfirmDialog } from "@/components/admin/confirm-dialog";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { FormAlert } from "@/components/forms/form-alert";
 import { SelectInputField, TextInputField, TextareaField } from "@/components/forms/form-fields";
@@ -30,7 +30,6 @@ const audienceOptions = (Object.keys(audienceLabel) as NoticeAudience[]).map((va
 
 export function NoticesManager() {
   const list = useListState();
-  const [search, setSearch] = useListSearch();
   const [dialog, setDialog] = useState<{ item: Notice | null } | null>(null);
   const [toDelete, setToDelete] = useState<Notice | null>(null);
 
@@ -58,8 +57,6 @@ export function NoticesManager() {
       <PageHeader eyebrow="Communication" title="Notices" description="Announcements. Audience decides who sees each one when they log in." />
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search notices"
         searchPlaceholder="Search titles and content"
         action={

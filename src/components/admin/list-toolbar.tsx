@@ -13,15 +13,11 @@ export function useListSearch() {
 }
 
 export function ListToolbar({
-  search,
-  onSearchChange,
   searchLabel,
   searchPlaceholder,
   filters,
   action,
 }: {
-  search: string;
-  onSearchChange: (value: string) => void;
   searchLabel: string;
   searchPlaceholder: string;
   filters?: ReactNode;
@@ -30,10 +26,21 @@ export function ListToolbar({
   return (
     <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <SearchField label={searchLabel} placeholder={searchPlaceholder} value={search} onChange={onSearchChange} />
+        <ListSearch label={searchLabel} placeholder={searchPlaceholder} />
         {filters}
       </div>
       {action ? <div className="flex justify-end">{action}</div> : null}
     </div>
   );
+}
+
+/**
+ * The search box owns its own state (colocated). Typing re-renders this input
+ * only; the list above it re-renders once, when the debounced value reaches the
+ * URL. Before, the state lived in each manager, so every keystroke re-rendered
+ * the whole manager: table, row menus and dialogs.
+ */
+function ListSearch({ label, placeholder }: { label: string; placeholder: string }) {
+  const [search, setSearch] = useListSearch();
+  return <SearchField label={label} placeholder={placeholder} value={search} onChange={setSearch} />;
 }

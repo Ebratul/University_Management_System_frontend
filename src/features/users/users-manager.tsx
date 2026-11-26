@@ -7,7 +7,7 @@ import { useForm } from "@tanstack/react-form";
 import { ConfirmDialog } from "@/components/admin/confirm-dialog";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { RowMenu, type RowMenuItem } from "@/components/admin/row-menu";
 import { FormAlert } from "@/components/forms/form-alert";
@@ -31,7 +31,6 @@ const ROLES: Role[] = ["ADMIN", "FACULTY", "STUDENT"];
 
 export function UsersManager() {
   const list = useListState(FILTER_KEYS);
-  const [search, setSearch] = useListSearch();
   const [creating, setCreating] = useState(false);
   const [toDelete, setToDelete] = useState<AdminUser | null>(null);
 
@@ -93,8 +92,6 @@ export function UsersManager() {
       <PageHeader eyebrow="People" title="Users" description="Every login in the system. Changing a role only works if the account already has a profile for that role." />
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search users"
         searchPlaceholder="Search by email"
         filters={

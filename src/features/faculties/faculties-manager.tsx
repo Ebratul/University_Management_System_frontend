@@ -7,7 +7,7 @@ import { useForm } from "@tanstack/react-form";
 import { ConfirmDialog } from "@/components/admin/confirm-dialog";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { FormAlert } from "@/components/forms/form-alert";
 import { SelectInputField, TextInputField } from "@/components/forms/form-fields";
@@ -34,7 +34,6 @@ const FILTER_KEYS = ["departmentId"];
 
 export function FacultiesManager() {
   const list = useListState(FILTER_KEYS);
-  const [search, setSearch] = useListSearch();
   const departments = useDepartmentOptions();
   const [dialog, setDialog] = useState<{ item: Faculty | null } | null>(null);
   const [toDelete, setToDelete] = useState<Faculty | null>(null);
@@ -64,8 +63,6 @@ export function FacultiesManager() {
       <PageHeader eyebrow="People" title="Faculty" description="Teaching staff. Creating a faculty member also creates their login." />
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search faculty"
         searchPlaceholder="Search by name or faculty ID"
         filters={

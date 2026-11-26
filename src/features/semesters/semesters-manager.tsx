@@ -7,7 +7,7 @@ import { useForm } from "@tanstack/react-form";
 import { ConfirmDialog } from "@/components/admin/confirm-dialog";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { FormDialog } from "@/components/admin/form-dialog";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { FormAlert } from "@/components/forms/form-alert";
 import { SelectInputField, TextInputField } from "@/components/forms/form-fields";
@@ -34,7 +34,6 @@ const money = new Intl.NumberFormat("en-BD", { style: "currency", currency: "BDT
 
 export function SemestersManager() {
   const list = useListState(FILTER_KEYS);
-  const [search, setSearch] = useListSearch();
   const [dialog, setDialog] = useState<{ item: Semester | null } | null>(null);
   const [toDelete, setToDelete] = useState<Semester | null>(null);
 
@@ -74,8 +73,6 @@ export function SemestersManager() {
       <PageHeader eyebrow="Academic setup" title="Semesters" description="Terms with their dates, status and the tuition fee students pay." />
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search semesters"
         searchPlaceholder="Search by code"
         filters={

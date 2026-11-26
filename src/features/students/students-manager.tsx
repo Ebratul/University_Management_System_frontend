@@ -4,7 +4,7 @@ import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 
 import { DataTable, type Column } from "@/components/admin/data-table";
-import { ListToolbar, useListSearch } from "@/components/admin/list-toolbar";
+import { ListToolbar } from "@/components/admin/list-toolbar";
 import { Pagination } from "@/components/admin/pagination";
 import { PageHeader } from "@/components/shared/page-header";
 import { PersonAvatar } from "@/components/shared/person-avatar";
@@ -20,7 +20,6 @@ const FILTER_KEYS = ["departmentId", "admissionSemesterId"];
 
 export function StudentsManager() {
   const list = useListState(FILTER_KEYS);
-  const [search, setSearch] = useListSearch();
   const departments = useDepartmentOptions();
   const semesters = useSemesterOptions();
 
@@ -55,8 +54,6 @@ export function StudentsManager() {
       <PageHeader eyebrow="People" title="Students" description="Student profiles. Open a student to see their enrolments and payments." />
 
       <ListToolbar
-        search={search}
-        onSearchChange={setSearch}
         searchLabel="Search students"
         searchPlaceholder="Search by name or student ID"
         filters={
