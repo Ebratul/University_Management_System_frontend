@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /**
  * Client-safe environment. Only NEXT_PUBLIC_* values belong here, because

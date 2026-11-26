@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "@tanstack/react-form";
 import { Clock, FileQuestion, ListChecks, Plus } from "lucide-react";
-import { z } from "zod";
+import * as z from "zod";
 
 import { FormDialog } from "@/components/admin/form-dialog";
 import { FormAlert } from "@/components/forms/form-alert";

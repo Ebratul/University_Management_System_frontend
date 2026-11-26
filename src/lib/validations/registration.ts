@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 import { bdtToPaisa, paisaToBdt } from "@/lib/format";
 import type { RegistrationSettingValues } from "@/types/entities";

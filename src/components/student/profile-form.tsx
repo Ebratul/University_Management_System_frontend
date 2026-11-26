@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { Camera, Loader2 } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
-import { z } from "zod";
+import * as z from "zod";
 
 import { useSession } from "@/components/auth/session-provider";
 import { FormAlert } from "@/components/forms/form-alert";

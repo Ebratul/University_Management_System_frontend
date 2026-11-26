@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /**
  * Mirrors backend/src/module/auth/auth.validation.ts. If a rule changes on the
