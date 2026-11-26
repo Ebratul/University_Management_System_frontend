@@ -70,7 +70,10 @@ export function GoogleSignIn({ next }: { next: string | null }) {
             mutate(credential, { onError: (e) => setError(toApiError(e).message) });
           },
         });
-        google.accounts.id.renderButton(buttonRef.current, { theme: "outline", size: "large", text: "continue_with", width: 320 });
+        // Never wider than its column: on a 375px phone (and with longer localized
+        // labels) a fixed 320px+ button pushed the whole login page sideways.
+        const width = Math.max(200, Math.min(320, buttonRef.current.clientWidth || 320));
+        google.accounts.id.renderButton(buttonRef.current, { theme: "outline", size: "large", text: "continue_with", width });
       })
       .catch((e: Error) => setError(e.message));
     return () => {
@@ -92,7 +95,8 @@ export function GoogleSignIn({ next }: { next: string | null }) {
           {error}
         </div>
       ) : null}
-      <div ref={buttonRef} className="flex justify-center" aria-busy={signIn.isPending} />
+      {/* contain:inline-size keeps Google's min-content button from widening the page. */}
+      <div ref={buttonRef} className="flex w-full justify-center overflow-hidden [contain:inline-size]" aria-busy={signIn.isPending} />
     </div>
   );
 }

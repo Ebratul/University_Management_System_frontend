@@ -18,7 +18,7 @@ export default async function AuthLayout({ children }: { children: ReactNode }) 
   const { universityName, logoUrl } = await getWebsiteSettings();
 
   return (
-    <div className="grid min-h-dvh lg:grid-cols-[1fr_1.1fr]">
+    <div className="grid min-h-dvh grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
       <SkipLink />
 
       <aside
