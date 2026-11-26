@@ -11,7 +11,7 @@ import { FormSkeleton } from "@/components/admin/form-skeleton";
 import { ListToolbar } from "@/components/admin/list-toolbar";
 import { ListViewSwitch } from "@/components/admin/list-view-switch";
 import { SampleDataNotice } from "@/components/admin/sample-data-notice";
-import { VirtualTable } from "@/components/admin/virtual-table";
+import { VirtualTable } from "@/components/admin/virtual-table-lazy";
 import { Pagination } from "@/components/admin/pagination";
 import { RowMenu, type RowMenuItem } from "@/components/admin/row-menu";
 import { PageHeader } from "@/components/shared/page-header";

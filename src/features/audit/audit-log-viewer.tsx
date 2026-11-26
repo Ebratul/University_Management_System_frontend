@@ -7,7 +7,7 @@ import { ScrollText } from "lucide-react";
 import { DataTable, type Column } from "@/components/admin/data-table";
 import { ListViewSwitch } from "@/components/admin/list-view-switch";
 import { SampleDataNotice } from "@/components/admin/sample-data-notice";
-import { VirtualTable } from "@/components/admin/virtual-table";
+import { VirtualTable } from "@/components/admin/virtual-table-lazy";
 import { Pagination } from "@/components/admin/pagination";
 import { PageHeader } from "@/components/shared/page-header";
 import { Badge } from "@/components/ui/badge";
