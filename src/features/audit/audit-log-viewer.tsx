@@ -89,7 +89,7 @@ export function AuditLogViewer() {
     <div className="space-y-6">
       <PageHeader eyebrow="Oversight" title="Audit log" description="Who changed what, and when. Entries are written by the API and cannot be edited." />
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <FilterField paramKey="action" label="Action" placeholder="e.g. PAYMENT_COMPLETED" />
         <FilterField paramKey="entityType" label="Entity type" placeholder="e.g. Payment" />
         <FilterField paramKey="from" label="From" type="date" />

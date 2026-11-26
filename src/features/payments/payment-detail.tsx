@@ -40,7 +40,7 @@ export function PaymentDetail({ id }: { id: string }) {
       </nav>
       <PageHeader eyebrow={p.semester.code + " " + p.semester.year} title={money.format(p.amount)} description={`${p.student.name} (${p.student.studentId})`} actions={paymentBadge(p.status)} />
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {rows.map(([label, value]) => (
           <Card key={label}>
             <CardHeader className="gap-1">

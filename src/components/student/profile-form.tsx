@@ -111,7 +111,7 @@ export function ProfileForm() {
     <div className="space-y-8">
       <PageHeader eyebrow="Account" title="Profile" description="Keep your contact details up to date. Your student ID and login email are managed by the university." />
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_1.5fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1.5fr]">
         <Card>
           <CardHeader>
             <CardTitle className="text-base">Photo</CardTitle>
@@ -140,7 +140,7 @@ export function ProfileForm() {
             <form noValidate className="space-y-5" onSubmit={(event) => { event.preventDefault(); event.stopPropagation(); void form.handleSubmit(); }}>
               {serverError ? <FormAlert message={serverError.message} details={serverError.details} /> : null}
               <form.Field name="name">{(field) => <TextInputField field={field} label="Full name" autoComplete="name" />}</form.Field>
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <form.Field name="phone">{(field) => <TextInputField field={field} label="Phone" type="tel" autoComplete="tel" />}</form.Field>
                 {isStudent ? (
                   <form.Field name="dateOfBirth">{(field) => <TextInputField field={field} label="Date of birth" type="date" />}</form.Field>

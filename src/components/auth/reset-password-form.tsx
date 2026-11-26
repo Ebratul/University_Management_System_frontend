@@ -72,7 +72,7 @@ export function ResetPasswordForm({ email, justSent }: { email: string; justSent
         )}
       </form.Field>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="newPassword">
           {(field) => <TextInputField field={field} label="New password" type="password" autoComplete="new-password" hint="8+ characters with upper, lower, number and symbol." />}
         </form.Field>

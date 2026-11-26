@@ -296,12 +296,12 @@ function SettingsForm({ row, onDone }: { row: Row; onDone: () => void }) {
 
       <fieldset className="space-y-3">
         <legend className="text-sm font-semibold">Credit fees (BDT per credit)</legend>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <form.Field name="theoryRate">{(f) => <TextInputField field={f} label="Theory" inputMode="decimal" />}</form.Field>
           <form.Field name="practicalRate">{(f) => <TextInputField field={f} label="Practical" inputMode="decimal" />}</form.Field>
           <form.Field name="otherRate">{(f) => <TextInputField field={f} label="Project / thesis" inputMode="decimal" />}</form.Field>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <form.Field name="registrationFee">{(f) => <TextInputField field={f} label="Registration fee (flat)" inputMode="decimal" />}</form.Field>
           <form.Field name="lateFee">{(f) => <TextInputField field={f} label="Late registration fee (flat)" inputMode="decimal" />}</form.Field>
         </div>
@@ -309,7 +309,7 @@ function SettingsForm({ row, onDone }: { row: Row; onDone: () => void }) {
 
       <fieldset className="space-y-3">
         <legend className="text-sm font-semibold">Credit limits</legend>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <form.Field name="minCredits">{(f) => <TextInputField field={f} label="Minimum credits" inputMode="decimal" hint="0 = no minimum." />}</form.Field>
           <form.Field name="maxCredits">{(f) => <TextInputField field={f} label="Maximum credits" inputMode="decimal" />}</form.Field>
         </div>
@@ -317,7 +317,7 @@ function SettingsForm({ row, onDone }: { row: Row; onDone: () => void }) {
 
       <fieldset className="space-y-3">
         <legend className="text-sm font-semibold">Registration window</legend>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <form.Field name="registrationStart">{(f) => <TextInputField field={f} label="Opens" type="datetime-local" />}</form.Field>
           <form.Field name="registrationEnd">{(f) => <TextInputField field={f} label="Closes" type="datetime-local" />}</form.Field>
         </div>
@@ -339,7 +339,7 @@ function SettingsForm({ row, onDone }: { row: Row; onDone: () => void }) {
         <form.Subscribe selector={(s) => s.values.lateEnabled}>
           {(enabled) =>
             enabled ? (
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <form.Field name="lateStart">{(f) => <TextInputField field={f} label="Late registration opens" type="datetime-local" />}</form.Field>
                 <form.Field name="lateEnd">{(f) => <TextInputField field={f} label="Late registration closes" type="datetime-local" />}</form.Field>
               </div>

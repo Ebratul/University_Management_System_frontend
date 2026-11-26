@@ -57,7 +57,7 @@ export function QuizResultsPanel({ quizId, status }: { quizId: string; status: Q
   return (
     <div className="space-y-6">
       {results.data ? (
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <StatCard label="Enrolled" value={results.data.summary.enrolled} icon={Users} tone="indigo" />
           <StatCard label="Attempted" value={results.data.summary.attempted} hint={`of ${results.data.summary.enrolled} students`} icon={ListChecks} tone="teal" />
           <StatCard label="Average score" value={`${results.data.summary.averagePercentage}%`} icon={ListChecks} tone="violet" />

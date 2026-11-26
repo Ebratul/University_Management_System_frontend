@@ -171,7 +171,7 @@ export function RegistrationDetail({
         </SectionCard>
       ) : null}
 
-      <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_1fr]">
         <SectionCard title="Registered courses" description={`${reg.items.length} course${reg.items.length === 1 ? "" : "s"} · ${reg.totalCredits} credits`}>
           <div className="overflow-x-auto">
             <Table>
@@ -461,7 +461,7 @@ function DetailSkeleton() {
     <div className="space-y-6" aria-busy="true">
       <Skeleton className="h-10 w-72" />
       <Skeleton className="h-16 w-full rounded-xl" />
-      <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_1fr]">
         <Skeleton className="h-64 rounded-xl" />
         <Skeleton className="h-64 rounded-xl" />
       </div>

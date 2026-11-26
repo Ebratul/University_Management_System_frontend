@@ -22,7 +22,7 @@ export default async function FacultiesPage() {
         fallback={
           <div className="space-y-6">
             <Skeleton className="h-10 w-full sm:max-w-xs" />
-            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {Array.from({ length: Math.min(Math.max(faculties.length, 1), 12) }, (_, index) => (
                 <li key={index}>
                   <Skeleton className="h-36 w-full rounded-xl" />

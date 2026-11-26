@@ -38,7 +38,7 @@ function CatalogSkeleton({ count }: { count: number }) {
         <Skeleton className="h-10 w-full sm:max-w-xs" />
         <Skeleton className="h-10 w-full sm:w-64" />
       </div>
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: Math.min(Math.max(count, 1), 12) }, (_, index) => (
           <li key={index}>
             <Skeleton className="h-[9.25rem] w-full rounded-xl" />

@@ -48,7 +48,7 @@ export function MaterialsTab({ offeringId, isStaff }: { offeringId: string; isSt
       {isStaff ? <UploadCard offeringId={offeringId} /> : null}
 
       {materials.isPending ? (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {Array.from({ length: 3 }, (_, i) => (
             <Skeleton key={i} className="h-36 rounded-xl" />
           ))}
@@ -71,7 +71,7 @@ export function MaterialsTab({ offeringId, isStaff }: { offeringId: string; isSt
           description={isStaff ? "Upload a PDF above and every enrolled student will see it here." : "Your teacher has not shared any material yet."}
         />
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {materials.data.map((material) => (
             <li key={material.id}>
               <MaterialCard material={material} offeringId={offeringId} isStaff={isStaff} onDelete={() => setToDelete(material)} />
@@ -146,7 +146,7 @@ function UploadCard({ offeringId }: { offeringId: string }) {
           <h2 className="text-base font-semibold">Upload a PDF</h2>
           <p className="text-muted-foreground text-sm">Visible only to you and the students enrolled in this course.</p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
           <div className="space-y-2">
             <Label htmlFor="material-file">PDF file</Label>
             <Input

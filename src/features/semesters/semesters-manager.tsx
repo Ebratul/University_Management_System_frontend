@@ -193,7 +193,7 @@ function SemesterForm({ item, onDone }: { item: Semester | null; onDone: () => v
     <form noValidate className="space-y-5" onSubmit={(event) => { event.preventDefault(); event.stopPropagation(); void form.handleSubmit(); }}>
       {serverError ? <FormAlert message={serverError.message} details={serverError.details} /> : null}
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="code">{(field) => <TextInputField field={field} label="Code" placeholder="FALL" />}</form.Field>
         <form.Field name="year">{(field) => <TextInputField field={field} label="Year" inputMode="numeric" placeholder="2027" />}</form.Field>
         <form.Field name="startDate">{(field) => <TextInputField field={field} label="Start date" type="date" />}</form.Field>

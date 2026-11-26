@@ -212,7 +212,7 @@ function QuestionCard({
 
         <fieldset className="space-y-2" disabled={!editable}>
           <legend className="text-sm font-medium">Options — select the correct one</legend>
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {CHOICES.map((c) => {
               const correct = q.correctAnswer === c;
               return (
@@ -242,7 +242,7 @@ function QuestionCard({
           </div>
         </fieldset>
 
-        <div className="grid gap-4 sm:grid-cols-[2fr_1fr]">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-[2fr_1fr]">
           <div className="space-y-2">
             <Label htmlFor={`${id}-exp`}>Explanation</Label>
             <textarea
@@ -312,7 +312,7 @@ function AiGenerator({ quiz, onGenerated }: { quiz: QuizDetail; onGenerated: (qu
         {noMaterials ? (
           <p className="text-muted-foreground text-sm">Upload a PDF in this course’s Materials tab first.</p>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_auto] lg:items-end">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_auto] lg:items-end">
             <div className="space-y-2">
               <Label htmlFor="ai-material">Source PDF</Label>
               <Select value={selected} onValueChange={setMaterialId} disabled={generate.isPending}>

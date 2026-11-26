@@ -93,7 +93,7 @@ export function RegisterForm() {
         </div>
       ) : null}
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="name">
           {(field) => (
             <TextField field={field} label="Full name" autoComplete="name" placeholder="Jane Doe" className="sm:col-span-2" />

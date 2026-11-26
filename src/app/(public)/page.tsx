@@ -69,7 +69,7 @@ export default async function HomePage() {
       <Hero settings={settings} />
 
       <nav aria-label="Quick links" className="relative z-10 mx-auto -mt-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <ul className="bg-card grid gap-px overflow-hidden rounded-2xl border shadow-lg sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="bg-card grid grid-cols-1 gap-px overflow-hidden rounded-2xl border shadow-lg sm:grid-cols-2 lg:grid-cols-5">
           {quickLinks.map((item) => (
             <li key={item.label} className="bg-card">
               <Link
@@ -101,7 +101,7 @@ export default async function HomePage() {
         }
       >
         {departments.length > 0 ? (
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {departments.slice(0, 6).map((department) => (
               <li key={department.id}>
                 <Link
@@ -132,7 +132,7 @@ export default async function HomePage() {
         description="Create an account, choose your courses and manage everything about your studies in one place."
         muted
       >
-        <ol className="grid gap-4 md:grid-cols-3">
+        <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             { step: "1", title: "Apply", text: "Register an account with your details." },
             { step: "2", title: "Enrol", text: "Pick course offerings with live seat availability." },
@@ -163,7 +163,7 @@ export default async function HomePage() {
         title="Student services"
         description="Everything a student needs, available from the student portal."
       >
-        <ul className="grid gap-4 md:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {studentServices.map((service) => (
             <li key={service.label}>
               <Card className="card-hover h-full">
@@ -196,7 +196,7 @@ export default async function HomePage() {
           </Button>
         }
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Link href="/faculties" className="bg-card card-hover focus-visible:ring-ring/40 rounded-2xl border p-6 shadow-card outline-none focus-visible:ring-2">
             <Users className="text-brand-violet mb-3 size-6" aria-hidden="true" />
             <h3 className="font-semibold">Faculty directory</h3>
@@ -216,7 +216,7 @@ export default async function HomePage() {
         title="Research at the university"
         description="Our departments and faculty drive research across disciplines. Browse departments and researchers to learn more."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Link href="/departments" className="bg-card card-hover focus-visible:ring-ring/40 flex items-center gap-4 rounded-2xl border p-6 shadow-card outline-none focus-visible:ring-2">
             <FlaskConical className="text-brand-rose size-7 shrink-0" aria-hidden="true" />
             <span>
@@ -246,7 +246,7 @@ export default async function HomePage() {
         }
       >
         {notices.length > 0 ? (
-          <ul className="grid gap-4 md:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {notices.map((notice) => (
               <li key={notice.id}>
                 <NoticeCard notice={notice} href={`/notices/${notice.id}`} />
@@ -278,7 +278,7 @@ export default async function HomePage() {
         title="Useful links"
         muted
       >
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { label: "Course catalogue", href: "/courses" },
             { label: "Departments", href: "/departments" },

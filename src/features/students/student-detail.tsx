@@ -172,7 +172,7 @@ function StudentEditForm({ student, onDone }: { student: StudentRecord; onDone: 
     <form noValidate className="space-y-5" onSubmit={(event) => { event.preventDefault(); event.stopPropagation(); void form.handleSubmit(); }}>
       {serverError ? <FormAlert message={serverError.message} details={serverError.details} /> : null}
       <form.Field name="name">{(field) => <TextInputField field={field} label="Full name" />}</form.Field>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="phone">{(field) => <TextInputField field={field} label="Phone (optional)" type="tel" />}</form.Field>
         <form.Field name="dateOfBirth">{(field) => <TextInputField field={field} label="Date of birth (optional)" type="date" />}</form.Field>
       </div>

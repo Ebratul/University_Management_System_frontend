@@ -47,7 +47,7 @@ export function QuizzesTab({ offeringId, isStaff }: { offeringId: string; isStaf
       ) : null}
 
       {quizzes.isPending ? (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {Array.from({ length: 2 }, (_, i) => (
             <Skeleton key={i} className="h-40 rounded-xl" />
           ))}
@@ -70,7 +70,7 @@ export function QuizzesTab({ offeringId, isStaff }: { offeringId: string; isStaf
           description={isStaff ? "Create a quiz, or generate its questions from one of your PDFs with AI." : "Quizzes your teacher publishes will appear here."}
         />
       ) : (
-        <ul className="grid gap-4 md:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {quizzes.data.quizzes.map((quiz) => (
             <li key={quiz.id}>
               <QuizCard quiz={quiz} isStaff={isStaff} />

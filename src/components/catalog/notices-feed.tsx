@@ -23,11 +23,11 @@ export function NoticesFeed({ description = "Announcements for you and for every
     <div className="space-y-6">
       <PageHeader eyebrow="Announcements" title="Notices" description={description} />
       {notices.isPending ? (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 3 }, (_, i) => <Skeleton key={i} className="h-40 rounded-xl" />)}
         </div>
       ) : notices.data && notices.data.data.length > 0 ? (
-        <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {notices.data.data.map((notice) => (
             <li key={notice.id}><NoticeCard notice={notice} /></li>
           ))}

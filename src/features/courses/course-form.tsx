@@ -75,14 +75,14 @@ export function CourseForm({ item, departments, onDone }: { item: Course | null;
 
       <form.Field name="courseCode">{(field) => <TextInputField field={field} label="Course code" placeholder="CSE1010" />}</form.Field>
       <form.Field name="title">{(field) => <TextInputField field={field} label="Title" placeholder="Introduction to Programming" />}</form.Field>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="credits">{(field) => <TextInputField field={field} label="Credits" inputMode="decimal" hint="Whole or half credits, e.g. 3 or 1.5." />}</form.Field>
         <form.Field name="departmentId">
           {(field) => <SelectInputField field={field} label="Department" placeholder="Choose a department" options={departments} />}
         </form.Field>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="courseType">
           {(field) => <SelectInputField field={field} label="Course type" placeholder="Choose a type" options={COURSE_TYPE_OPTIONS} hint="Sets which credit-fee rate applies." />}
         </form.Field>

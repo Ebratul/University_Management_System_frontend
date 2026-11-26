@@ -72,7 +72,7 @@ export function OverviewTab({
         <StatCard label={isStaff ? "Average attendance" : "My attendance"} value={attendanceValue} hint={attendanceHint} icon={CalendarCheck} tone="amber" />
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <SectionCard title="About this course" className="lg:col-span-2">
           {offering.course.description ? (
             <p className="text-sm leading-relaxed whitespace-pre-line">{offering.course.description}</p>

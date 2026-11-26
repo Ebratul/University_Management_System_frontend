@@ -55,7 +55,7 @@ export function ReceiptView({ registrationId, backHref }: { registrationId: stri
           <p className="text-muted-foreground text-sm">Course Registration Receipt</p>
         </header>
 
-        <dl className="grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
+        <dl className="grid grid-cols-1 gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
           <Row label="Student" value={r.student.name} />
           <Row label="Student ID" value={r.student.studentId} mono />
           <Row label="Registration number" value={r.student.registrationNumber} mono />

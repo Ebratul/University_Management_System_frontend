@@ -58,7 +58,7 @@ export default async function CoursePage({ params }: PageProps<"/courses/[id]">)
         </h2>
 
         {offerings.length > 0 ? (
-          <ul className="grid gap-4 md:grid-cols-2">
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {offerings.map((offering) => {
               const fillPercent = offering.maxSeats > 0 ? (offering.enrolledCount / offering.maxSeats) * 100 : 0;
               const full = offering.seatsRemaining <= 0;

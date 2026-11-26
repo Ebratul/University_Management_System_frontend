@@ -147,7 +147,7 @@ export function CourseRegistration() {
         </div>
       ) : null}
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_22rem]">
         <section aria-labelledby="available-heading" className="space-y-4">
           <div className="flex flex-wrap items-center gap-3">
             <h2 id="available-heading" className="text-base font-semibold">
@@ -314,7 +314,7 @@ function CourseRow({ course, checked, selectable, onToggle }: { course: Availabl
           <CourseStateBadge state={course.state} />
         </div>
         <p className="font-semibold">{course.title}</p>
-        <dl className="text-muted-foreground grid gap-x-6 gap-y-1 text-xs sm:grid-cols-2">
+        <dl className="text-muted-foreground grid grid-cols-1 gap-x-6 gap-y-1 text-xs sm:grid-cols-2">
           <div className="flex gap-1"><dt>Credit:</dt><dd className="text-foreground tabular-nums">{course.credits}</dd></div>
           <div className="flex gap-1"><dt>Teacher:</dt><dd className="text-foreground truncate">{course.teacher}</dd></div>
           {course.prerequisite ? (
@@ -379,7 +379,7 @@ function PageSkeleton() {
     <div className="space-y-6" aria-busy="true">
       <Skeleton className="h-10 w-72" />
       <Skeleton className="h-14 w-full rounded-xl" />
-      <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_22rem]">
         <div className="space-y-3">
           {Array.from({ length: 4 }, (_, i) => (
             <Skeleton key={i} className="h-28 rounded-xl" />

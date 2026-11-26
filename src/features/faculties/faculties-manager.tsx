@@ -180,7 +180,7 @@ function FacultyCreateForm({ departments, onDone }: { departments: { value: stri
       <form.Field name="name">{(field) => <TextInputField field={field} label="Full name" />}</form.Field>
       <form.Field name="email">{(field) => <TextInputField field={field} label="Email" type="email" autoComplete="off" />}</form.Field>
       <form.Field name="password">{(field) => <TextInputField field={field} label="Temporary password" type="password" autoComplete="new-password" hint="8+ characters with upper, lower, number and symbol. Share it securely." />}</form.Field>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="phone">{(field) => <TextInputField field={field} label="Phone (optional)" type="tel" />}</form.Field>
         <form.Field name="designation">{(field) => <TextInputField field={field} label="Designation (optional)" placeholder="Lecturer" />}</form.Field>
       </div>
@@ -239,7 +239,7 @@ function FacultyEditForm({ item, departments, onDone }: { item: Faculty; departm
       {serverError ? <FormAlert message={serverError.message} details={serverError.details} /> : null}
       <p className="text-muted-foreground text-sm">Faculty ID <span className="font-mono">{item.facultyId}</span>. The login email cannot be changed here.</p>
       <form.Field name="name">{(field) => <TextInputField field={field} label="Full name" />}</form.Field>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <form.Field name="phone">{(field) => <TextInputField field={field} label="Phone (optional)" type="tel" />}</form.Field>
         <form.Field name="designation">{(field) => <TextInputField field={field} label="Designation" />}</form.Field>
       </div>

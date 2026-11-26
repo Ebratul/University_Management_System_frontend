@@ -251,7 +251,7 @@ function QuizSession({
         </div>
       ) : null}
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_16rem]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_16rem]">
         <Card key={current.id} className="animate-in fade-in-0 slide-in-from-right-3 duration-200">
           <CardContent className="space-y-6">
             <h2 className="text-lg leading-snug font-semibold text-balance sm:text-xl">
@@ -396,7 +396,7 @@ function ResultView({ quizId, courseId, timeOver }: { quizId: string; courseId: 
           <p className="text-sm text-white/80">Result</p>
           <h1 className="text-2xl font-bold text-balance">{r.quizTitle}</h1>
         </div>
-        <CardContent className="grid items-center gap-6 sm:grid-cols-[auto_1fr]">
+        <CardContent className="grid grid-cols-1 items-center gap-6 sm:grid-cols-[auto_1fr]">
           <ScoreRing percentage={r.percentage} />
           <dl className="grid grid-cols-2 gap-4 text-sm sm:grid-cols-4">
             <Stat label="Score" value={`${r.score} / ${r.totalQuestions}`} />

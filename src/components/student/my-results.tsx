@@ -34,7 +34,7 @@ export function MyResults() {
     <div className="space-y-6">
       <PageHeader eyebrow="Academics" title="Results" description="Published grades. Your GPA is weighted by course credits." />
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <StatCard label="Grade point average" value={gpa === null ? "—" : gpa.toFixed(2)} hint={gpa === null ? "Shown once a result is published" : `Across ${totalCredits} credits`} icon={Award} tone="violet" />
         <StatCard label="Results published" value={results.data?.meta.total ?? 0} icon={Award} tone="teal" />
       </div>

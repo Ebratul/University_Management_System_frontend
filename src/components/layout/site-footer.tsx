@@ -14,7 +14,7 @@ export function SiteFooter({ settings }: { settings: WebsiteSettings }) {
 
   return (
     <footer className="mt-auto border-t bg-card">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.5fr_repeat(4,1fr)] lg:px-8">
+      <div className="mx-auto grid grid-cols-1 max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.5fr_repeat(4,1fr)] lg:px-8">
         <div className="space-y-4 md:col-span-2 lg:col-span-1">
           <Logo name={settings.universityName} logoUrl={settings.logoUrl} />
           <p className="max-w-sm text-sm text-pretty text-muted-foreground">{settings.tagline}</p>

@@ -63,7 +63,7 @@ export default async function DepartmentPage({ params }: PageProps<"/departments
       />
 
       {courses.length > 0 ? (
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
             <li key={course.id}>
               <CourseCard course={course} />

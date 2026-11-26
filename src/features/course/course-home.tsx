@@ -82,7 +82,7 @@ export function CourseHome({ offeringId }: { offeringId: string }) {
             <h1 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl">{o.course.title}</h1>
           </div>
         </div>
-        <dl className="grid gap-4 px-5 py-4 text-sm sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+        <dl className="grid grid-cols-1 gap-4 px-5 py-4 text-sm sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
           <HeaderFact label="Teacher">
             <span className="flex items-center gap-2">
               <PersonAvatar name={o.faculty.name} imageUrl={o.faculty.user?.imageUrl} size="sm" />

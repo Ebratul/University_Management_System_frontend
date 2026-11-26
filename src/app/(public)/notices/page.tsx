@@ -19,7 +19,7 @@ export default async function NoticesPage() {
       <PageHeader eyebrow="Announcements" title="Notices" description="Announcements open to everyone." />
 
       {notices.length > 0 ? (
-        <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {notices.map((notice) => (
             <li key={notice.id}>
               <NoticeCard notice={notice} href={`/notices/${notice.id}`} />

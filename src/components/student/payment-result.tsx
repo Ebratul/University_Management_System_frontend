@@ -57,7 +57,7 @@ export function PaymentResult({ paymentId }: { paymentId: string | null }) {
           <CardDescription>Keep the transaction ID for your records.</CardDescription>
         </CardHeader>
         <CardContent>
-          <dl className="grid gap-3 text-sm sm:grid-cols-2">
+          <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
             <Row label="For" value={registration ? "Course registration" : "Semester tuition"} />
             {registration ? <Row label="Invoice" value={registration.invoiceNo} mono /> : null}
             <Row label="Semester" value={`${p.semester.code} ${p.semester.year}`} />
